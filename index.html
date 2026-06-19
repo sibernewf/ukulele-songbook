@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ukulele Songbook v5.3</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div><h1>Ukulele Songbook</h1><p>Select songs, view chords, build set lists, practise, use the chord dictionary, practise with metronome and strumming trainer, and auto-scroll while you play.</p></div>
+    <div class="controls"><button id="smallerText">A−</button><button id="largerText">A+</button><button id="togglePanel">Hide chord panel</button></div>
+  </header>
+  <main class="app">
+    <aside class="chords-panel">
+      <details class="accordion-section"><summary>Library Controls</summary>
+        <label for="songSearch">Search songs</label><input id="songSearch" class="song-search" type="search" placeholder="Search by title, artist or tag...">
+        <label for="songSelect">Choose song</label><select id="songSelect"></select>
+        <div id="libraryStats" class="library-stats"></div><div id="searchStatus" class="search-status"></div>
+        <label for="sortSelect">Sort songs</label><select id="sortSelect"><option value="title">Title A-Z</option><option value="artist">Artist A-Z</option><option value="favourites">Favourites first</option></select>
+        <label class="favourites-toggle"><input id="favouritesOnly" type="checkbox"> Show favourites only</label>
+        <label for="typeFilter">Song type</label><select id="typeFilter"><option value="all">All types</option><option value="chords">Chords only</option><option value="tabs">Tabs only</option><option value="chords-tabs">Chords + tabs</option></select>
+        <h2>Tags</h2><div id="tagFilters" class="tag-filters"></div>
+      </details>
+      <details class="accordion-section"><summary>Recently Played</summary>
+        <div id="recentSongs" class="recent-songs"><p class="hint compact-hint">Recently opened songs will appear here.</p></div>
+        <button id="clearRecentSongs" class="wide-button" type="button">Clear recent songs</button>
+      </details>
+
+      <details class="accordion-section" open><summary>Set Lists</summary>
+        <label for="setSelect">Choose set</label><select id="setSelect"></select>
+        <div class="set-buttons"><button id="startSet">Start set</button><button id="deleteSet">Delete set</button></div>
+        <h2>Create / update set</h2>
+        <label for="setName">Set name</label><input id="setName" class="song-search" type="text" placeholder="Campfire Night">
+        <label for="setSongs">Songs in set</label><div id="setSongs" class="set-song-list"></div>
+        <button id="saveSet" class="wide-button">Save set</button>
+        <div class="hint">Sets are saved in this browser/device. Later we can make them shared across the NAS.</div>
+      </details>
+
+      <details class="accordion-section"><summary>Practice Mode</summary>
+        <div class="practice-mode" id="practiceMode">
+          <div class="practice-tabs" role="tablist" aria-label="Practice mode tools">
+            <button class="practice-tab active" data-practice-tab="custom" type="button">🎯 Custom</button>
+            <button class="practice-tab" data-practice-tab="random" type="button">🎲 Random</button>
+            <button class="practice-tab" data-practice-tab="song" type="button">🎵 This Song</button>
+            <button class="practice-tab" data-practice-tab="packs" type="button">📦 Packs</button>
+            <button class="practice-tab" data-practice-tab="strumming" type="button">🎶 Strumming</button>
+            <button class="practice-tab" data-practice-tab="metronome" type="button">🥁 Metronome</button>
+            <button class="practice-tab" data-practice-tab="timer" type="button">⏱ Timer</button>
+          </div>
+
+          <section class="practice-tool active" id="practice-custom">
+            <h2>Custom Chord Practice</h2>
+            <p class="hint compact-hint">Enter chords from any course or lesson. Spaces or commas both work.</p>
+            <label for="customChordInput">Chords to practise</label>
+            <input id="customChordInput" class="song-search" type="text" placeholder="Am G6 C D">
+            <button id="loadCustomPractice" class="wide-button" type="button">Load practice set</button>
+          </section>
+
+          <section class="practice-tool" id="practice-random">
+            <h2>Random Chord Trainer</h2>
+            <label for="randomChordCount">Number of chords</label>
+            <select id="randomChordCount">
+              <option value="5">5 chords</option>
+              <option value="10" selected>10 chords</option>
+              <option value="20">20 chords</option>
+              <option value="all">All chords</option>
+            </select>
+            <button id="startRandomPractice" class="wide-button" type="button">Start random practice</button>
+          </section>
+
+          <section class="practice-tool" id="practice-song">
+            <h2>Learn This Song</h2>
+            <p class="hint compact-hint">Uses the song currently selected in the library.</p>
+            <button id="loadSongPractice" class="wide-button" type="button">Practise selected song chords</button>
+          </section>
+
+          <section class="practice-tool" id="practice-packs">
+            <h2>Chord Packs</h2>
+            <div id="practicePackList" class="practice-pack-list"></div>
+          </section>
+
+          <section class="practice-tool" id="practice-strumming">
+            <h2>Animated Strumming Trainer</h2>
+            <p class="hint compact-hint">Use the selected song pattern, or enter your own. The trainer can animate each stroke at your chosen BPM.</p>
+            <label for="customStrumInput">Pattern</label>
+            <input id="customStrumInput" class="song-search" type="text" placeholder="D D U U D U">
+            <div class="set-buttons">
+              <button id="loadSongStrumPractice" type="button">Use song</button>
+              <button id="loadCustomStrumPractice" type="button">Use custom</button>
+            </div>
+          </section>
+
+          <section class="practice-tool" id="practice-metronome">
+            <h2>Metronome</h2>
+            <p class="hint compact-hint">Keep steady time while practising chords, strumming or full songs.</p>
+            <label for="metronomeBpm">Tempo</label>
+            <div class="practice-inline-control">
+              <input id="metronomeBpm" type="range" min="40" max="240" step="1" value="80">
+              <strong><span id="metronomeBpmLabel">80</span> BPM</strong>
+            </div>
+            <label for="metronomeBeats">Beats per bar</label>
+            <select id="metronomeBeats">
+              <option value="3">3 / 4</option>
+              <option value="4" selected>4 / 4</option>
+              <option value="6">6 / 8</option>
+            </select>
+            <div class="set-buttons">
+              <button id="metronomeToggle" type="button">Start metronome</button>
+              <button id="metronomeTap" type="button">Tap tempo</button>
+            </div>
+          </section>
+
+          <section class="practice-tool" id="practice-timer">
+            <h2>Practice Timer</h2>
+            <p class="hint compact-hint">Set a short focused practice session.</p>
+            <label for="practiceTimerMinutes">Session length</label>
+            <select id="practiceTimerMinutes">
+              <option value="5">5 minutes</option>
+              <option value="10">10 minutes</option>
+              <option value="15" selected>15 minutes</option>
+              <option value="20">20 minutes</option>
+              <option value="30">30 minutes</option>
+            </select>
+            <div class="set-buttons">
+              <button id="practiceTimerToggle" type="button">Start timer</button>
+              <button id="practiceTimerReset" type="button">Reset timer</button>
+            </div>
+          </section>
+
+          <div id="practiceStatus" class="practice-status"></div>
+          <div id="practiceWorkspace" class="practice-workspace"></div>
+        </div>
+      </details>
+
+      <details class="accordion-section"><summary>Chord Dictionary</summary>
+        <div class="chord-dictionary" id="chordDictionary">
+          <h2>Chord Dictionary</h2>
+          <p class="hint compact-hint">Look up any chord in the ukulele chord database.</p>
+          <label for="chordDictionaryInput">Find chord</label>
+          <input id="chordDictionaryInput" class="song-search" type="search" placeholder="Cmaj7, F#m7, G6...">
+          <button id="chordDictionarySearch" class="wide-button" type="button">Search chord</button>
+          <div id="chordDictionaryStatus" class="dictionary-status"></div>
+          <div id="chordDictionaryResult" class="dictionary-result"></div>
+        </div>
+      </details>
+      <details class="accordion-section" open><summary>Chord Fingerings</summary>
+        <div class="summary"><div><strong id="chordCount">0</strong> diagrams</div><div id="missingCount">0 missing</div></div>
+        <div id="chordCards" class="chord-cards"></div><h2>Missing chords</h2><p id="missingChords" class="missing-list">None.</p>
+      </details>
+      <details class="accordion-section"><summary>Adding Songs Help</summary><div class="hint">Put TXT files in <code>songs</code>, add them to <code>data/song-list.js</code>, then refresh with Ctrl + F5 if needed.</div></details>
+    </aside>
+    <section class="song-panel">
+      <div id="performanceBar" class="performance-bar"></div><div id="setModeBar" class="set-mode-bar"></div><h2 id="songTitle">Loading...</h2><div id="songInfo" class="song-info"></div>
+      <div id="autoScrollBar" class="auto-scroll-bar" aria-label="Auto scroll controls">
+        <div class="auto-scroll-title">Auto Scroll</div>
+        <div class="auto-scroll-controls">
+          <button id="autoScrollToggle" type="button">Start</button>
+          <label for="autoScrollSpeed">Speed</label>
+          <input id="autoScrollSpeed" type="range" min="1" max="10" step="1" value="3">
+          <span id="autoScrollSpeedLabel">3</span>
+          <button id="autoScrollReset" type="button">Reset</button>
+        </div>
+      </div>
+      <div id="songTools" class="song-tools">
+        <button id="toggleSongNotes" type="button">📝 Notes</button>
+        <span id="songNotesStatus" class="song-notes-status">No notes yet</span>
+      </div>
+      <div id="songNotesPanel" class="song-notes-panel" hidden>
+        <label for="songNotesText">My Notes</label>
+        <textarea id="songNotesText" rows="4" placeholder="Capo 2 sounds better, slow the chorus, Vish sings verse 2..."></textarea>
+        <div class="song-notes-actions">
+          <button id="saveSongNotes" type="button">Save notes</button>
+          <button id="clearSongNotes" type="button">Clear notes</button>
+        </div>
+      </div>
+      <pre id="songText" class="song-text"></pre></section>
+  </main>
+  <script src="data/song-list.js"></script><script src="data/chords.js"></script><script src="data/practice-packs.js"></script><script src="js/transpose.js"></script><script src="js/app.js"></script><script src="js/history.js"></script><script src="js/song-notes.js"></script><script src="js/practice-storage.js"></script><script src="js/practice.js"></script><script src="js/auto-scroll.js"></script><script src="js/chord-dictionary.js"></script>
+</body></html>

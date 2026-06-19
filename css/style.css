@@ -1,0 +1,818 @@
+*{box-sizing:border-box}:root{--song-font-size:20px}body{margin:0;background:#f6efe1;color:#211b14;font-family:Arial,Helvetica,sans-serif}.topbar{display:flex;justify-content:space-between;gap:1rem;padding:1rem 1.25rem;background:#2d241b;color:white}.topbar h1{margin:0 0 .25rem;font-size:1.6rem}.topbar p{margin:0;opacity:.86}.controls{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}button,select,input{padding:.55rem .7rem;border-radius:.5rem;border:1px solid #b9a78d;background:#fff9ec;font-size:1rem}button,select{cursor:pointer}.app{display:grid;grid-template-columns:390px 1fr;gap:1rem;height:calc(100vh - 86px);padding:1rem}.chords-panel,.song-panel{background:#fff9ec;border:1px solid #ddcdb4;border-radius:1rem;padding:1rem;overflow:auto}.accordion-section{border:1px solid #ddcdb4;border-radius:.85rem;background:#fffdf7;margin-bottom:.75rem;overflow:hidden}.accordion-section summary{padding:.75rem .85rem;background:#efe1ca;font-weight:bold;cursor:pointer;user-select:none}.accordion-section[open] summary{border-bottom:1px solid #ddcdb4}.accordion-section>*:not(summary){margin-left:.85rem;margin-right:.85rem}.accordion-section>:last-child{margin-bottom:.85rem}.chords-panel label{display:block;font-weight:bold;margin:.75rem 0 .35rem}#songSelect,#sortSelect,#typeFilter,#setSelect{width:100%}.song-search{width:100%;margin-bottom:.5rem}.library-stats,.hint,.summary{margin:.75rem 0;padding:.7rem;background:#efe1ca;border-radius:.75rem;font-size:.92rem;line-height:1.4}.search-status{margin:.45rem 0 .75rem;font-size:.9rem;color:#6d5b45}.favourites-toggle{display:flex;align-items:center;gap:.45rem;margin:.75rem 0 1rem;font-weight:bold;cursor:pointer}.favourites-toggle input{width:auto;margin:0}.tag-filters{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1rem}.tag-button{padding:.35rem .55rem;border-radius:999px;border:1px solid #b9a78d;background:#fff9ec;font-size:.9rem}.tag-button.active{background:#2d241b;color:white;border-color:#2d241b}.summary{display:flex;justify-content:space-between;gap:.75rem}.chords-panel h2{font-size:1.1rem;margin:1rem 0 .6rem}.chord-cards{display:grid;grid-template-columns:repeat(2,minmax(130px,1fr));gap:.75rem}.chord-card{text-align:center;background:white;border:1px solid #d8c8ad;border-radius:.9rem;padding:.65rem;box-shadow:0 2px 8px rgba(0,0,0,.06)}.chord-name{font-weight:bold;font-size:1.2rem;margin-bottom:.25rem}.chord-shape{font-size:.85rem;opacity:.7}.chord-diagram{width:105px;height:135px;margin:0 auto .2rem}.missing-list{margin-top:0;color:#9a2d20;font-weight:bold}.wide-button{width:calc(100% - 1.7rem);margin-top:.75rem}.set-buttons{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-top:.75rem}.set-song-list{max-height:220px;overflow:auto;border:1px solid #ddcdb4;border-radius:.75rem;background:white;padding:.5rem}.set-song-item{display:flex;align-items:flex-start;gap:.45rem;padding:.35rem;border-bottom:1px solid #f0e6d5;font-size:.92rem}.set-song-item:last-child{border-bottom:none}.set-song-item input{width:auto;margin-top:.15rem}.set-mode-bar{display:none;margin-bottom:1rem;padding:.75rem;background:#efe1ca;border-radius:.85rem;border:1px solid #ddcdb4}.set-mode-bar.active{display:block}.set-mode-title{font-weight:bold;margin-bottom:.5rem}.set-mode-controls{display:flex;flex-wrap:wrap;gap:.5rem}.song-info{display:flex;flex-wrap:wrap;gap:.45rem;margin:0 0 1rem;padding:.7rem;background:#efe1ca;border-radius:.75rem;font-size:.95rem;line-height:1.4}.song-info:empty{display:none}.info-chip,.type-chip{display:inline-block;padding:.35rem .55rem;background:#fff9ec;border:1px solid #d8c8ad;border-radius:999px}.song-panel h2{margin:0 0 1rem;padding-bottom:.75rem;border-bottom:1px solid #ddcdb4}.song-text{margin:0;white-space:pre-wrap;line-height:1.55;font-family:"Courier New",Courier,monospace;font-size:var(--song-font-size)}.chord-highlight{color:#a64200;font-weight:bold}.section-heading,.tab-section-heading{color:#5f4226;font-weight:bold}.tab-line{color:#1f5f48;font-weight:bold}.favourite-star{color:#a64200;font-weight:bold}body.panel-hidden .chords-panel{display:none}body.panel-hidden .app{grid-template-columns:1fr}@media(max-width:900px){.topbar{flex-direction:column}.app{grid-template-columns:1fr;height:auto}.chord-cards{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}}
+
+/* v4.8 Performance Mode */
+
+body.performance-mode {
+  background: #15110d;
+  color: #f7ead4;
+}
+
+body.performance-mode .topbar,
+body.performance-mode .chords-panel {
+  display: none;
+}
+
+body.performance-mode .app {
+  display: block;
+  height: auto;
+  min-height: 100vh;
+  padding: 0;
+}
+
+body.performance-mode .song-panel {
+  min-height: 100vh;
+  border: none;
+  border-radius: 0;
+  background: #15110d;
+  color: #f7ead4;
+  padding: 1rem;
+}
+
+body.performance-mode .song-panel h2 {
+  color: #f7ead4;
+  border-bottom-color: #5a4935;
+  font-size: 2rem;
+  margin-top: .5rem;
+}
+
+body.performance-mode .song-info {
+  background: #2b2117;
+  border: 1px solid #5a4935;
+}
+
+body.performance-mode .info-chip,
+body.performance-mode .type-chip {
+  background: #15110d;
+  border-color: #5a4935;
+  color: #f7ead4;
+}
+
+body.performance-mode .song-text {
+  font-size: var(--performance-font-size, 30px);
+  line-height: 1.65;
+  color: #f7ead4;
+}
+
+body.performance-mode .chord-highlight {
+  color: #ffb05c;
+}
+
+body.performance-mode .section-heading,
+body.performance-mode .tab-section-heading {
+  color: #ffd08a;
+}
+
+body.performance-mode .tab-line {
+  color: #8ee0b5;
+}
+
+.performance-bar {
+  display: none;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  margin: -1rem -1rem 1rem;
+  padding: .9rem 1rem;
+  background: #211810;
+  border-bottom: 1px solid #5a4935;
+}
+
+body.performance-mode .performance-bar {
+  display: block;
+}
+
+.performance-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: .7rem;
+  color: #f7ead4;
+}
+
+.performance-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+}
+
+.performance-controls button {
+  background: #f7ead4;
+  color: #15110d;
+  border-color: #a9875e;
+  font-weight: bold;
+  padding: .7rem .9rem;
+}
+
+.performance-controls .exit-performance {
+  background: #ffd08a;
+}
+
+body.performance-mode .set-mode-bar {
+  display: none;
+}
+
+.performance-empty {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  body.performance-mode .song-panel {
+    padding: .75rem;
+  }
+
+  body.performance-mode .song-panel h2 {
+    font-size: 1.5rem;
+  }
+
+  body.performance-mode .song-text {
+    font-size: var(--performance-font-size-mobile, 24px);
+  }
+}
+
+/* v4.9 Compact Strumming */
+.strumming-card {
+  width: 100%;
+  flex-basis: 100%;
+  display: block;
+  margin: 0 0 .45rem;
+  padding: .65rem .75rem;
+  background: #fff6e3;
+  border: 1px solid #d8c8ad;
+  border-radius: .85rem;
+}
+
+.strumming-title {
+  font-weight: bold;
+  margin-bottom: .45rem;
+  color: #5f4226;
+}
+
+.strum-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .35rem .5rem;
+  margin: .25rem 0;
+}
+
+.strum-label {
+  font-weight: bold;
+  min-width: 4.5rem;
+}
+
+.strum-pattern {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .22rem;
+}
+
+.strum-token {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.85rem;
+  min-height: 2.05rem;
+  padding: .18rem .25rem;
+  background: #2d241b;
+  color: #fff9ec;
+  border-radius: .5rem;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.strum-symbol {
+  font-size: 1.05rem;
+}
+
+.strum-letter {
+  font-size: .68rem;
+  opacity: .85;
+}
+
+.strum-x,
+.strum-rest {
+  background: #806144;
+}
+
+.strum-gap {
+  width: .3rem;
+}
+
+.strum-text {
+  font-weight: bold;
+  padding: .15rem .25rem;
+}
+
+.strum-raw {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  opacity: .75;
+}
+
+.strumming-help {
+  margin-top: .4rem;
+  font-size: .85rem;
+  opacity: .75;
+}
+
+body.performance-mode .strumming-card {
+  background: #2b2117;
+  border-color: #5a4935;
+}
+
+body.performance-mode .strumming-title {
+  color: #ffd08a;
+}
+
+body.performance-mode .strum-token {
+  background: #f7ead4;
+  color: #15110d;
+}
+
+body.performance-mode .strum-x,
+body.performance-mode .strum-rest {
+  background: #ffd08a;
+}
+
+/* v5.0 Practice Mode */
+.practice-mode h2 {
+  font-size: 1rem;
+  margin: .8rem 0 .5rem;
+}
+
+.practice-tabs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .4rem;
+  margin: .75rem 0;
+}
+
+.practice-tab {
+  padding: .45rem .35rem;
+  font-size: .9rem;
+  text-align: center;
+}
+
+.practice-tab.active {
+  background: #2d241b;
+  color: #fff9ec;
+  border-color: #2d241b;
+}
+
+.practice-tool {
+  display: none;
+  padding-top: .15rem;
+}
+
+.practice-tool.active {
+  display: block;
+}
+
+.compact-hint {
+  font-size: .86rem;
+  margin: .45rem 0 .65rem;
+}
+
+.practice-status {
+  min-height: 1.3rem;
+  margin: .75rem 0;
+  font-size: .9rem;
+  color: #5f4226;
+  font-weight: bold;
+}
+
+.practice-status.error {
+  color: #9a2d20;
+}
+
+.practice-workspace {
+  margin: .65rem 0 .85rem;
+}
+
+.practice-empty-card,
+.practice-card {
+  background: white;
+  border: 1px solid #d8c8ad;
+  border-radius: .9rem;
+  padding: .75rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,.05);
+}
+
+.practice-card-head {
+  display: flex;
+  justify-content: space-between;
+  gap: .5rem;
+  align-items: center;
+  border-bottom: 1px solid #f0e6d5;
+  padding-bottom: .5rem;
+  margin-bottom: .65rem;
+  font-size: .9rem;
+}
+
+.practice-card-head span {
+  opacity: .75;
+  white-space: nowrap;
+}
+
+.practice-big-chord {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #a64200;
+  margin: .2rem 0 .35rem;
+}
+
+.practice-diagram {
+  text-align: center;
+}
+
+.practice-shape {
+  text-align: center;
+  font-size: .85rem;
+  opacity: .7;
+  margin-bottom: .55rem;
+}
+
+.practice-controls-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: .35rem;
+  margin: .6rem 0;
+}
+
+.practice-controls-row button {
+  padding: .45rem .25rem;
+  font-size: .9rem;
+}
+
+.practice-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .3rem;
+  margin-top: .65rem;
+}
+
+.practice-chip {
+  padding: .25rem .45rem;
+  border-radius: 999px;
+  font-size: .85rem;
+}
+
+.practice-chip.active {
+  background: #2d241b;
+  color: #fff9ec;
+  border-color: #2d241b;
+}
+
+.practice-missing {
+  margin-top: .75rem;
+  padding: .6rem;
+  background: #fff1ea;
+  border: 1px solid #e2b7a5;
+  border-radius: .7rem;
+  color: #9a2d20;
+  font-size: .9rem;
+}
+
+.practice-pack-list {
+  display: grid;
+  gap: .5rem;
+  margin: .7rem 0;
+}
+
+.practice-pack-card {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: white;
+  border: 1px solid #d8c8ad;
+  border-radius: .8rem;
+  padding: .65rem;
+}
+
+.practice-pack-card strong,
+.practice-pack-card span,
+.practice-pack-card small {
+  display: block;
+}
+
+.practice-pack-card span {
+  margin: .25rem 0;
+  font-size: .88rem;
+  opacity: .85;
+}
+
+.practice-pack-card small {
+  color: #5f4226;
+  line-height: 1.35;
+}
+
+.practice-metronome-note {
+  margin-top: .65rem;
+  padding: .6rem;
+  background: #efe1ca;
+  border-radius: .7rem;
+  font-size: .9rem;
+  line-height: 1.35;
+}
+
+@media(max-width:900px) {
+  .practice-tabs {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* v5.1 Auto Scroll */
+.auto-scroll-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem;
+  flex-wrap: wrap;
+  margin: 0 0 1rem;
+  padding: .65rem .75rem;
+  background: #efe1ca;
+  border: 1px solid #ddcdb4;
+  border-radius: .85rem;
+}
+
+.auto-scroll-title {
+  font-weight: bold;
+  color: #5f4226;
+}
+
+.auto-scroll-controls {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  flex-wrap: wrap;
+}
+
+.auto-scroll-controls label {
+  font-weight: bold;
+}
+
+.auto-scroll-controls input[type="range"] {
+  width: 150px;
+  padding: 0;
+}
+
+#autoScrollSpeedLabel {
+  min-width: 1.5rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+body.auto-scroll-running #autoScrollToggle {
+  background: #2d241b;
+  color: #fff9ec;
+  border-color: #2d241b;
+}
+
+body.performance-mode .auto-scroll-bar {
+  position: sticky;
+  top: 0;
+  z-index: 11;
+  background: #211810;
+  border-color: #5a4935;
+  color: #f7ead4;
+}
+
+body.performance-mode .auto-scroll-title {
+  color: #ffd08a;
+}
+
+body.performance-mode .auto-scroll-controls button,
+body.performance-mode .auto-scroll-controls input {
+  background: #f7ead4;
+  color: #15110d;
+  border-color: #a9875e;
+}
+
+@media(max-width: 900px) {
+  .auto-scroll-bar,
+  .auto-scroll-controls {
+    align-items: stretch;
+  }
+
+  .auto-scroll-controls {
+    width: 100%;
+  }
+
+  .auto-scroll-controls input[type="range"] {
+    flex: 1;
+    min-width: 130px;
+  }
+}
+
+/* v5.2 Chord Dictionary */
+.chord-dictionary h2 {
+  margin-top: 0;
+}
+
+.dictionary-status {
+  margin: .65rem 0;
+  font-size: .9rem;
+  color: #5f4226;
+}
+
+.dictionary-card {
+  background: #fff9ec;
+  border: 1px solid #d8c8ad;
+  border-radius: .85rem;
+  padding: .8rem;
+  margin-top: .75rem;
+  text-align: center;
+}
+
+.dictionary-chord-name {
+  font-size: 1.55rem;
+  font-weight: 800;
+  margin-bottom: .35rem;
+}
+
+.dictionary-shape,
+.dictionary-note {
+  font-size: .9rem;
+  color: #5f4226;
+  margin: .35rem 0;
+}
+
+.dictionary-missing {
+  text-align: left;
+}
+
+.dictionary-missing .dictionary-chord-name {
+  text-align: center;
+}
+
+.dictionary-related {
+  margin-top: .8rem;
+  text-align: left;
+}
+
+.dictionary-related-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem;
+  margin-top: .4rem;
+}
+
+.dictionary-related-list button {
+  padding: .35rem .55rem;
+  border-radius: 999px;
+  font-size: .85rem;
+}
+
+/* v5.2.1 Personal Songbook Polish */
+.recent-song-list {
+  display: grid;
+  gap: .45rem;
+  margin: .75rem 0;
+}
+
+.recent-song-button {
+  width: 100%;
+  text-align: left;
+  line-height: 1.25;
+  background: #fff9ec;
+}
+
+.song-tools {
+  display: flex;
+  align-items: center;
+  gap: .65rem;
+  margin: 0 0 .75rem;
+  padding: .55rem .65rem;
+  background: #efe1ca;
+  border: 1px solid #ddcdb4;
+  border-radius: .75rem;
+}
+
+.song-tools button {
+  padding: .4rem .65rem;
+}
+
+.song-tools button.has-notes {
+  font-weight: bold;
+  border-color: #8b6f45;
+}
+
+.song-notes-status {
+  font-size: .9rem;
+  color: #6d5b45;
+}
+
+.song-notes-panel {
+  margin: 0 0 .85rem;
+  padding: .75rem;
+  background: #fff6e3;
+  border: 1px solid #d8c8ad;
+  border-radius: .85rem;
+}
+
+.song-notes-panel label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: .4rem;
+  color: #5f4226;
+}
+
+.song-notes-panel textarea {
+  width: 100%;
+  min-height: 7rem;
+  resize: vertical;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.4;
+}
+
+.song-notes-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-top: .6rem;
+}
+
+body.performance-mode .song-tools,
+body.performance-mode .song-notes-panel {
+  background: #2b2117;
+  border-color: #5a4935;
+  color: #f7ead4;
+}
+
+body.performance-mode .song-notes-status,
+body.performance-mode .song-notes-panel label {
+  color: #ffd08a;
+}
+
+/* v5.3 Practice Studio */
+.practice-inline-control {
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  flex-wrap: wrap;
+  margin: .55rem 0;
+}
+
+.practice-inline-control input[type="range"] {
+  flex: 1;
+  min-width: 130px;
+  padding: 0;
+}
+
+.metronome-card,
+.timer-card,
+.strumming-trainer-card {
+  text-align: center;
+}
+
+.metronome-pulse {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .65rem;
+  padding: 1rem .5rem;
+}
+
+.beat-dot {
+  width: 1.05rem;
+  height: 1.05rem;
+  border-radius: 999px;
+  background: #d8c8ad;
+  border: 2px solid #8b6f45;
+  transition: transform .08s ease, background .08s ease;
+}
+
+.beat-dot.accent {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.beat-dot.active {
+  background: #2d241b;
+  transform: scale(1.35);
+}
+
+.animated-strumming-panel {
+  margin-top: .75rem;
+  padding: .75rem;
+  background: #fff6e3;
+  border: 1px solid #d8c8ad;
+  border-radius: .85rem;
+}
+
+.animated-strumming-steps {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: .45rem;
+  margin-bottom: .65rem;
+}
+
+.animated-strum-token {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 2.65rem;
+  height: 2.65rem;
+  border-radius: .75rem;
+  background: #2d241b;
+  color: #fff9ec;
+  border: 2px solid transparent;
+  transition: transform .08s ease, background .08s ease, border-color .08s ease;
+}
+
+.animated-strum-token span {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.animated-strum-token small {
+  font-size: .68rem;
+  line-height: 1;
+}
+
+.animated-strum-token.x,
+.animated-strum-token.rest {
+  background: #806144;
+}
+
+.animated-strum-token.active {
+  background: #fff9ec;
+  color: #2d241b;
+  border-color: #2d241b;
+  transform: scale(1.18);
+}
+
+.practice-timer-display {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #2d241b;
+  margin: .75rem 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.timer-progress {
+  height: .7rem;
+  background: #d8c8ad;
+  border-radius: 999px;
+  overflow: hidden;
+  margin: .5rem 0 1rem;
+}
+
+.timer-progress div {
+  height: 100%;
+  background: #2d241b;
+  transition: width .25s linear;
+}
+
+body.performance-mode .animated-strumming-panel,
+body.performance-mode .timer-progress {
+  background: #2b2117;
+  border-color: #5a4935;
+}
+
+body.performance-mode .practice-timer-display {
+  color: #ffd08a;
+}
+
+/* v6.0 Transpose */
+.transpose-card {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .35rem .55rem;
+  background: #fff9ec;
+  border: 1px solid #d8c8ad;
+  border-radius: 999px;
+}
+
+.transpose-card.active {
+  background: #fff6e3;
+  border-color: #a64200;
+}
+
+.transpose-title {
+  font-weight: bold;
+  color: #5f4226;
+}
+
+.transpose-card button {
+  padding: .2rem .5rem;
+  min-width: 2rem;
+  line-height: 1.15;
+}
+
+.transpose-value {
+  min-width: 2.5rem;
+  text-align: center;
+  font-weight: bold;
+  font-variant-numeric: tabular-nums;
+}
+
+.transpose-card button:disabled {
+  opacity: .55;
+  cursor: default;
+}

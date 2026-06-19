@@ -1,0 +1,309 @@
+🎸 Ukulele Songbook Roadmap Status
+✅ COMPLETED FEATURES (v1.0 → v6.0)
+
+The Ukulele Songbook has evolved from a simple chord viewer into a complete digital ukulele companion for learning, practising and performing.
+
+🎵 Core Songbook
+✅ Split screen layout:
+ - Chord diagrams panel
+ - Song display panel
+✅ Responsive design:
+ - Desktop PC
+ - iPad and tablets
+ - Mobile phones
+✅ Reading improvements:
+ - Adjustable font sizes
+ - Hide/show chord panel
+ - Clean accordion-based interface
+
+🎸 Chord System
+✅ Automatic chord detection
+✅ Automatic chord highlighting
+✅ Large chord database
+✅ Chord diagram display
+✅ Missing chord reporting
+
+🎼 Song Format & Metadata
+✅ Standardised TXT song format
+
+Supported metadata:
+✅ Tuning
+✅ Key
+✅ Capo
+✅ Difficulty
+✅ Tempo
+✅ Notes
+✅ Strumming patterns
+
+📚 Song Library Management
+✅ Song library
+✅ Powerful search:
+ - Song title
+ - Artist
+ - Tags
+ - Song type
+✅ Sorting:
+ - Title A–Z
+ - Artist A–Z
+ - Favourites first
+✅ Filtering:
+ - Chords
+ - Tabs
+ - Chords + Tabs
+ - Favourites
+ - Tags
+✅ Library statistics
+
+⭐ Favourites
+✅ Mark favourite songs
+✅ Quickly filter favourite songs
+
+🎤 Performance Mode
+The application is now suitable for real performances and music stand use.
+Set Lists
+✅ Create sets
+✅ Edit existing sets
+✅ Delete sets
+✅ Save sets automatically using browser localStorage
+
+Performance View
+✅ Dedicated performance interface
+✅ Dark theme for low-light environments
+✅ Large, readable song text
+✅ Previous/Next song navigation
+
+Auto Scroll (v5.1.1)
+✅ Automatic song scrolling
+✅ Start / Pause controls
+✅ Reset to top of song
+✅ Adjustable speed settings
+✅ Smooth low-speed scrolling
+✅ Speed preference saved in browser
+
+🎶 Strumming Assistant (v4.9)
+✅ Compact visual strumming display
+
+Supported symbols:
+✅ D = Down strum
+✅ U = Up strum
+✅ X = Chuck / muted strum
+✅ - = Rest / hold
+✅ Multiple named patterns:
+ - Verse
+ - Chorus
+ - Bridge
+ - Intro
+
+🎓 Practice Mode (v5.0)
+The app now provides structured ukulele learning tools.
+
+Custom Chord Practice
+✅ Enter your own practice chords
+Examples:
+  Am G6 C D
+or:
+  Am, G6, C, D
+
+Features:
+✅ Automatic chord lookup
+✅ Duplicate removal
+✅ Missing chord reporting
+
+Random Chord Trainer
+
+✅ Random practice sets
+Options:
+ - 5 chords
+ - 10 chords
+ - 20 chords
+ - Entire database
+
+Learn This Song
+✅ Detect chords used in the currently selected song
+✅ Create a focused practice session
+
+Chord Packs
+Included packs:
+✅ Beginner Basics
+✅ First 10 Chords
+✅ Campfire Classics
+✅ Christmas Chords
+✅ Hawaiian Chill
+
+Strumming Practice
+✅ Practice song strumming patterns
+✅ Enter custom strumming patterns
+
+📖 Chord Dictionary (v5.2)
+✅ Dedicated chord lookup tool
+✅ Search any chord in the chord database
+✅ Display chord diagrams
+✅ Show fingering code
+✅ Show string order: G C E A
+✅ Related chord suggestions
+✅ Click related chords to explore
+✅ Clear missing chord messages
+✅ Slash chord support using base chord fingering where available
+
+📝 Personal Songbook Polish (v5.2.1)
+✅ Recently Played songs
+✅ Resume last opened song
+✅ Collapsible per-song notes
+✅ Notes hidden by default to preserve song page space
+✅ Personal song data stored in browser localStorage
+
+
+🥁 Practice Studio (v5.3)
+✅ Metronome
+✅ Adjustable BPM
+✅ 3/4, 4/4 and 6/8 beat options
+✅ Tap tempo
+✅ Animated strumming trainer
+✅ Strumming trainer BPM control
+✅ Practice timer
+✅ Focused session lengths
+
+😈 Transpose (v6.0)
+✅ Display-only transposition
+✅ Original song files are preserved
+✅ Transpose down/up by semitone
+✅ Reset to original key
+✅ Transpose chord lines in the song display
+✅ Update chord highlighting
+✅ Update chord diagrams
+✅ Update displayed Key metadata
+✅ Slash chord support
+✅ Major, minor, 7th, maj7, sus, add, dim and aug chords supported
+
+💾 Data Storage & Architecture
+✅ Browser localStorage support
+Used for:
+ - Set Lists
+ - Auto Scroll preferences
+ - Practice data
+
+Major application modules:
+✅ data/practice-packs.js
+✅ js/practice.js
+✅ js/practice-storage.js
+
+✅ js/chord-dictionary.js
+✅ js/transpose.js
+✅ js/history.js
+✅ js/song-notes.js
+
+✅ js/metronome.js
+✅ js/strumming-trainer.js
+✅ js/practice-timer.js
+
+🚀 FUTURE ROADMAP
+The following features are planned for future versions.
+
+📝 v6.1 — In-app Song Editor / Importer ⭐⭐⭐⭐⭐
+Allow songs to be added from inside the app instead of manually copying TXT files and editing data/song-list.js.
+Possible features:
+ - Paste song text into the app
+ - Enter title, artist, tags and type
+ - Add metadata such as tuning, key, capo and strumming
+ - Preview before saving
+ - Export updated song files or library data
+ - Later: save directly to NAS if supported
+
+Difficulty:
+⭐⭐⭐⭐ Medium–High
+
+Impact:
+⭐⭐⭐⭐⭐ Extremely High
+
+
+⭐ v6.2 — Personal Song Ratings
+Allow each user to rate how much they enjoy a particular song version.
+Example:
+★★★★★ Perfect. A favourite I play often.
+★★★★☆ Very enjoyable.
+★★★☆☆ Average. Keep it in the library.
+★★☆☆☆ Rarely played.
+★☆☆☆☆ Consider removing.
+
+Possible uses:
+ - Sort songs by personal rating
+ - Filter to favourite 5-star songs
+ - Combine with play statistics
+ - Identify favourite versions of duplicate songs
+ - Identify songs that may be removed
+
+Stored as personal data, separate from the original song files.
+
+
+🎼 v6.3 — Song Versions and Alternate Arrangements
+
+Support multiple versions of the same song.
+
+Examples:
+Country Roads - Original
+Country Roads - Easy Beginner
+Country Roads - Fingerstyle
+Country Roads - Campfire Version
+
+Possible future library fields:
+
+version: "Easy Beginner"
+
+Benefits:
+ - Keep different arrangements of the same song.
+ - Compare beginner and advanced versions.
+ - Store fingerstyle and chord versions separately.
+ - Avoid losing useful arrangements.
+
+
+🥉 v7.0 — Shared Synology NAS Features ⭐⭐⭐
+Bring the household experience together.
+Possible shared features:
+ - Set Lists
+ - Practice packs
+ - Favourite songs
+ - Song notes
+ - Practice progress
+
+Difficulty:
+⭐⭐⭐ Medium–High
+
+Impact:
+⭐⭐⭐ Depends on household use
+
+💡 Future Ideas & Possibilities
+Performance Enhancements
+Ideas:
+ - Countdown before Auto Scroll starts
+ - Bluetooth page-turn pedal support
+ - Full-screen gig mode
+ - Better performance statistics
+
+Learning Statistics
+Possible long-term ideas:
+ - Practice time tracking
+ - Most practised songs
+ - Most used chords
+ - Weekly practice goals
+ - Learning achievements
+
+🎯 Current Development Priority
+Recommended next development order:
+ - 🥇 v6.1 — In-app Song Editor / Importer
+ - 🥈 v6.2 — Personal Song Ratings
+ - 🥉 v6.3 — Song Versions and Alternate Arrangements
+ - 4️⃣ v7.0 — Shared Synology NAS Features
+
+Project Philosophy
+The goal of the Ukulele Songbook is no longer just to display songs.
+It aims to become:
+ - 🎵 A digital song library
+ - 🎸 A chord reference
+ - 🎓 A learning companion
+ - 🎤 A performance assistant
+ - 📱 An iPad music stand companion
+ - 🏠 A shared household music system
+
+==================================================
+🎸 CURRENT RELEASE: UKULELE SONGBOOK v6.0
+==================================================

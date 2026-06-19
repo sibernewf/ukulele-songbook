@@ -1,0 +1,503 @@
+🎸 Ukulele Songbook User Guide (v6.0)
+1. Adding New Songs
+Step 1: Download the song
+
+Download a ukulele song as a TXT file from your preferred website.
+
+Step 2: Rename the file
+Use a simple lowercase filename with hyphens.
+
+Examples:
+ - somewhere-over-the-rainbow.txt
+ - dont-worry-be-happy.txt
+ - country-roads-john-denver.txt
+ - wagon-wheel.txt
+
+Step 3: Clean up the downloaded file
+Remove website-specific information that is not part of the song.
+
+Examples:
+ - 181,605 views
+ - 12,748 saves
+ - 10 comments
+ - Author: Unregistered
+ - Difficulty: Beginner
+ - Speed: 0.2
+ - Transpose
+
+Step 4: Add song metadata
+At the very top of the file, add a metadata line:
+
+Tuning: G C E A | Key: C | Capo: No capo
+
+Optional information can also be added:
+
+Tuning: G C E A | Key: C | Capo: No capo | Difficulty: Beginner | Tempo: 84 BPM | Strumming: D D U U D U | Notes: Fingerpick gently
+
+Step 5: Leave a blank line
+Leave one empty line after the metadata.
+Example:
+
+Tuning: G C E A | Key: C | Capo: No capo
+
+[Intro]
+| C | Em | Am | F |
+
+Step 6: Add the song content
+The song can contain:
+ - Chords and lyrics
+
+Example:
+
+[Verse]
+C            G
+Hello darkness my old friend
+Ukulele melody tabs
+
+Example:
+
+A|--3-3-5-5-3--
+E|------------|
+C|------------|
+G|------------|
+A combination of both
+
+Example:
+
+[Verse]
+C        F
+Jingle bells, jingle bells
+
+A|--3-3-5-5-3--
+E|------------|
+C|------------|
+G|------------|
+
+Step 7: Save the song
+Save the TXT file into the:
+ - songs folder.
+
+2. Adding the Song to the Library
+After adding the TXT file, update:
+
+  data/song-list.js
+
+Add a new entry:
+
+{
+  title: "Song Title",
+  artist: "Artist Name",
+  file: "songs/song-file-name.txt",
+  favourite: false,
+  tags: [
+    "Beginner",
+    "Campfire"
+  ],
+  type: "chords"
+}
+
+Song Types
+
+  Chords only
+  type: "chords"
+
+Use this for standard chord and lyric sheets.
+
+  Tabs only
+  type: "tabs"
+
+Use this for melody or fingerpicking pieces.
+
+  Chords and Tabs
+  type: "chords-tabs"
+
+Use this for songs that contain both chord sheets and melody tabs.
+
+3. Tags
+Tags make it easier to find songs.
+
+Suggested tags:
+ - Beginner
+ - Easy
+ - Practice
+ - Campfire
+ - Christmas
+ - Aussie
+ - Country
+ - Hawaiian
+ - Classic
+ - Slow
+ - Fast
+ - Happy
+ - Fingerpicking
+ - Strumming
+ - Intermediate
+ - Advanced
+
+You can create any tags you like.
+
+Examples:
+
+  "tags": [
+    "Christmas",
+    "Beginner"
+  ]
+
+4. Favourites
+Mark favourite songs using:
+
+  favourite: true
+
+Example:
+
+  {
+    title: "Somewhere Over the Rainbow",
+    favourite: true
+  }
+
+Favourite songs can then be quickly filtered inside the app.
+
+5. Using the Song Library
+The library controls allow you to:
+
+Search
+Search by:
+ - Song title
+ - Artist
+ - Tags
+ - Song type
+
+Sort
+Songs can be sorted by:
+ - Title A–Z
+ - Artist A–Z
+ - Favourites first
+
+Filter
+You can filter by:
+ - Favourite songs only
+ - Song type:
+   - Chords
+   - Tabs
+   - Chords + Tabs
+ - Tags
+
+ Library Statistics
+The library displays information such as:
+ - Total number of songs
+ - Number of favourite songs
+ - Number of tags
+ - Number of chords, tabs and mixed songs
+ - Number of saved set lists
+
+6. Creating and Using Set Lists
+Set Lists allow songs to be grouped together for practice sessions, performances, campfire nights, Christmas songs, or any other collection of songs.
+
+Examples:
+ - 🔥 Campfire Night
+ - 🎄 Christmas Songs
+ - 🎸 Beginner Practice
+ - 🌴 Hawaiian Chill
+
+Creating a Set List
+ - Open the Set Lists accordion on the left side of the application.
+ - In the Create / Update Set section:
+   - Enter a name for your set.
+   - Tick the songs you wish to include.
+ - Click Save Set.
+
+The set will now appear in the Choose Set dropdown list.
+
+Editing a Set List
+ - Select an existing set from Choose Set.
+ - The current set name and song selections will automatically load.
+ - Add or remove songs.
+ - Click Save Set again to update the set.
+
+Deleting a Set List
+ - Select the set from the Choose Set dropdown.
+ - Click Delete Set.
+ - Confirm the deletion.
+
+🎸 Playing a Set (Performance Mode)
+Performance Mode is designed for real playing sessions with the iPad or computer placed on a music stand.
+ - Open the Set Lists accordion.
+ - Select the required set from Choose Set.
+ - Click Start Set.
+
+The application will switch to the dedicated Performance Mode interface.
+
+Performance Mode Features
+Performance Mode provides a clean, distraction-free playing interface.
+
+Features include:
+ - 🌙 Dark theme for comfortable viewing in low light.
+ - 🔠 Larger song text for easier reading from a distance.
+ - 🎵 Song title and current position in the set.
+ - 🎸 Chord diagrams (if displayed for the song)
+ - ⬅️ Previous Song button.
+ - ➡️ Next Song button.
+ - 🔍 A− / A+ controls to adjust the performance text size.
+ - ❌ Exit Performance Mode button.
+
+Navigating Through a Set
+During a performance:
+ - Click Previous to return to the earlier song.
+ - Click Next to move to the next song.
+ - The display will update automatically with the correct:
+   - Song lyrics
+   - Chords
+   - Tabs
+   - Metadata
+   - Chord diagrams (if enabled)
+
+Exiting Performance Mode
+At any time, click:
+ - Exit Performance Mode
+
+The application will return to the normal songbook interface where you can:
+ - Browse songs.
+ - Search and filter the library.
+ - Create or edit set lists.
+ - Manage your song collection.
+
+Where Are My Set Lists Stored?
+Set Lists are currently stored in your browser using localStorage.
+Advantages:
+ - ✅ No server or database required.
+ - ✅ Very fast.
+ - ✅ Available when the application is loaded.
+
+Current limitation:
+ - ❌ Set Lists are stored per device and per browser.
+
+For example:
+
+Alan's Computer
+        |
+        └── Campfire Night
+
+Vish's iPad
+        |
+        └── Christmas Songs
+
+Each device currently maintains its own set list collection.
+
+7. Future Enhancement – Shared NAS Set Lists
+A future version may store Set Lists on the Synology NAS.
+
+Benefits:
+ - One shared library of sets.
+ - Available on all devices.
+ - Changes made on one device appear everywhere.
+
+Example:
+
+Alan's PC
+     |
+Vish's iPad
+     |
+Phone
+     |
+Synology NAS
+     |
+Shared Set Lists
+
+8. Using the Chord Dictionary
+The Chord Dictionary lets you look up any chord stored in the ukulele chord database.
+
+Open the Chord Dictionary accordion in the left sidebar.
+
+Enter a chord name, for example:
+
+Cmaj7
+
+or:
+
+F#m7
+
+Click Search Chord, or press Enter.
+
+The app will display:
+ - The chord name
+ - The chord diagram
+ - The fingering code
+ - The string order: G C E A
+ - Related chords you can click to explore
+
+If the chord is not found, the app will show a clear missing chord message and suggest that the chord can be added to:
+
+data/chords.js
+
+Slash chords such as C/G are handled by showing the base chord fingering where available.
+
+Tip:
+The Chord Dictionary uses the same chord database as songs and Practice Mode.
+If a chord is missing from the dictionary, adding it to data/chords.js makes it available throughout the application.
+
+
+9. Updating the App
+After adding new songs, modifying song-list.js, updating chord data, or replacing application files:
+ - Refresh your browser.
+ - If changes do not appear, perform a hard refresh:
+   - Windows: Ctrl + F5
+   - Mac: Cmd + Shift + R
+
+
+10. Personal Songbook Features
+
+v5.2.1 adds small personalisation features that help the app remember how you use it.
+
+Recently Played
+The Recently Played accordion shows songs you have opened recently.
+Click any song in the list to quickly return to it.
+
+Resume Last Song
+When the app opens, it will automatically return to the last song you were viewing on that device/browser.
+
+Song Notes
+Each song has a compact Notes button above the lyrics.
+The notes area is collapsed by default so it does not take up space while playing.
+Click Notes to open the notes panel, enter your personal notes, then click Save notes.
+
+Examples:
+ - Capo 2 sounds better
+ - Slow the chorus
+ - Vish sings verse 2
+ - Practise the bridge
+
+Song notes are stored in your browser using localStorage, so they are device/browser specific.
+
+11. Using Practice Studio Tools
+Practice Mode now includes extra Practice Studio tools.
+
+Metronome
+Open Practice Mode, choose Metronome, select a BPM and beats per bar, then press Start metronome. The first beat of each bar is accented. Use Tap tempo to set the speed by tapping along with a song.
+
+Animated Strumming Trainer
+Open Practice Mode, choose Strumming, then either use the selected song's strumming pattern or enter a custom pattern such as:
+
+D D U U D U
+
+The trainer highlights each strum in sequence. You can adjust the BPM and start or stop the animation.
+
+Practice Timer
+Open Practice Mode, choose Timer, select a session length, then press Start timer. This is useful for short focused practice blocks.
+
+
+12. Using Transpose
+Transpose lets you change the displayed key of a song without changing the original TXT song file.
+
+The original song file is never modified. Transpose is display-only.
+
+When a song is open, use the Transpose controls above the lyrics:
+ - Minus: transpose down one semitone
+ - Plus: transpose up one semitone
+ - Original: reset back to the song as written
+
+Example:
+Original chords:
+
+C     G     Am     F
+
+Transpose +2 displays:
+
+D     A     Bm     G
+
+Transpose also updates:
+ - Chord highlighting
+ - Chord diagrams
+ - The displayed Key metadata
+
+Slash chords are transposed on both sides where possible.
+
+Example:
+
+C/G becomes D/A when transposed +2.
+
+v6.0 uses sharp chord names by default, such as C#, F# and A#.
+
+To return to the original song, click Original.
+
+
+🎸 Current Application Version
+Ukulele Songbook v6.0
+
+Current major features:
+✓ Chord diagrams
+✓ Automatic chord detection
+✓ Chords, tabs and mixed songs
+✓ Song metadata
+✓ Chord highlighting
+✓ Large chord database
+✓ Missing chord reporting
+
+✓ Search
+✓ Sorting
+✓ Tags
+✓ Favourites
+✓ Library statistics
+
+✓ User-created Set Lists
+✓ Set creation and editing
+✓ Performance Mode
+✓ Previous / Next song navigation
+✓ Dark performance theme
+✓ Large performance text
+
+✓ Practice Mode
+✓ Custom chord practice
+✓ Random chord trainer
+✓ Learn This Song
+✓ Chord Packs
+✓ Strumming Practice
+
+✓ Chord Dictionary
+✓ Chord lookup
+✓ Related chord suggestions
+
+✓ Transpose
+✓ Display-only transposition
+✓ Transposed chord diagrams
+✓ Transposed key metadata
+
+✓ Practice Studio
+✓ Metronome
+✓ Animated strumming trainer
+✓ Practice timer
+
+✓ Recently Played Songs
+✓ Resume Last Song
+✓ Collapsible Song Notes
+
+✓ Auto Scroll
+✓ Adjustable scroll speed
+✓ Music stand friendly hands-free scrolling
+
+✓ Responsive layout for PC, iPad and mobile
+✓ Synology NAS compatible
+
+Important Project Files
+
+The following files and folders should always be preserved when upgrading the application:
+
+  /songs/
+  data/song-list.js
+  data/chords.js
+  data/practice-packs.js
+  js/practice.js
+  js/practice-storage.js
+  js/chord-dictionary.js
+  js/transpose.js
+  js/history.js
+  js/song-notes.js
+  js/metronome.js
+  js/strumming-trainer.js
+  js/practice-timer.js
+
+  User-Documentation.txt
+  README-CHANGELOG.txt
+  Roadmap.txt
+
+These files contain the song library, chord database, practice data, documentation, and project history.
+
