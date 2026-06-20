@@ -1,5 +1,5 @@
 🎸 Ukulele Songbook Roadmap Status
-✅ COMPLETED FEATURES (v1.0 → v6.0)
+✅ COMPLETED FEATURES (v1.0 → v6.1)
 
 The Ukulele Songbook has evolved from a simple chord viewer into a complete digital ukulele companion for learning, practising and performing.
 
@@ -173,7 +173,22 @@ Strumming Practice
 ✅ Update chord diagrams
 ✅ Update displayed Key metadata
 ✅ Slash chord support
-✅ Major, minor, 7th, maj7, sus, add, dim and aug chords supported
+✅ Common chord extensions supported
+
+📝 My Songs Manager (v6.1)
+✅ Add songs inside the app
+✅ Edit user-added songs
+✅ Delete user-added songs
+✅ User song metadata fields
+✅ Version / arrangement field
+✅ Preview before saving
+✅ My Songs appear in the main library
+✅ Import/export My Songs JSON backup
+✅ Export as permanent song
+✅ Permanent TXT file export
+✅ song-list.js entry export
+✅ Unique permanent filenames to avoid overwriting songs
+✅ Built-in song files remain unchanged
 
 💾 Data Storage & Architecture
 ✅ Browser localStorage support
@@ -189,6 +204,7 @@ Major application modules:
 
 ✅ js/chord-dictionary.js
 ✅ js/transpose.js
+✅ js/my-songs.js
 ✅ js/history.js
 ✅ js/song-notes.js
 
@@ -198,22 +214,6 @@ Major application modules:
 
 🚀 FUTURE ROADMAP
 The following features are planned for future versions.
-
-📝 v6.1 — In-app Song Editor / Importer ⭐⭐⭐⭐⭐
-Allow songs to be added from inside the app instead of manually copying TXT files and editing data/song-list.js.
-Possible features:
- - Paste song text into the app
- - Enter title, artist, tags and type
- - Add metadata such as tuning, key, capo and strumming
- - Preview before saving
- - Export updated song files or library data
- - Later: save directly to NAS if supported
-
-Difficulty:
-⭐⭐⭐⭐ Medium–High
-
-Impact:
-⭐⭐⭐⭐⭐ Extremely High
 
 
 ⭐ v6.2 — Personal Song Ratings
@@ -289,10 +289,9 @@ Possible long-term ideas:
 
 🎯 Current Development Priority
 Recommended next development order:
- - 🥇 v6.1 — In-app Song Editor / Importer
- - 🥈 v6.2 — Personal Song Ratings
- - 🥉 v6.3 — Song Versions and Alternate Arrangements
- - 4️⃣ v7.0 — Shared Synology NAS Features
+ - 🥇 v6.2 — Personal Song Ratings
+ - 🥈 v6.3 — Song Versions and Alternate Arrangements
+ - 🥉 v7.0 — Shared Synology NAS Features
 
 Project Philosophy
 The goal of the Ukulele Songbook is no longer just to display songs.
@@ -305,5 +304,5 @@ It aims to become:
  - 🏠 A shared household music system
 
 ==================================================
-🎸 CURRENT RELEASE: UKULELE SONGBOOK v6.0
+🎸 CURRENT RELEASE: UKULELE SONGBOOK v6.1
 ==================================================

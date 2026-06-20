@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ukulele Songbook v5.3</title>
+  <title>Ukulele Songbook v6.1</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header class="topbar">
-    <div><h1>Ukulele Songbook</h1><p>Select songs, view chords, build set lists, practise, use the chord dictionary, practise with metronome and strumming trainer, and auto-scroll while you play.</p></div>
+    <div><h1>Ukulele Songbook</h1><p>Select songs, view chords, build set lists, practise, use the chord dictionary, practise with metronome and strumming trainer, transpose songs, manage My Songs, and auto-scroll while you play.</p></div>
     <div class="controls"><button id="smallerText">A−</button><button id="largerText">A+</button><button id="togglePanel">Hide chord panel</button></div>
   </header>
   <main class="app">
@@ -22,6 +22,45 @@
         <label for="typeFilter">Song type</label><select id="typeFilter"><option value="all">All types</option><option value="chords">Chords only</option><option value="tabs">Tabs only</option><option value="chords-tabs">Chords + tabs</option></select>
         <h2>Tags</h2><div id="tagFilters" class="tag-filters"></div>
       </details>
+
+      <details class="accordion-section"><summary>My Songs</summary>
+        <div class="my-songs-manager" id="mySongsManager">
+          <p class="hint compact-hint">Paste, save, edit, delete, import and export songs stored in this browser. Built-in songs are unchanged.</p>
+          <div id="mySongsList" class="my-songs-list"></div>
+          <div class="set-buttons">
+            <button id="newMySong" type="button">New song</button>
+            <button id="exportMySongs" type="button">Export backup</button>
+          </div>
+          <label for="importMySongsFile" class="file-import-label">Import My Songs backup</label>
+          <input id="importMySongsFile" type="file" accept="application/json,.json">
+          <input id="mySongId" type="hidden">
+          <h2>Add / Edit Song</h2>
+          <label for="mySongTitle">Title</label><input id="mySongTitle" class="song-search" type="text" placeholder="Big Rock Candy Mountains">
+          <label for="mySongArtist">Artist</label><input id="mySongArtist" class="song-search" type="text" placeholder="Traditional">
+          <label for="mySongVersion">Version / arrangement</label><input id="mySongVersion" class="song-search" type="text" placeholder="Campfire, easy, fingerstyle...">
+          <label for="mySongType">Song type</label><select id="mySongType"><option value="chords">Chords only</option><option value="tabs">Tabs only</option><option value="chords-tabs" selected>Chords + tabs</option></select>
+          <label for="mySongTags">Tags</label><input id="mySongTags" class="song-search" type="text" placeholder="Folk, Campfire, Beginner">
+          <label for="mySongTuning">Tuning</label><input id="mySongTuning" class="song-search" type="text" value="G C E A">
+          <label for="mySongKey">Key</label><input id="mySongKey" class="song-search" type="text" placeholder="C">
+          <label for="mySongCapo">Capo</label><input id="mySongCapo" class="song-search" type="text" value="No capo">
+          <label for="mySongDifficulty">Difficulty</label><input id="mySongDifficulty" class="song-search" type="text" placeholder="Beginner">
+          <label for="mySongTempo">Tempo</label><input id="mySongTempo" class="song-search" type="text" placeholder="84 BPM">
+          <label for="mySongStrumming">Strumming</label><input id="mySongStrumming" class="song-search" type="text" placeholder="D D U U D U">
+          <label for="mySongNotes">Song metadata notes</label><input id="mySongNotes" class="song-search" type="text" placeholder="Fingerpick gently">
+          <label for="mySongBody">Song text</label><textarea id="mySongBody" class="my-song-body" rows="12" placeholder="Paste chords, lyrics and tabs here..."></textarea>
+          <div class="set-buttons">
+            <button id="previewMySong" type="button">Preview</button>
+            <button id="saveMySong" type="button">Save to My Songs</button>
+          </div>
+          <div class="set-buttons">
+            <button id="exportPermanentSong" type="button">Export as permanent song</button>
+            <button id="deleteMySong" type="button">Delete</button>
+          </div>
+          <div id="mySongsStatus" class="my-songs-status"></div>
+          <pre id="mySongPreview" class="my-song-preview" hidden></pre>
+        </div>
+      </details>
+
       <details class="accordion-section"><summary>Recently Played</summary>
         <div id="recentSongs" class="recent-songs"><p class="hint compact-hint">Recently opened songs will appear here.</p></div>
         <button id="clearRecentSongs" class="wide-button" type="button">Clear recent songs</button>
@@ -176,5 +215,5 @@
       </div>
       <pre id="songText" class="song-text"></pre></section>
   </main>
-  <script src="data/song-list.js"></script><script src="data/chords.js"></script><script src="data/practice-packs.js"></script><script src="js/transpose.js"></script><script src="js/app.js"></script><script src="js/history.js"></script><script src="js/song-notes.js"></script><script src="js/practice-storage.js"></script><script src="js/practice.js"></script><script src="js/auto-scroll.js"></script><script src="js/chord-dictionary.js"></script>
+  <script src="data/song-list.js"></script><script src="data/chords.js"></script><script src="data/practice-packs.js"></script><script src="js/transpose.js"></script><script src="js/my-songs.js"></script><script src="js/app.js"></script><script src="js/history.js"></script><script src="js/song-notes.js"></script><script src="js/practice-storage.js"></script><script src="js/practice.js"></script><script src="js/auto-scroll.js"></script><script src="js/chord-dictionary.js"></script>
 </body></html>

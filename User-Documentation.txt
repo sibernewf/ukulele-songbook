@@ -1,4 +1,4 @@
-🎸 Ukulele Songbook User Guide (v6.0)
+🎸 Ukulele Songbook User Guide (v5.2.1)
 1. Adding New Songs
 Step 1: Download the song
 
@@ -420,8 +420,47 @@ v6.0 uses sharp chord names by default, such as C#, F# and A#.
 To return to the original song, click Original.
 
 
+13. Using My Songs Manager
+My Songs lets users add songs inside the app without manually creating TXT files or editing data/song-list.js.
+
+Open the My Songs accordion in the left sidebar.
+
+To add a song:
+ - Click New song.
+ - Enter the title, artist, version/arrangement, type, tags, tuning, key, capo, difficulty, tempo and strumming if known.
+ - Paste the song text into the Song text box.
+ - Click Preview to check how the song will be stored.
+ - Click Save to My Songs.
+
+My Songs are stored in this browser using localStorage. They are available in the normal song library alongside built-in songs, but they are device/browser specific unless exported and imported elsewhere.
+
+Editing a My Song:
+ - Open the My Songs accordion.
+ - Click the song in the My Songs list.
+ - Make changes.
+ - Click Save to My Songs again.
+
+Deleting a My Song:
+ - Select it from the My Songs list.
+ - Click Delete.
+ - Confirm the deletion.
+
+Backup and restore:
+ - Export backup downloads all My Songs as a JSON backup file.
+ - Import My Songs backup restores songs from that JSON file.
+
+Making a My Song permanent:
+Use Export as permanent song after testing a My Song. The app downloads:
+ - a TXT song file to place into the songs folder
+ - a song-list entry to copy into data/song-list.js
+
+This lets you test songs locally first, then promote good versions into the permanent shared library later.
+
+The browser cannot directly write files into the project folder for security reasons, so the final permanent step is still manual.
+
+
 🎸 Current Application Version
-Ukulele Songbook v6.0
+Ukulele Songbook v6.1
 
 Current major features:
 ✓ Chord diagrams
@@ -461,6 +500,11 @@ Current major features:
 ✓ Transposed chord diagrams
 ✓ Transposed key metadata
 
+✓ My Songs Manager
+✓ Add/edit/delete user songs inside the app
+✓ Import/export My Songs backup
+✓ Export as permanent song
+
 ✓ Practice Studio
 ✓ Metronome
 ✓ Animated strumming trainer
@@ -489,12 +533,9 @@ The following files and folders should always be preserved when upgrading the ap
   js/practice-storage.js
   js/chord-dictionary.js
   js/transpose.js
+  js/my-songs.js
   js/history.js
   js/song-notes.js
-  js/metronome.js
-  js/strumming-trainer.js
-  js/practice-timer.js
-
   User-Documentation.txt
   README-CHANGELOG.txt
   Roadmap.txt

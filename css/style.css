@@ -816,3 +816,71 @@ body.performance-mode .practice-timer-display {
   opacity: .55;
   cursor: default;
 }
+
+/* v6.1 My Songs Manager */
+.my-songs-manager textarea,
+.my-song-body {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border: 1px solid #d5c7a0;
+  padding: 10px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 13px;
+  line-height: 1.35;
+  resize: vertical;
+  background: #fffdf6;
+}
+.my-songs-list {
+  display: grid;
+  gap: 6px;
+  margin: 8px 0 10px;
+}
+.my-song-row { display: flex; }
+.my-song-link {
+  width: 100%;
+  text-align: left;
+  border: 1px solid #e0d3aa;
+  background: #fff8df;
+  border-radius: 10px;
+  padding: 8px 10px;
+  cursor: pointer;
+  font-size: 13px;
+}
+.my-song-link:hover { background: #fff0b7; }
+.my-songs-status,
+.dictionary-status {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #5f5128;
+}
+.my-song-preview {
+  margin-top: 10px;
+  max-height: 260px;
+  overflow: auto;
+  white-space: pre-wrap;
+  background: #1d1b16;
+  color: #fff8e1;
+  border-radius: 12px;
+  padding: 12px;
+  font-size: 13px;
+}
+.file-import-label {
+  display: block;
+  margin-top: 10px;
+}
+#importMySongsFile {
+  width: 100%;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+.user-song-badge {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: #e7f8e1;
+  color: #245d16;
+  font-size: 12px;
+  vertical-align: middle;
+}

@@ -2,11 +2,41 @@
 README / CHANGELOG
 
 ------------------------------------------------------------
-Version 6.0 - Transpose
+Version 6.1 - My Songs Manager
 ------------------------------------------------------------
 
 Release Date:
 Current Release
+
+New Features:
+- Added My Songs Manager accordion.
+- Users can paste songs directly into the app.
+- Added fields for title, artist, version/arrangement, song type, tags, tuning, key, capo, difficulty, tempo, strumming and notes.
+- Added preview before saving.
+- Added local browser storage for user-added songs.
+- My Songs appear in the normal song library alongside built-in songs.
+- Added edit and delete support for My Songs.
+- Added JSON backup export/import for My Songs.
+- Added Export as permanent song workflow.
+- Permanent export downloads a TXT song file and a matching song-list.js entry.
+- Permanent export creates unique filenames to avoid overwriting existing songs.
+
+Important Design Rule:
+- Browser JavaScript cannot directly write into the project songs folder or data/song-list.js.
+- My Songs are stored locally first, then can be exported and manually promoted into the permanent library.
+
+Files Added:
+- js/my-songs.js
+
+Purpose:
+Allows users to add, test and manage their own songs inside the app while still preserving a clean permanent song library.
+
+------------------------------------------------------------
+Version 6.0 - Transpose
+------------------------------------------------------------
+
+Release Date:
+Previous Release
 
 New Features:
 - Added display-only song transposition.

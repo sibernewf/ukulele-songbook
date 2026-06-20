@@ -49,37 +49,5 @@ const SONGS = [
     favourite: false,
     tags: ["Intermediate", "Country"],
     type: "chords"
-  },
-  {
-    title: "What's Up",
-    artist: "4 Non Blondes",
-    file: "songs/whats-up.txt",
-    favourite: false,
-    tags: ["Intermediate", "Rock"],
-    type: "chords"
-  },
-  {
-    title: "Frosty the Snowman",
-    artist: "Traditional",
-    file: "songs/frosty-the-snowman.txt",
-    favourite: false,
-    tags: ["Beginner", "Happy", "Christmas"],
-    type: "chords"
-  },
-  {
-    title: "Let it Snow",
-    artist: "Traditional",
-    file: "songs/frosty-the-snowman.txt",
-    favourite: false,
-    tags: ["Advanced", "Happy", "Christmas"],
-    type: "chords"
-  },
-  {
-    title: "Big Rock Candy Mountain",
-    artist: "Harry McClintock",
-    file: "songs/big-rock-candy-mountain.txt",
-    favourite: false,
-    tags: ["Beginner", "Folk", "Traditional", "Campfire"],
-    type: "chords"
   }
 ];
