@@ -1,5 +1,5 @@
 🎸 Ukulele Songbook Roadmap Status
-✅ COMPLETED FEATURES (v1.0 → v6.1)
+✅ COMPLETED FEATURES (v1.0 → v6.1.1)
 
 The Ukulele Songbook has evolved from a simple chord viewer into a complete digital ukulele companion for learning, practising and performing.
 
@@ -189,6 +189,8 @@ Strumming Practice
 ✅ song-list.js entry export
 ✅ Unique permanent filenames to avoid overwriting songs
 ✅ Built-in song files remain unchanged
+✅ Song Text box moved higher and enlarged in v6.1.1
+✅ Clearer paste-song instructions in v6.1.1
 
 💾 Data Storage & Architecture
 ✅ Browser localStorage support
@@ -304,5 +306,5 @@ It aims to become:
  - 🏠 A shared household music system
 
 ==================================================
-🎸 CURRENT RELEASE: UKULELE SONGBOOK v6.1
+🎸 CURRENT RELEASE: UKULELE SONGBOOK v6.1.1
 ==================================================

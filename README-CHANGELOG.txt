@@ -2,11 +2,27 @@
 README / CHANGELOG
 
 ------------------------------------------------------------
-Version 6.1 - My Songs Manager
+Version 6.1.1 - My Songs Manager UI Polish
 ------------------------------------------------------------
 
 Release Date:
 Current Release
+
+Changes:
+- Moved the Song Text box higher in the My Songs form so it is easy to find.
+- Added clearer instructions for where to paste chords, lyrics and tabs.
+- Enlarged the Song Text area for easier pasting and editing.
+- Kept metadata fields below the main song content to reduce confusion.
+
+Purpose:
+Makes the My Songs Manager easier to use when adding pasted songs from tab/chord websites.
+
+------------------------------------------------------------
+Version 6.1 - My Songs Manager
+------------------------------------------------------------
+
+Release Date:
+Previous Release
 
 New Features:
 - Added My Songs Manager accordion.
