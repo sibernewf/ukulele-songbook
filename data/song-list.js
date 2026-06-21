@@ -65,5 +65,13 @@ const SONGS = [
   favourite: false,
   tags: ["Beginner"],
   type: "chords"
+},
+{
+  title: "Hey There Delila — Fingerpicked",
+  artist: "Plain White T's",
+  file: "songs/hey-there-delila-fingerpicked.txt",
+  favourite: false,
+  tags: ["Pop","Ballad","Fingerpicked","Romantic","Intermediate"],
+  type: "chords-tabs"
 }
 ];
