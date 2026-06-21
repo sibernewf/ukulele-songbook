@@ -73,5 +73,13 @@ const SONGS = [
   favourite: false,
   tags: ["Pop","Ballad","Fingerpicked","Romantic","Intermediate"],
   type: "chords-tabs"
+},
+{
+  title: "Fly Me To The Moon — Classic Jazz",
+  artist: "Frank Sinatra",
+  file: "songs/fly-me-to-the-moon-classic-jazz.txt",
+  favourite: false,
+  tags: ["Jazz","Swing","Standard","Classic","Beginner"],
+  type: "chords"
 }
 ];
