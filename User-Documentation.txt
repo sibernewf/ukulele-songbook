@@ -428,7 +428,7 @@ Open the My Songs accordion in the left sidebar.
 To add a song:
  - Click New song.
  - Enter the title, artist, version/arrangement, type, tags, tuning, key, capo, difficulty, tempo and strumming if known.
- - Paste the song text into the large Song Text box. This is the main chords/lyrics/tab area.
+ - Paste the song text into the Song text box.
  - Click Preview to check how the song will be stored.
  - Click Save to My Songs.
 
@@ -460,7 +460,7 @@ The browser cannot directly write files into the project folder for security rea
 
 
 🎸 Current Application Version
-Ukulele Songbook v6.1.1
+Ukulele Songbook v6.1
 
 Current major features:
 ✓ Chord diagrams
@@ -536,9 +536,6 @@ The following files and folders should always be preserved when upgrading the ap
   js/my-songs.js
   js/history.js
   js/song-notes.js
-  js/metronome.js
-  js/strumming-trainer.js
-  js/practice-timer.js
   User-Documentation.txt
   README-CHANGELOG.txt
   Roadmap.txt

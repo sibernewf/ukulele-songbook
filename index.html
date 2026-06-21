@@ -35,32 +35,19 @@
           <input id="importMySongsFile" type="file" accept="application/json,.json">
           <input id="mySongId" type="hidden">
           <h2>Add / Edit Song</h2>
-          <p class="hint compact-hint"><strong>Step 1:</strong> Enter the basic song details, then paste the full song text into the large Song Text box below.</p>
-
           <label for="mySongTitle">Title</label><input id="mySongTitle" class="song-search" type="text" placeholder="Big Rock Candy Mountains">
           <label for="mySongArtist">Artist</label><input id="mySongArtist" class="song-search" type="text" placeholder="Traditional">
           <label for="mySongVersion">Version / arrangement</label><input id="mySongVersion" class="song-search" type="text" placeholder="Campfire, easy, fingerstyle...">
           <label for="mySongType">Song type</label><select id="mySongType"><option value="chords">Chords only</option><option value="tabs">Tabs only</option><option value="chords-tabs" selected>Chords + tabs</option></select>
           <label for="mySongTags">Tags</label><input id="mySongTags" class="song-search" type="text" placeholder="Folk, Campfire, Beginner">
-
-          <h2>Song Text</h2>
-          <p class="hint compact-hint">Paste the chords, lyrics and tabs here. This is the main song content.</p>
-          <textarea id="mySongBody" class="my-song-body" rows="18" placeholder="Paste your song here...
-
-Example:
-C
-One evening as the sun went down
-      G              C
-And the jungle fire was burning..."></textarea>
-
-          <h2>Optional Metadata</h2>
           <label for="mySongTuning">Tuning</label><input id="mySongTuning" class="song-search" type="text" value="G C E A">
           <label for="mySongKey">Key</label><input id="mySongKey" class="song-search" type="text" placeholder="C">
           <label for="mySongCapo">Capo</label><input id="mySongCapo" class="song-search" type="text" value="No capo">
           <label for="mySongDifficulty">Difficulty</label><input id="mySongDifficulty" class="song-search" type="text" placeholder="Beginner">
           <label for="mySongTempo">Tempo</label><input id="mySongTempo" class="song-search" type="text" placeholder="84 BPM">
-          <label for="mySongStrumming">Strumming pattern</label><input id="mySongStrumming" class="song-search" type="text" placeholder="D D U U D U">
+          <label for="mySongStrumming">Strumming</label><input id="mySongStrumming" class="song-search" type="text" placeholder="D D U U D U">
           <label for="mySongNotes">Song metadata notes</label><input id="mySongNotes" class="song-search" type="text" placeholder="Fingerpick gently">
+          <label for="mySongBody">Song text</label><textarea id="mySongBody" class="my-song-body" rows="12" placeholder="Paste chords, lyrics and tabs here..."></textarea>
           <div class="set-buttons">
             <button id="previewMySong" type="button">Preview</button>
             <button id="saveMySong" type="button">Save to My Songs</button>

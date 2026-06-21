@@ -57,5 +57,13 @@ const SONGS = [
   favourite: false,
   tags: ["Tags: Ballad","Slow","Fingerpicked Intro","Intermediate"],
   type: "chords"
- }
+ },
+ {
+  title: "Riptide — Easy",
+  artist: "Vance Joy",
+  file: "songs/riptide-easy.txt",
+  favourite: false,
+  tags: ["Beginner"],
+  type: "chords"
+}
 ];

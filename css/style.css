@@ -884,13 +884,3 @@ body.performance-mode .practice-timer-display {
   font-size: 12px;
   vertical-align: middle;
 }
-
-
-/* v6.1.1 My Songs Manager polish */
-.my-song-body {
-  min-height: 320px;
-  margin-bottom: .75rem;
-}
-.my-songs-manager h2 {
-  margin-top: 1.25rem;
-}
