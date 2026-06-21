@@ -81,5 +81,13 @@ const SONGS = [
   favourite: false,
   tags: ["Jazz","Swing","Standard","Classic","Beginner"],
   type: "chords"
+},
+{
+  title: "Stand By Me — Campfire",
+  artist: "Ben E King",
+  file: "songs/stand-by-me-campfire.txt",
+  favourite: false,
+  tags: ["Soul","Classic","Beginner","Campfire","4 Chords"],
+  type: "chords-tabs"
 }
 ];
