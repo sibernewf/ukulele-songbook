@@ -49,5 +49,13 @@ const SONGS = [
     favourite: false,
     tags: ["Intermediate", "Country"],
     type: "chords"
-  }
+  },
+  {
+  title: "Hallelujah — Easy",
+  artist: "Leonard Cohen",
+  file: "songs/hallelujah-easy.txt",
+  favourite: false,
+  tags: ["Tags: Ballad","Slow","Fingerpicked Intro","Intermediate"],
+  type: "chords"
+ }
 ];
