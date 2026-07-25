@@ -82,6 +82,14 @@ const SONGS = [
   tags: ["Beginner"],
   type: "chords-tabs"
 },
+{
+  title: "Ring of Fire",
+  artist: "Johnny Cash",
+  file: "songs/ring-of-fire.txt",
+  favourite: false,
+  tags: ["Beginner"],
+  type: "chords-tabs"
+},
  {
   title: "Riptide — Easy",
   artist: "Vance Joy",
