@@ -1,5 +1,51 @@
+Version 6.2.2 - Collapsible Left Menu
+------------------------------------------------------------
+
+New Features:
+- Added Minimise / Maximise controls for the left menu.
+- The song content expands to nearly the full screen when the menu is hidden.
+- Added a floating Maximise Menu button so the menu can always be restored.
+- The chosen menu state is remembered on the device.
+- Menu controls are hidden when printing.
+
+------------------------------------------------------------
+
+Version 6.2.2 - One-Page Fretboard Printing
+==============================================
+
+PRINTING FIXES
+- Rebuilt the fretboard print stylesheet so the normal application is removed from the print layout rather than merely hidden.
+- Eliminated the blank first page and separated heading page seen in some browsers.
+- The heading, complete fretboard and explanatory legend now fit together on the first and only printed page.
+- Retained the white background and black outlines to minimise printer ink.
+- Optimised sizing and margins for A4 landscape printing.
+
+
 🎸 Ukulele Songbook
 README / CHANGELOG
+
+------------------------------------------------------------
+Version 6.2 - Printable Fretboard Note Chart
+------------------------------------------------------------
+
+Release Date:
+Current Release
+
+New Features:
+- Added a Fretboard Note Chart accordion.
+- Added a full G-C-E-A note chart from open strings through the 12th fret.
+- Shows sharps and flats together as enharmonic note names.
+- Added a large on-screen chart viewer.
+- Added a dedicated Print Chart button.
+- Added an A4 landscape print layout.
+- Printing uses a white background and black outlines to minimise printer ink.
+- App controls, navigation and background styling are hidden when printing the chart.
+
+Files Added:
+- js/fretboard-notes.js
+
+Purpose:
+Provides a clear fretboard-learning reference that can be viewed on screen or printed economically.
 
 ------------------------------------------------------------
 Version 6.1 - My Songs Manager

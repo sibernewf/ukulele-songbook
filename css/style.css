@@ -1,4 +1,4 @@
-*{box-sizing:border-box}:root{--song-font-size:20px}body{margin:0;background:#f6efe1;color:#211b14;font-family:Arial,Helvetica,sans-serif}.topbar{display:flex;justify-content:space-between;gap:1rem;padding:1rem 1.25rem;background:#2d241b;color:white}.topbar h1{margin:0 0 .25rem;font-size:1.6rem}.topbar p{margin:0;opacity:.86}.controls{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}button,select,input{padding:.55rem .7rem;border-radius:.5rem;border:1px solid #b9a78d;background:#fff9ec;font-size:1rem}button,select{cursor:pointer}.app{display:grid;grid-template-columns:390px 1fr;gap:1rem;height:calc(100vh - 86px);padding:1rem}.chords-panel,.song-panel{background:#fff9ec;border:1px solid #ddcdb4;border-radius:1rem;padding:1rem;overflow:auto}.accordion-section{border:1px solid #ddcdb4;border-radius:.85rem;background:#fffdf7;margin-bottom:.75rem;overflow:hidden}.accordion-section summary{padding:.75rem .85rem;background:#efe1ca;font-weight:bold;cursor:pointer;user-select:none}.accordion-section[open] summary{border-bottom:1px solid #ddcdb4}.accordion-section>*:not(summary){margin-left:.85rem;margin-right:.85rem}.accordion-section>:last-child{margin-bottom:.85rem}.chords-panel label{display:block;font-weight:bold;margin:.75rem 0 .35rem}#songSelect,#sortSelect,#typeFilter,#setSelect{width:100%}.song-search{width:100%;margin-bottom:.5rem}.library-stats,.hint,.summary{margin:.75rem 0;padding:.7rem;background:#efe1ca;border-radius:.75rem;font-size:.92rem;line-height:1.4}.search-status{margin:.45rem 0 .75rem;font-size:.9rem;color:#6d5b45}.favourites-toggle{display:flex;align-items:center;gap:.45rem;margin:.75rem 0 1rem;font-weight:bold;cursor:pointer}.favourites-toggle input{width:auto;margin:0}.tag-filters{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1rem}.tag-button{padding:.35rem .55rem;border-radius:999px;border:1px solid #b9a78d;background:#fff9ec;font-size:.9rem}.tag-button.active{background:#2d241b;color:white;border-color:#2d241b}.summary{display:flex;justify-content:space-between;gap:.75rem}.chords-panel h2{font-size:1.1rem;margin:1rem 0 .6rem}.chord-cards{display:grid;grid-template-columns:repeat(2,minmax(130px,1fr));gap:.75rem}.chord-card{text-align:center;background:white;border:1px solid #d8c8ad;border-radius:.9rem;padding:.65rem;box-shadow:0 2px 8px rgba(0,0,0,.06)}.chord-name{font-weight:bold;font-size:1.2rem;margin-bottom:.25rem}.chord-shape{font-size:.85rem;opacity:.7}.chord-diagram{width:105px;height:135px;margin:0 auto .2rem}.missing-list{margin-top:0;color:#9a2d20;font-weight:bold}.wide-button{width:calc(100% - 1.7rem);margin-top:.75rem}.set-buttons{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-top:.75rem}.set-song-list{max-height:220px;overflow:auto;border:1px solid #ddcdb4;border-radius:.75rem;background:white;padding:.5rem}.set-song-item{display:flex;align-items:flex-start;gap:.45rem;padding:.35rem;border-bottom:1px solid #f0e6d5;font-size:.92rem}.set-song-item:last-child{border-bottom:none}.set-song-item input{width:auto;margin-top:.15rem}.set-mode-bar{display:none;margin-bottom:1rem;padding:.75rem;background:#efe1ca;border-radius:.85rem;border:1px solid #ddcdb4}.set-mode-bar.active{display:block}.set-mode-title{font-weight:bold;margin-bottom:.5rem}.set-mode-controls{display:flex;flex-wrap:wrap;gap:.5rem}.song-info{display:flex;flex-wrap:wrap;gap:.45rem;margin:0 0 1rem;padding:.7rem;background:#efe1ca;border-radius:.75rem;font-size:.95rem;line-height:1.4}.song-info:empty{display:none}.info-chip,.type-chip{display:inline-block;padding:.35rem .55rem;background:#fff9ec;border:1px solid #d8c8ad;border-radius:999px}.song-panel h2{margin:0 0 1rem;padding-bottom:.75rem;border-bottom:1px solid #ddcdb4}.song-text{margin:0;white-space:pre-wrap;line-height:1.55;font-family:"Courier New",Courier,monospace;font-size:var(--song-font-size)}.chord-highlight{color:#a64200;font-weight:bold}.section-heading,.tab-section-heading{color:#5f4226;font-weight:bold}.tab-line{color:#1f5f48;font-weight:bold}.favourite-star{color:#a64200;font-weight:bold}body.panel-hidden .chords-panel{display:none}body.panel-hidden .app{grid-template-columns:1fr}@media(max-width:900px){.topbar{flex-direction:column}.app{grid-template-columns:1fr;height:auto}.chord-cards{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}}
+*{box-sizing:border-box}:root{--song-font-size:20px}body{margin:0;background:#f6efe1;color:#211b14;font-family:Arial,Helvetica,sans-serif}.topbar{display:flex;justify-content:space-between;gap:1rem;padding:1rem 1.25rem;background:#2d241b;color:white}.topbar h1{margin:0 0 .25rem;font-size:1.6rem}.topbar p{margin:0;opacity:.86}.controls{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}button,select,input{padding:.55rem .7rem;border-radius:.5rem;border:1px solid #b9a78d;background:#fff9ec;font-size:1rem}button,select{cursor:pointer}.app{display:grid;grid-template-columns:390px 1fr;gap:1rem;height:calc(100vh - 86px);padding:1rem}.chords-panel,.song-panel{background:#fff9ec;border:1px solid #ddcdb4;border-radius:1rem;padding:1rem;overflow:auto}.accordion-section{border:1px solid #ddcdb4;border-radius:.85rem;background:#fffdf7;margin-bottom:.75rem;overflow:hidden}.accordion-section summary{padding:.75rem .85rem;background:#efe1ca;font-weight:bold;cursor:pointer;user-select:none}.accordion-section[open] summary{border-bottom:1px solid #ddcdb4}.accordion-section>*:not(summary){margin-left:.85rem;margin-right:.85rem}.accordion-section>:last-child{margin-bottom:.85rem}.chords-panel label{display:block;font-weight:bold;margin:.75rem 0 .35rem}#songSelect,#sortSelect,#typeFilter,#setSelect{width:100%}.song-search{width:100%;margin-bottom:.5rem}.library-stats,.hint,.summary{margin:.75rem 0;padding:.7rem;background:#efe1ca;border-radius:.75rem;font-size:.92rem;line-height:1.4}.search-status{margin:.45rem 0 .75rem;font-size:.9rem;color:#6d5b45}.favourites-toggle{display:flex;align-items:center;gap:.45rem;margin:.75rem 0 1rem;font-weight:bold;cursor:pointer}.favourites-toggle input{width:auto;margin:0}.tag-filters{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1rem}.tag-button{padding:.35rem .55rem;border-radius:999px;border:1px solid #b9a78d;background:#fff9ec;font-size:.9rem}.tag-button.active{background:#2d241b;color:white;border-color:#2d241b}.summary{display:flex;justify-content:space-between;gap:.75rem}.chords-panel h2{font-size:1.1rem;margin:1rem 0 .6rem}.chord-cards{display:grid;grid-template-columns:repeat(2,minmax(130px,1fr));gap:.75rem}.chord-card{text-align:center;background:white;border:1px solid #d8c8ad;border-radius:.9rem;padding:.65rem;box-shadow:0 2px 8px rgba(0,0,0,.06)}.chord-name{font-weight:bold;font-size:1.2rem;margin-bottom:.25rem}.chord-shape{font-size:.85rem;opacity:.7}.chord-diagram{width:105px;height:135px;margin:0 auto .2rem}.missing-list{margin-top:0;color:#9a2d20;font-weight:bold}.wide-button{width:calc(100% - 1.7rem);margin-top:.75rem}.set-buttons{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-top:.75rem}.set-song-list{max-height:220px;overflow:auto;border:1px solid #ddcdb4;border-radius:.75rem;background:white;padding:.5rem}.set-song-item{display:flex;align-items:flex-start;gap:.45rem;padding:.35rem;border-bottom:1px solid #f0e6d5;font-size:.92rem}.set-song-item:last-child{border-bottom:none}.set-song-item input{width:auto;margin-top:.15rem}.set-mode-bar{display:none;margin-bottom:1rem;padding:.75rem;background:#efe1ca;border-radius:.85rem;border:1px solid #ddcdb4}.set-mode-bar.active{display:block}.set-mode-title{font-weight:bold;margin-bottom:.5rem}.set-mode-controls{display:flex;flex-wrap:wrap;gap:.5rem}.song-info{display:flex;flex-wrap:wrap;gap:.45rem;margin:0 0 1rem;padding:.7rem;background:#efe1ca;border-radius:.75rem;font-size:.95rem;line-height:1.4}.song-info:empty{display:none}.info-chip,.type-chip{display:inline-block;padding:.35rem .55rem;background:#fff9ec;border:1px solid #d8c8ad;border-radius:999px}.song-panel h2{margin:0 0 1rem;padding-bottom:.75rem;border-bottom:1px solid #ddcdb4}.song-text{margin:0;white-space:pre-wrap;line-height:1.55;font-family:"Courier New",Courier,monospace;font-size:var(--song-font-size)}.chord-highlight{color:#a64200;font-weight:bold}.section-heading,.tab-section-heading{color:#5f4226;font-weight:bold}.tab-line{color:#1f5f48;font-weight:bold}.favourite-star{color:#a64200;font-weight:bold}body.panel-hidden .chords-panel,body.sidebar-collapsed .chords-panel{display:none}body.panel-hidden .app,body.sidebar-collapsed .app{grid-template-columns:1fr}.app{position:relative;transition:grid-template-columns .2s ease}.sidebar-collapse-button{width:100%;margin:0 0 .75rem;background:#2d241b;color:white;border-color:#2d241b;font-weight:bold}.sidebar-expand-button{display:none;position:absolute;z-index:5;top:.35rem;left:.35rem;background:#2d241b;color:white;border-color:#2d241b;font-weight:bold;box-shadow:0 2px 8px rgba(0,0,0,.18)}body.sidebar-collapsed .sidebar-expand-button,body.panel-hidden .sidebar-expand-button{display:block}body.sidebar-collapsed .song-panel,body.panel-hidden .song-panel{padding-left:3.75rem}.menu-toggle{white-space:nowrap}@media(max-width:900px){.topbar{flex-direction:column}.app{grid-template-columns:1fr;height:auto}body.sidebar-collapsed .song-panel,body.panel-hidden .song-panel{padding-left:1rem;padding-top:3.75rem}.chord-cards{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}}
 
 /* v4.8 Performance Mode */
 
@@ -883,4 +883,190 @@ body.performance-mode .practice-timer-display {
   color: #245d16;
   font-size: 12px;
   vertical-align: middle;
+}
+
+
+/* v6.2 Ukulele Fretboard Note Chart */
+.fretboard-chart-launcher h2 { margin-top: 0; }
+.fretboard-modal[hidden] { display: none; }
+.fretboard-modal { position: fixed; inset: 0; z-index: 10000; display: grid; place-items: center; padding: 24px; }
+.fretboard-modal-backdrop { position: absolute; inset: 0; background: rgba(20, 15, 8, .72); }
+.fretboard-modal-dialog { position: relative; width: min(1380px, 96vw); max-height: 94vh; overflow: auto; background: #fff; border-radius: 18px; box-shadow: 0 18px 60px rgba(0,0,0,.4); }
+.fretboard-modal-toolbar { position: sticky; top: 0; z-index: 3; display: flex; justify-content: flex-end; gap: 10px; padding: 12px 16px; background: #efe1ca; border-bottom: 1px solid #d8c8ad; }
+.fretboard-print-area { box-sizing: border-box; background: #fff; color: #111; padding: 24px; }
+.fretboard-print-header { text-align: center; margin-bottom: 18px; }
+.fretboard-print-header h1 { margin: 0 0 5px; font-size: clamp(1.65rem, 3vw, 2.5rem); color: #111; }
+.fretboard-print-header p { margin: 0; font-size: 1rem; color: #333; }
+.fretboard-note-chart { display: grid; grid-template-columns: minmax(110px, 1.35fr) repeat(13, minmax(58px, 1fr)); border: 2px solid #111; background: #fff; overflow: hidden; }
+.fretboard-corner, .fretboard-fret-label, .fretboard-string-label, .fretboard-cell { min-width: 0; border-right: 1px solid #777; border-bottom: 1px solid #777; }
+.fretboard-corner, .fretboard-fret-label { min-height: 44px; display: flex; align-items: center; justify-content: center; background: #f1f1f1; font-weight: 800; }
+.fretboard-fret-label { position: relative; flex-direction: column; font-size: .86rem; }
+.fret-marker { font-size: .55rem; line-height: .65; }
+.fretboard-string-label { min-height: 74px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; padding: 4px; background: #f7f7f7; text-align: center; }
+.fretboard-string-label span { font-size: 1.25rem; font-weight: 900; }
+.fretboard-cell { position: relative; min-height: 74px; display: grid; place-items: center; background-color: #fff; background-image: linear-gradient(to bottom, transparent 48%, #777 48%, #777 52%, transparent 52%); }
+.fretboard-cell:not(.fret-0)::after { content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 3px; background: #555; }
+.fretboard-cell.fret-12::after { width: 5px; background: #111; }
+.fretboard-note { position: relative; z-index: 1; width: 46px; min-height: 46px; padding: 3px; box-sizing: border-box; border: 2px solid #111; border-radius: 999px; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #fff; color: #111; font-weight: 900; line-height: 1; box-shadow: 0 1px 2px rgba(0,0,0,.18); }
+.fretboard-note.accidental-note { font-size: .84rem; }
+.fretboard-note.natural-note { background: #202020; color: #fff; }
+.fretboard-note.open-note { outline: 3px double #555; outline-offset: 2px; }
+.fretboard-note.octave-note { border-width: 3px; }
+.alternate-name { margin-top: 2px; font-size: .76em; font-weight: 700; }
+.fretboard-legend { margin-top: 16px; padding: 12px 15px; border: 1px solid #aaa; border-radius: 10px; background: #fff; }
+.fretboard-legend p { margin: .25rem 0; color: #222; }
+body.fretboard-modal-open { overflow: hidden; }
+
+@media (max-width: 1000px) {
+  .fretboard-modal { padding: 8px; }
+  .fretboard-modal-dialog { width: 99vw; }
+  .fretboard-print-area { overflow-x: auto; padding: 14px; }
+  .fretboard-note-chart { min-width: 1060px; }
+}
+
+@page { size: A4 landscape; margin: 8mm; }
+@media print {
+  html, body {
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  /* Remove the normal application from print layout completely. Using
+     display:none (rather than visibility:hidden) prevents blank pages. */
+  body > * { display: none !important; }
+  body > #fretboardChartModal { display: block !important; }
+
+  #fretboardChartModal {
+    position: absolute !important;
+    inset: 0 auto auto 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+    overflow: visible !important;
+  }
+
+  .fretboard-modal-backdrop,
+  .no-print { display: none !important; }
+
+  .fretboard-modal-dialog,
+  .fretboard-print-area,
+  .fretboard-note-chart,
+  .fretboard-print-header,
+  .fretboard-legend {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .fretboard-modal-dialog {
+    position: static !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background: #fff !important;
+  }
+
+  .fretboard-print-area {
+    box-sizing: border-box !important;
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  .fretboard-print-header { margin: 0 0 3mm !important; }
+  .fretboard-print-header h1 {
+    margin: 0 0 1mm !important;
+    font-size: 18pt !important;
+    line-height: 1.1 !important;
+    color: #000 !important;
+  }
+  .fretboard-print-header p {
+    margin: 0 !important;
+    font-size: 8.5pt !important;
+    line-height: 1.15 !important;
+    color: #000 !important;
+  }
+
+  .fretboard-note-chart {
+    display: grid !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    grid-template-columns: 23mm repeat(13, minmax(0, 1fr)) !important;
+    border: 1.2pt solid #000 !important;
+    overflow: hidden !important;
+    background: #fff !important;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .fretboard-corner,
+  .fretboard-fret-label {
+    min-height: 8mm !important;
+    background: #fff !important;
+    font-size: 7pt !important;
+    line-height: 1 !important;
+  }
+
+  .fretboard-string-label,
+  .fretboard-cell {
+    min-height: 16mm !important;
+    background-color: #fff !important;
+  }
+
+  .fretboard-string-label {
+    padding: 1mm !important;
+    font-size: 6.5pt !important;
+    line-height: 1 !important;
+  }
+  .fretboard-string-label span { font-size: 9pt !important; }
+
+  .fretboard-note {
+    width: 9.5mm !important;
+    min-height: 9.5mm !important;
+    padding: .5mm !important;
+    background: #fff !important;
+    color: #000 !important;
+    border: 1pt solid #000 !important;
+    box-shadow: none !important;
+    font-size: 7.5pt !important;
+    line-height: .9 !important;
+  }
+  .fretboard-note.accidental-note { font-size: 6.7pt !important; }
+  .fretboard-note.natural-note { background: #fff !important; color: #000 !important; }
+  .fretboard-note.open-note { outline: .8pt double #000 !important; outline-offset: .7pt !important; }
+  .fretboard-note.octave-note { border-width: 1.5pt !important; }
+  .alternate-name { margin-top: .3mm !important; }
+
+  .fretboard-cell {
+    background-image: linear-gradient(to bottom, transparent 49%, #555 49%, #555 51%, transparent 51%) !important;
+  }
+  .fretboard-cell:not(.fret-0)::after { width: 1.2pt !important; background: #555 !important; }
+  .fretboard-cell.fret-12::after { width: 2pt !important; background: #000 !important; }
+
+  .fretboard-legend {
+    margin: 3mm 0 0 !important;
+    padding: 2mm 2.5mm !important;
+    background: #fff !important;
+    border: .7pt solid #555 !important;
+    border-radius: 0 !important;
+    font-size: 7pt !important;
+    line-height: 1.15 !important;
+  }
+  .fretboard-legend p { margin: .7mm 0 !important; color: #000 !important; }
 }

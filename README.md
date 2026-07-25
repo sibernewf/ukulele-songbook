@@ -14,6 +14,7 @@ performing, and managing your song library.
 ### 🎸 Performance
 
 -   Chord diagrams
+-   Viewable and printable fretboard note chart
 -   Visual strumming
 -   Set lists
 -   Auto scroll

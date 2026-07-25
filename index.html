@@ -3,16 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ukulele Songbook v6.1</title>
+  <title>Ukulele Songbook v6.2.2</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header class="topbar">
-    <div><h1>Ukulele Songbook</h1><p>Select songs, view chords, build set lists, practise, use the chord dictionary, practise with metronome and strumming trainer, transpose songs, manage My Songs, and auto-scroll while you play.</p></div>
-    <div class="controls"><button id="smallerText">A−</button><button id="largerText">A+</button><button id="togglePanel">Hide chord panel</button></div>
+    <div><h1>Ukulele Songbook</h1><p>Select songs, view chords, build set lists, practise, use the chord dictionary, view and print the fretboard note chart, practise with metronome and strumming trainer, transpose songs, manage My Songs, and auto-scroll while you play.</p></div>
+    <div class="controls"><button id="smallerText">A−</button><button id="largerText">A+</button><button class="menu-toggle top-menu-toggle" data-sidebar-toggle type="button" aria-expanded="true" aria-controls="leftMenu">Minimise menu</button></div>
   </header>
   <main class="app">
-    <aside class="chords-panel">
+    <button class="sidebar-expand-button menu-toggle" data-sidebar-toggle type="button" aria-expanded="false" aria-controls="leftMenu" title="Show left menu">☰ Maximise menu</button>
+    <aside class="chords-panel" id="leftMenu">
+      <button class="sidebar-collapse-button menu-toggle" data-sidebar-toggle type="button" aria-expanded="true" aria-controls="leftMenu" title="Hide left menu">◀ Minimise menu</button>
       <details class="accordion-section"><summary>Library Controls</summary>
         <label for="songSearch">Search songs</label><input id="songSearch" class="song-search" type="search" placeholder="Search by title, artist or tag...">
         <label for="songSelect">Choose song</label><select id="songSelect"></select>
@@ -172,6 +174,14 @@
         </div>
       </details>
 
+      <details class="accordion-section"><summary>Fretboard Note Chart</summary>
+        <div class="fretboard-chart-launcher">
+          <h2>Ukulele Fretboard Notes</h2>
+          <p class="hint compact-hint">View every note from the open strings to the 12th fret, then print a clean white-background A4 chart.</p>
+          <button id="openFretboardChart" class="wide-button" type="button">View / Print Note Chart</button>
+        </div>
+      </details>
+
       <details class="accordion-section"><summary>Chord Dictionary</summary>
         <div class="chord-dictionary" id="chordDictionary">
           <h2>Chord Dictionary</h2>
@@ -215,5 +225,25 @@
       </div>
       <pre id="songText" class="song-text"></pre></section>
   </main>
-  <script src="data/song-list.js"></script><script src="data/chords.js"></script><script src="data/practice-packs.js"></script><script src="js/transpose.js"></script><script src="js/my-songs.js"></script><script src="js/app.js"></script><script src="js/history.js"></script><script src="js/song-notes.js"></script><script src="js/practice-storage.js"></script><script src="js/practice.js"></script><script src="js/auto-scroll.js"></script><script src="js/chord-dictionary.js"></script>
+  <div id="fretboardChartModal" class="fretboard-modal" hidden>
+    <div class="fretboard-modal-backdrop" data-close-fretboard></div>
+    <section class="fretboard-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="fretboardChartTitle">
+      <div class="fretboard-modal-toolbar no-print">
+        <button id="printFretboardChart" type="button">Print Chart</button>
+        <button id="closeFretboardChart" type="button">Close</button>
+      </div>
+      <div id="fretboardPrintArea" class="fretboard-print-area">
+        <header class="fretboard-print-header">
+          <h1 id="fretboardChartTitle">Notes on the Ukulele Fretboard</h1>
+          <p>Standard tuning: <strong>G–C–E–A</strong> • Open strings through the 12th fret</p>
+        </header>
+        <div id="fretboardNoteChart" class="fretboard-note-chart" aria-label="Ukulele fretboard note chart"></div>
+        <div class="fretboard-legend">
+          <p><strong>Reading the chart:</strong> The 1st string is A, the string nearest the floor when playing. The 4th string is G, the string nearest your face.</p>
+          <p><strong>Enharmonic notes:</strong> Notes such as C♯ and D♭ sound the same but have different names.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script src="data/song-list.js"></script><script src="data/chords.js"></script><script src="data/practice-packs.js"></script><script src="js/transpose.js"></script><script src="js/my-songs.js"></script><script src="js/app.js"></script><script src="js/history.js"></script><script src="js/song-notes.js"></script><script src="js/practice-storage.js"></script><script src="js/practice.js"></script><script src="js/auto-scroll.js"></script><script src="js/chord-dictionary.js"></script><script src="js/fretboard-notes.js"></script>
 </body></html>

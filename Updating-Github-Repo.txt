@@ -1,0 +1,307 @@
+How to update my GitHub repositrory:
+My Repository is:
+https://github.com/sibernewf/ukulele-songbook.git
+My Live site is:
+https://sibernewf.github.io/ukulele-songbook/
+
+Updating Ukulele Songbook on GitHub
+Part 1 — One-time setup on your computer
+Only do this section once for the project folder.
+
+1. Make sure Git is installed
+Open the Windows Start menu and type:
+
+   cmd
+
+Open Command Prompt, then enter:
+
+   git --version
+
+You should see something similar to:
+
+   git version 2.5x.x.windows.x
+
+If Windows says that git is not recognised, Git must be installed before continuing.
+GitHub’s command-line instructions require Git to be installed and configured locally.
+
+2. Open the project folder in Windows Explorer
+Navigate to the folder containing the actual website files.
+
+You should be looking at files and folders such as:
+ - index.html
+ - css
+ - js
+ - songs
+ - images
+
+The correct folder is the one where index.html is directly visible.
+Do not open a parent folder that merely contains another folder holding the website.
+
+3. Open Command Prompt directly in that folder
+The easiest Windows method is:
+ - Click the address bar at the top of File Explorer.
+ - Delete the existing folder path.
+ - Type:
+       cmd
+ - Press Enter.
+   A Command Prompt window will open with the project folder already selected.
+
+For example:
+  C:\Users\Alan\Documents\ukulele-songbook>
+
+You can confirm the folder contents by entering:
+  dir
+
+You should see index.html in the list.
+
+4. Initialise the folder as a Git repository
+Enter:
+  git init
+
+This adds Git tracking information to the folder. It does not alter your website files.
+
+5. Tell Git to use the main branch
+Enter:
+  git branch -M main
+
+6. Connect the local folder to your GitHub repository
+Enter:
+  git remote add origin https://github.com/sibernewf/ukulele-songbook.git
+
+Check that it was added correctly:
+  git remote -v
+
+You should see:
+  origin  https://github.com/sibernewf/ukulele-songbook.git (fetch)
+  origin  https://github.com/sibernewf/ukulele-songbook.git (push)
+
+Important: your repository already contains files
+Because you initially uploaded your website through the GitHub webpage, GitHub already has a commit that your local folder does not know about.
+Before pushing from the local folder for the first time, retrieve that history:
+  git pull origin main --allow-unrelated-histories
+
+Git may open an editor asking you to confirm a merge message.
+If that happens in a black Vim-style screen:
+ - Press Esc.
+ - Type:
+   :wq
+ - Press Enter.
+
+There may also be conflicts if your local files differ from the files already uploaded. The safest first-time approach is to make sure your local folder contains the exact version you intend to keep before proceeding.
+
+Part 2 — Normal update procedure
+
+Use this section every time you update songs, JavaScript, CSS, HTML, images, or anything else.
+
+1. Make your changes locally
+For example:
+  songs/big-rock-candy-mountain.txt
+  js/song-list.js
+  index.html
+  css/styles.css
+
+Test the app locally before uploading it.
+
+2. Open Command Prompt in the project folder
+In File Explorer:
+ - Open the folder containing index.html.
+ - Click the address bar.
+ - Type:
+     cmd
+ - Press Enter.
+
+3. Download any changes already on GitHub
+This is a good habit, especially if you sometimes edit files directly through the GitHub website:
+
+  git pull origin main
+
+This helps prevent overwriting changes that exist online but not locally. GitHub documents git pull and cloning as methods for bringing remote changes onto your computer.
+If you are certain nobody has edited the GitHub copy, this command may simply report:
+  Already up to date.
+
+4. Check what has changed
+Enter:
+
+  git status
+
+You may see something like:
+  modified:   js/song-list.js
+  modified:   songs/let-it-snow.txt
+  untracked files:
+    songs/new-song.txt
+
+This step is useful because it shows exactly what Git intends to work with.
+
+5. Add the changed files
+To add every changed, new, and deleted file in the project:
+
+  git add .
+
+The full stop means:
+  Add all changes beneath the current folder.
+
+GitHub’s documented command-line workflow uses git add before creating a commit.
+Check again:
+
+  git status
+
+The files should now appear under:
+
+  Changes to be committed
+
+6. Commit the update
+Create a short description of what changed:
+
+  git commit -m "Add new songs and strumming patterns"
+
+Other examples:
+  git commit -m "Update song tags"
+  git commit -m "Add guitar instrument support"
+  git commit -m "Release version 6.2.2"
+
+A commit records a labelled snapshot of your changes.
+
+7. Push the update to GitHub
+Enter:
+
+  git push origin main
+
+GitHub documents git push as the command used to send local commits to the remote repository.
+You may be asked to sign in to GitHub the first time. Windows may open a browser window or use Git Credential Manager.
+
+Once complete, you should see output similar to:
+  Enumerating objects...
+  Writing objects...
+  To https://github.com/sibernewf/ukulele-songbook.git
+     abc1234..def5678  main -> main
+
+8. Wait for GitHub Pages to update
+
+GitHub Pages builds automatically when changes are pushed to the configured publishing branch and folder.
+
+Usually allow approximately one or two minutes, then visit:
+
+https://sibernewf.github.io/ukulele-songbook/
+
+Refresh the page with:
+
+Ctrl + F5
+
+That forces the browser to reload the files instead of showing an older cached copy.
+
+The everyday four-command version
+
+Once the initial setup has been completed, most updates are simply:
+
+git pull origin main
+git add .
+git commit -m "Describe the update"
+git push origin main
+
+That is the main procedure worth printing or keeping beside the project.
+
+Recommended safer version
+
+This version includes checks before committing:
+
+git pull origin main
+git status
+git add .
+git status
+git commit -m "Describe the update"
+git push origin main
+Example: adding a new song
+
+Suppose you add:
+
+songs/ukulele/waltzing-matilda.txt
+
+and update:
+
+js/song-list.js
+
+Your commands would be:
+
+git pull origin main
+git status
+git add .
+git commit -m "Add Waltzing Matilda"
+git push origin main
+
+Then wait briefly and refresh the live site.
+
+Common messages and what they mean
+Already up to date.
+
+Nothing newer exists on GitHub. This is normal.
+
+nothing to commit, working tree clean
+
+Git cannot find any local changes. Either nothing was changed, the wrong folder is open, or the files were already committed.
+
+fatal: not a git repository
+
+The Command Prompt is open in the wrong folder, or git init has not been completed there.
+
+Check the folder with:
+
+cd
+dir
+remote origin already exists
+
+The repository connection has already been configured. Do not add it again.
+
+Check it with:
+
+git remote -v
+rejected ... fetch first
+
+GitHub contains changes that are not present locally.
+
+Run:
+
+git pull origin main
+
+Resolve any reported conflict, then commit and push again.
+
+The website still shows the old version
+
+Try:
+
+Ctrl + F5
+
+Also check the repository’s Actions tab for a Pages deployment that is still running or has failed.
+
+Very important operating rule
+
+From now on, treat your local project folder as the main working copy:
+
+Edit locally.
+Test locally.
+Commit locally.
+Push to GitHub.
+Let GitHub Pages publish it.
+
+Avoid editing the same files directly on GitHub unless necessary, because doing both local and online edits can create merge conflicts.
+
+Printable quick reference:
+UPDATE ALAN’S UKULELE SONGBOOK
+
+1. Open the project folder containing index.html.
+2. Click the File Explorer address bar.
+3. Type cmd and press Enter.
+4. Run:
+
+   git pull origin main
+   git status
+   git add .
+   git commit -m "Describe the update"
+   git push origin main
+
+5. Wait one or two minutes.
+6. Open:
+   https://sibernewf.github.io/ukulele-songbook/
+7. Press Ctrl + F5 to force a refresh.
+
+
+

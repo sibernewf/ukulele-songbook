@@ -542,3 +542,25 @@ The following files and folders should always be preserved when upgrading the ap
 
 These files contain the song library, chord database, practice data, documentation, and project history.
 
+
+
+------------------------------------------------------------
+NEW IN VERSION 6.2 - FRETBOARD NOTE CHART
+------------------------------------------------------------
+
+Open the Fretboard Note Chart accordion in the left sidebar and select View / Print Note Chart.
+
+The chart shows standard G-C-E-A tuning from the open strings through fret 12. Sharps and flats are shown together where two names refer to the same pitch.
+
+To print:
+1. Open the chart.
+2. Select Print Chart.
+3. Use A4 paper in landscape orientation.
+4. The print version automatically removes the application interface and uses a white background to save ink.
+
+The chart can be closed with the Close button, by clicking outside the chart, or by pressing Escape.
+
+
+VERSION 6.2.1 PRINTING UPDATE
+-------------------------------
+The fretboard note chart now prints as one complete A4 landscape page. The normal application is removed from the print layout, preventing blank pages and keeping the title, chart and notes together. The print background remains white to save ink.

@@ -59,6 +59,14 @@ const SONGS = [
   type: "chords"
  },
  {
+  title: "Nothing You Can Take From Me",
+  artist: "Rachel Zegler",
+  file: "songs/nothing-you-can-take-from-me.txt",
+  favourite: false,
+  tags: ["Intermediate"],
+  type: "chords"
+},
+ {
   title: "Riptide — Easy",
   artist: "Vance Joy",
   file: "songs/riptide-easy.txt",
