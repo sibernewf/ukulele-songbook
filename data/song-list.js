@@ -66,6 +66,22 @@ const SONGS = [
   tags: ["Intermediate"],
   type: "chords"
 },
+{
+  title: "Folsom Prison Blues",
+  artist: "Johnny Cash",
+  file: "songs/folsom-prison-blues.txt",
+  favourite: false,
+  tags: ["Intermediate"],
+  type: "chords-tabs"
+},
+ {
+  title: "Ghost Riders in the Sky",
+  artist: "Johnny Cash",
+  file: "songs/ghost-riders-in-the-sky.txt",
+  favourite: false,
+  tags: ["Beginner"],
+  type: "chords-tabs"
+},
  {
   title: "Riptide — Easy",
   artist: "Vance Joy",
