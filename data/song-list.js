@@ -19,6 +19,14 @@ const SONGS = [
     type: "chords"
   },
   {
+    title: "Dont Worry, Be Happy",
+    artist: "Bobby McFerrin",
+    file: "songs/Dont_Worry_Be_Happy_TAB.txt",
+    favourite: true,
+    tags: ["Beginner", "Happy", "Campfire"],
+    type: "chords-tabs"
+  },
+  {
     title: "Jingle Bells",
     artist: "Traditional",
     file: "songs/jingle-bells.txt",
