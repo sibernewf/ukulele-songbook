@@ -1,49 +1,51 @@
-# 🎸 Ukulele Songbook
+# Ukulele Songbook v6.3.16
 
-A complete browser-based ukulele companion for learning, practising,
-performing, and managing your song library.
+- TAB arrangements can be reopened from My Songs with **Edit arrangement**.
+- Existing My Songs deletion remains available.
+- TAB Composer now supports editable four-string tuning labels.
+- Saved arrangements retain their structured composer project for later editing.
+- The locked TAB timing renderer geometry is unchanged.
 
-## Features
+# Ukulele Songbook v6.3.8
 
-### 🎵 Song Library
+## Changes
 
--   Browse a collection of ukulele songs
--   Search, filter and organise songs
--   Support chords, tabs and mixed arrangements
+- Restored the full four-beat TAB measure layout in the composer preview and text export.
+- Each measure now displays four visible `+` beat-boundary columns before the closing bar.
+- Added the trailing spacing block after beat 4 so the fourth `+` is no longer mistaken for the end bar.
+- Beat labels, chords, notes, lyrics, and the second measure all share the same corrected width calculation.
+- Existing v6.3.x autosaved arrangements remain compatible.
 
-### 🎸 Performance
 
--   Chord diagrams
--   Viewable and printable fretboard note chart
--   Visual strumming
--   Set lists
--   Auto scroll
--   Adjustable text size
+## v6.3.14
 
-### 🎓 Practice Studio
+- Kept the established four-`+` TAB measure geometry unchanged.
+- Moved `1  &  2  &  3  &  4  &` onto the same timing grid as the TAB.
+- Beat numbers now sit directly above the four `+` beat markers.
+- Chord changes now use those same beat and `&` positions.
+- Beat-aligned lyrics now use the same shared timing positions.
 
--   Chord Dictionary
--   Practice Mode
--   Metronome
--   Strumming Trainer
--   Practice Timer
+## v6.3.11
 
-### 😈 Transpose
+- Rebuilt the printable TAB timing geometry around one shared coordinate grid.
+- Beat numbers, ampersands, chord changes, TAB notes and aligned lyrics now use exactly the same eight timing positions.
+- Four evenly spaced `+` beat separators are drawn after beats 1, 2, 3 and 4.
+- Added the trailing TAB area after the fourth separator without shifting any musical timing positions.
+- Preview, TXT download and printing all use the same corrected renderer.
 
-Display-only transposition that preserves original song files.
+## v6.3.10
+- Corrected TAB preview beat-divider alignment.
+- Beat separator `+` characters now overlay the fixed timing grid instead of adding extra width after each beat.
+- Notes, chords, beat labels and lyrics now share identical fixed columns across both measures.
 
-### 📝 My Songs Manager
 
-Add, edit, import and export your own songs.
+## v6.3.14
+- TAB notes in the printable preview now use the exact same timing columns as chords and beat labels.
+- Beat notes align directly with the four fixed `+` markers; off-beat notes align with the corresponding `&` positions.
+- Existing beat markers, chord placement, measure widths, and beat-label geometry were left unchanged.
 
-## Technology
 
-Built using HTML, CSS and JavaScript with browser-based storage.
-
-## Hosting
-
-Works on GitHub Pages, Synology NAS or any standard web server.
-
-## Philosophy
-
-A digital songbook that grows with the player.
+## v6.3.14
+- Locked TAB renderer retained unchanged.
+- Added Copy preview, Download TXT, and working Print / Save PDF controls.
+- Added Delete arrangement to remove the complete draft and its saved My Songs entry.

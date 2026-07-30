@@ -1070,3 +1070,60 @@ body.fretboard-modal-open { overflow: hidden; }
   }
   .fretboard-legend p { margin: .7mm 0 !important; color: #000 !important; }
 }
+
+/* TAB Composer v6.3.0 */
+.composer-launch{display:grid;gap:.55rem}.composer-launch button{width:100%}
+.tab-composer{display:none}.tab-composer.active{display:block}.song-view-hidden{display:none!important}
+.composer-toolbar,.composer-actions,.composer-system-actions{display:flex;gap:.55rem;flex-wrap:wrap;align-items:center}
+.composer-toolbar{justify-content:space-between;margin-bottom:1rem}.composer-status{font-weight:700;color:#6b4b16}
+.composer-card{background:#fffaf0;border:1px solid #d9c8a5;border-radius:16px;padding:1rem;margin-bottom:1rem}
+.composer-fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.75rem}.composer-fields label{display:grid;gap:.3rem;font-weight:700}.composer-fields input,.composer-fields select,.composer-system input,.composer-system textarea{font:inherit;padding:.55rem;border:1px solid #bcae91;border-radius:9px;background:#fff}
+.composer-section{border:2px solid #d7c49f;border-radius:16px;margin:1rem 0;background:#f8efdc;overflow:hidden}.composer-section-header{display:flex;gap:.6rem;align-items:center;flex-wrap:wrap;padding:.75rem;background:#eadcc0}.composer-section-header input{font:inherit;font-weight:700;padding:.45rem;border-radius:8px;border:1px solid #bcae91}.composer-systems{padding:.75rem}
+.composer-system{background:#fff;border:1px solid #d9c8a5;border-radius:12px;padding:.8rem;margin-bottom:.8rem;overflow-x:auto}.composer-measures{display:grid;grid-template-columns:repeat(2,minmax(470px,1fr));gap:1rem}.composer-measure{min-width:470px}.measure-heading{display:flex;justify-content:space-between;gap:.6rem;align-items:center;margin-bottom:.45rem}.measure-heading input{width:150px}.chord-change-label{font-weight:700;margin:.35rem 0 .2rem}.chord-change-grid{display:grid;grid-template-columns:34px repeat(8,1fr);gap:3px;align-items:end;margin-bottom:.35rem}.chord-change-grid .chord-position{min-width:38px;text-align:center;font-family:Consolas,"Courier New",monospace;padding:.38rem .1rem!important}.chord-change-grid .chord-caption{font-size:.72rem;text-align:center;color:#6f5b37}.beat-labels{display:grid;grid-template-columns:34px repeat(8,1fr);font-family:Consolas,"Courier New",monospace;font-size:.78rem;text-align:center;margin-bottom:.2rem}.tab-grid{display:grid;grid-template-columns:34px repeat(8,1fr);gap:3px;align-items:center}.tab-string{font-family:Consolas,"Courier New",monospace;font-weight:800;text-align:center}.tab-cell{width:100%;min-width:38px;text-align:center;font-family:Consolas,"Courier New",monospace;padding:.4rem .1rem!important}.system-lyrics{width:100%;box-sizing:border-box;margin-top:.7rem;min-height:58px;font-family:Consolas,"Courier New",monospace;white-space:pre;overflow-x:auto}.composer-preview{white-space:pre;overflow:auto;background:#fff;border:1px solid #cdbb98;border-radius:12px;padding:1rem;font-family:Consolas,"Courier New",monospace;font-size:.82rem;line-height:1.35;letter-spacing:0;word-spacing:0}.composer-empty{padding:1rem;text-align:center;color:#765f38}
+@media(max-width:900px){.composer-measures{grid-template-columns:1fr}.composer-measure{min-width:460px}}
+@media print{body.composer-printing .topbar,body.composer-printing .chords-panel,body.composer-printing .composer-toolbar,body.composer-printing .composer-editor,body.composer-printing .auto-scroll-bar,body.composer-printing #songTools{display:none!important}body.composer-printing .app{display:block!important}body.composer-printing .song-panel{border:0!important;padding:0!important}body.composer-printing .tab-composer{display:block!important}body.composer-printing .composer-preview{border:0;padding:0;font-size:7.5pt;white-space:pre;overflow:visible}}
+
+/* v6.3.2 — keep chord-change cells aligned with the TAB beat columns */
+.composer-measures{grid-template-columns:repeat(2,minmax(0,1fr))}
+.composer-measure{min-width:0}
+.chord-change-grid,.beat-labels,.tab-grid{grid-template-columns:34px repeat(8,minmax(0,1fr));width:100%}
+.chord-change-grid>label{display:block;min-width:0;width:100%;overflow:hidden}
+.chord-change-grid .chord-position{display:block;width:100%;min-width:0;max-width:100%;box-sizing:border-box}
+.tab-cell{min-width:0}
+@media(max-width:1200px){.composer-measures{grid-template-columns:1fr}.composer-measure{min-width:0}}
+
+/* v6.3.5 lyric layout controls */
+.composer-lyric-editor{margin-top:.7rem}.lyric-toolbar{display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;margin-bottom:.4rem}.lyric-toolbar label{display:flex;align-items:center;gap:.4rem}.lyric-mode{padding:.35rem .5rem;border:1px solid #cdbb98;border-radius:8px;background:#fff}.lyric-help{color:#6f5b37;font-size:.88rem}.lyric-align-grid{overflow-x:auto}.lyric-align-head,.lyric-align-row{display:grid;grid-template-columns:60px repeat(16,minmax(52px,1fr));gap:3px;align-items:center;min-width:980px}.lyric-align-head{font-family:Consolas,"Courier New",monospace;font-size:.75rem;text-align:center;color:#6f5b37;margin-bottom:.2rem}.lyric-align-row>span{font-weight:700}.lyric-slot{width:100%;min-width:0;box-sizing:border-box;text-align:center;font-family:Consolas,"Courier New",monospace;padding:.42rem .12rem!important}.system-lyrics[hidden],.lyric-align-grid[hidden]{display:none!important}
+
+
+/* TAB Composer release controls */
+.danger-button{border-color:#a84b3f!important;color:#7d241b!important}
+.danger-button:hover{background:#fff0ed!important}
+
+/* Composer printing: override the fretboard-only print rule and print only the locked renderer preview. */
+@media print{
+  body.composer-printing > .app{display:block!important}
+  body.composer-printing #fretboardChartModal{display:none!important}
+  body.composer-printing .chords-panel,
+  body.composer-printing .topbar,
+  body.composer-printing .composer-toolbar,
+  body.composer-printing .composer-editor,
+  body.composer-printing .auto-scroll-bar,
+  body.composer-printing #songTools{display:none!important}
+  body.composer-printing .app{width:100%!important;max-width:none!important;margin:0!important;padding:0!important}
+  body.composer-printing .song-panel{display:block!important;width:100%!important;max-width:none!important;border:0!important;margin:0!important;padding:0!important;overflow:visible!important}
+  body.composer-printing .tab-composer{display:block!important;width:100%!important;margin:0!important;padding:0!important}
+  body.composer-printing .tab-composer>.composer-card{display:block!important;border:0!important;margin:0!important;padding:0!important}
+  body.composer-printing .tab-composer>.composer-card>h2{display:none!important}
+  body.composer-printing .composer-preview{display:block!important;border:0!important;margin:0!important;padding:0!important;font-size:7.5pt!important;line-height:1.3!important;white-space:pre!important;overflow:visible!important}
+}
+
+
+/* v6.3.16: editable four-string tuning and My Songs composer editing */
+.composer-tuning-group{grid-column:1/-1;display:grid;grid-template-columns:minmax(210px,1.5fr) repeat(4,minmax(80px,1fr));gap:10px;align-items:end;padding:12px;border:1px solid #d7c6a5;border-radius:12px;background:#fffdf8}
+.composer-tuning-title{font-weight:700;align-self:center}
+.composer-tuning-group label{display:flex;flex-direction:column;gap:4px}
+.my-song-row{display:flex;gap:8px;align-items:center}
+.my-song-link{flex:1}
+.my-song-edit-composer{white-space:nowrap}
+@media (max-width:900px){.composer-tuning-group{grid-template-columns:repeat(2,minmax(100px,1fr))}.composer-tuning-title{grid-column:1/-1}}

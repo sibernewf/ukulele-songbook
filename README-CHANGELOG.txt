@@ -1,3 +1,44 @@
+# Ukulele Songbook v6.3.16
+
+- TAB arrangements can be reopened from My Songs with **Edit arrangement**.
+- Existing My Songs deletion remains available.
+- TAB Composer now supports editable four-string tuning labels.
+- Saved arrangements retain their structured composer project for later editing.
+- The locked TAB timing renderer geometry is unchanged.
+
+v6.3.14
+- Locked the proven v6.3.13 TAB renderer with no geometry changes.
+- Added Copy preview to clipboard.
+- Confirmed Download TXT uses the same renderer output.
+- Fixed Print / Save PDF so only the clean preview is printed.
+- Added a master Delete arrangement button.
+- Deleting an arrangement removes its autosaved draft and, when applicable, its saved My Songs entry.
+
+v6.3.13
+- Aligned chord, beat-count and beat-lyric overlays to the fixed four-plus TAB grid.
+- TAB measure geometry unchanged.
+
+v6.3.11
+- Unified printable preview timing grid.
+- Chords, beat labels, TAB notes and aligned lyrics now share identical timing columns.
+- Corrected four evenly spaced beat separators and trailing measure spacing.
+
+Ukulele Songbook v6.3.7
+
+- Fixed second-measure preview alignment.
+- Beat labels and chord changes now line up with the exact TAB columns in both measures.
+- Corrected the two-measure width calculation used by aligned lyrics.
+- Existing v6.3.x autosaved arrangements remain compatible.
+
+Ukulele Songbook v6.3.2
+========================
+- Added a Strumming Pattern field to TAB Composer song information.
+- Added chord changes at every 1 & 2 & 3 & 4 & position.
+- Blank chord cells continue the previous chord.
+- Rebuilt the printable preview with fixed-width TAB, beat and chord alignment.
+- Preserved free typing and pasting in lyric text areas with monospaced spacing.
+- Added backward compatibility for v6.3.0 composer drafts.
+
 Version 6.2.2 - Collapsible Left Menu
 ------------------------------------------------------------
 
@@ -271,3 +312,30 @@ Major Features:
 - Synology NAS compatibility.
 
 The application foundation was established during versions 1.0 through 4.8.
+
+Version 6.3.0 - TAB Composer foundation
+- Added a new TAB Composer / Song Builder workspace.
+- Build arrangements in editable sections with two measures per system.
+- Enter fret numbers in a four-string G-C-E-A grid with eighth-note positions.
+- Add chord names, section repeats and lyrics.
+- Correct mistakes directly in any TAB cell; arrow keys and Enter move through cells.
+- Added duplicate, clear and delete controls for systems and sections.
+- Added live ASCII text preview designed for local text editors and printing.
+- Added browser draft autosave and automatic draft recovery.
+- Added Save to My Songs, TXT download and Print / PDF controls.
+
+v6.3.2
+- Fixed chord-change input boxes overflowing their measures.
+- Chord cells now use exactly the same eight timing columns as the TAB cells.
+- Added a responsive single-measure layout on narrower composer widths.
+
+v6.3.7
+- Fixed a JavaScript syntax error in the TAB Composer lyric-alignment controls.
+- Restored the Open TAB Composer and Start new arrangement buttons.
+- Retains all v6.3.4 lyric modes and existing autosaved arrangements.
+
+Version 6.3.15 - Portrait TAB printing
+- TAB Composer Print / PDF now requests A4 portrait orientation.
+- Uses 12 mm print margins for a clean song-sheet layout.
+- The portrait rule is applied only while printing a TAB arrangement, so the fretboard chart keeps its landscape print layout.
+- The locked v6.3.13 TAB renderer and timing alignment are unchanged.

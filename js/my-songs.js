@@ -110,7 +110,8 @@
       body,
       favourite: false,
       updatedAt: new Date().toISOString(),
-      createdAt: songs.find(s=>s.id===existingId)?.createdAt || new Date().toISOString()
+      createdAt: songs.find(s=>s.id===existingId)?.createdAt || new Date().toISOString(),
+      composerProject: songs.find(s=>s.id===existingId)?.composerProject || null
     };
   }
   function saveForm(){
@@ -160,6 +161,17 @@
       label.textContent=`${song.title}${song.version?' — '+song.version:''}${song.artist?' — '+song.artist:''}`;
       label.onclick=()=>{ fillForm(song); setStatus('Loaded for editing.'); };
       row.appendChild(label);
+      if(song.composerProject){
+        const edit=document.createElement('button');
+        edit.type='button';
+        edit.className='my-song-edit-composer';
+        edit.textContent='Edit arrangement';
+        edit.onclick=()=>{
+          if(window.ukuleleTabComposer?.loadProject){window.ukuleleTabComposer.loadProject(song.composerProject);setStatus('Opened in TAB Composer.');}
+          else setStatus('TAB Composer is not ready yet.');
+        };
+        row.appendChild(edit);
+      }
       list.appendChild(row);
     });
   }
@@ -234,7 +246,32 @@
     $('importMySongsFile')?.addEventListener('change',e=>importBackup(e.target.files[0]));
   }
 
-  window.ukuleleMySongs={getSongText,onSongLoaded,loadStoredSongs:()=>songs.slice()};
+  function saveExternalSong(raw){
+    if(!raw || !raw.title || !raw.body) throw new Error('A title and song text are required.');
+    const existing=raw.id ? songs.find(s=>s.id===raw.id) : null;
+    const song={
+      id: raw.id || makeId(raw.title), title: raw.title, artist: raw.artist || '', version: raw.version || '',
+      type: raw.type || 'chords-tabs', tags: Array.isArray(raw.tags)?raw.tags:splitTags(raw.tags),
+      tuning: raw.tuning || 'G C E A', key: raw.key || '', capo: raw.capo || 'No capo',
+      difficulty: raw.difficulty || '', tempo: raw.tempo || '', strumming: raw.strumming || '',
+      notes: raw.notes || '', body: raw.body, favourite: !!raw.favourite,
+      composerProject: raw.composerProject || null,
+      updatedAt:new Date().toISOString(), createdAt:existing?.createdAt || new Date().toISOString()
+    };
+    const idx=songs.findIndex(s=>s.id===song.id);
+    if(idx>=0) songs[idx]=song; else songs.unshift(song);
+    saveStoredSongs(); syncLibraryAfterChange();
+    return song;
+  }
+  function deleteExternalSong(id){
+    if(!id) return false;
+    const idx=songs.findIndex(s=>s.id===id);
+    if(idx<0) return false;
+    songs.splice(idx,1);
+    saveStoredSongs(); syncLibraryAfterChange();
+    return true;
+  }
+  window.ukuleleMySongs={getSongText,onSongLoaded,loadStoredSongs:()=>songs.slice(),saveExternalSong,deleteExternalSong};
   injectSongsIntoLibrary();
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',initUI); else initUI();
 })();

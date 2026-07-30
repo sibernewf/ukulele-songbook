@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ukulele Songbook v6.2.2</title>
+  <title>Ukulele Songbook v6.3.0</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -60,6 +60,15 @@
           </div>
           <div id="mySongsStatus" class="my-songs-status"></div>
           <pre id="mySongPreview" class="my-song-preview" hidden></pre>
+        </div>
+      </details>
+
+
+      <details class="accordion-section"><summary>TAB Composer / Song Builder</summary>
+        <div class="composer-launch">
+          <p class="hint compact-hint">Build an editable two-measure ukulele TAB arrangement, autosave your draft, preview it and save it into My Songs.</p>
+          <button id="openTabComposer" type="button">Open TAB Composer</button>
+          <button id="newTabComposer" type="button">Start new arrangement</button>
         </div>
       </details>
 
@@ -223,7 +232,49 @@
           <button id="clearSongNotes" type="button">Clear notes</button>
         </div>
       </div>
-      <pre id="songText" class="song-text"></pre></section>
+      <pre id="songText" class="song-text"></pre>
+      <section id="tabComposer" class="tab-composer" aria-label="TAB Composer">
+        <div class="composer-toolbar">
+          <div class="composer-actions">
+            <button id="composerBack" type="button">← Back to Songbook</button>
+            <button id="composerNew" type="button">New</button>
+            <button id="composerSave" type="button">Save to My Songs</button>
+            <button id="composerCopy" type="button">Copy preview</button>
+            <button id="composerDownload" type="button">Download TXT</button>
+            <button id="composerPrint" type="button">Print / PDF</button>
+            <button id="composerDelete" type="button" class="danger-button">Delete arrangement</button>
+          </div>
+          <span id="composerStatus" class="composer-status">Draft ready</span>
+        </div>
+        <div class="composer-editor">
+          <div class="composer-card">
+            <h2>TAB Composer / Song Builder</h2>
+            <div class="composer-fields">
+              <label>Title<input id="composerTitle" type="text" placeholder="Song title"></label>
+              <label>Artist<input id="composerArtist" type="text" placeholder="Artist"></label>
+              <label>Version<input id="composerVersion" type="text" placeholder="TAB arrangement"></label>
+              <label>Key<input id="composerKey" type="text" placeholder="C Major"></label>
+              <label>Tempo<input id="composerTempo" type="text" placeholder="84 BPM"></label>
+              <label>Time signature<select id="composerTime"><option value="4/4">4/4</option></select></label>
+              <label>Tags<input id="composerTags" type="text" placeholder="Beginner, TAB, Melody"></label>
+              <label>Used chords<input id="composerChords" type="text" placeholder="C, Dm, F"></label>
+              <label>Strumming pattern<input id="composerStrumming" type="text" placeholder="D D U U D U"></label>
+              <div class="composer-tuning-group">
+                <span class="composer-tuning-title">String tuning (top to bottom)</span>
+                <label>String 1<input id="composerTuningG" type="text" value="G" maxlength="3" aria-label="Top string tuning"></label>
+                <label>String 2<input id="composerTuningC" type="text" value="C" maxlength="3" aria-label="Second string tuning"></label>
+                <label>String 3<input id="composerTuningE" type="text" value="E" maxlength="3" aria-label="Third string tuning"></label>
+                <label>String 4<input id="composerTuningA" type="text" value="A" maxlength="3" aria-label="Bottom string tuning"></label>
+              </div>
+            </div>
+          </div>
+          <datalist id="composerChordOptions"></datalist>
+          <div id="composerSections"></div>
+          <div class="composer-actions"><button id="composerAddSection" type="button">+ Add section</button><button id="composerAddSystem" type="button">+ Add two measures</button></div>
+        </div>
+        <div class="composer-card"><h2>Printable text preview</h2><pre id="composerPreview" class="composer-preview"></pre></div>
+      </section>
+      </section>
   </main>
   <div id="fretboardChartModal" class="fretboard-modal" hidden>
     <div class="fretboard-modal-backdrop" data-close-fretboard></div>
@@ -245,5 +296,5 @@
       </div>
     </section>
   </div>
-  <script src="data/song-list.js"></script><script src="data/chords.js"></script><script src="data/practice-packs.js"></script><script src="js/transpose.js"></script><script src="js/my-songs.js"></script><script src="js/app.js"></script><script src="js/history.js"></script><script src="js/song-notes.js"></script><script src="js/practice-storage.js"></script><script src="js/practice.js"></script><script src="js/auto-scroll.js"></script><script src="js/chord-dictionary.js"></script><script src="js/fretboard-notes.js"></script>
+  <script src="data/song-list.js"></script><script src="data/chords.js"></script><script src="data/practice-packs.js"></script><script src="js/transpose.js"></script><script src="js/my-songs.js"></script><script src="js/app.js"></script><script src="js/history.js"></script><script src="js/song-notes.js"></script><script src="js/practice-storage.js"></script><script src="js/practice.js"></script><script src="js/auto-scroll.js"></script><script src="js/chord-dictionary.js"></script><script src="js/fretboard-notes.js"></script><script src="js/tab-composer.js"></script>
 </body></html>
