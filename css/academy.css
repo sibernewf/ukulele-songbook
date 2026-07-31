@@ -42,3 +42,7 @@
 .academy-chord-dot-label{fill:#fff;font:800 16px Arial,Helvetica,sans-serif}
 .academy-chord-string{fill:currentColor;font:700 15px Arial,Helvetica,sans-serif}
 .academy-chord-open{fill:currentColor;font:700 20px Arial,Helvetica,sans-serif}
+
+
+/* Level 6 rhythm lesson */
+.rhythm-count-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem;margin:1rem 0}.rhythm-count-grid span{display:grid;text-align:center;gap:.25rem;padding:1rem;border:1px solid var(--border);border-radius:12px;background:#fffaf0}.rhythm-count-grid b{font-size:2.2rem;color:#6b4317}.rhythm-count-grid small{color:#715b3e}.rhythm-eighth-count{text-align:center;margin:1rem 0;padding:1.1rem;border-radius:12px;background:#2c2925;color:#fff7df;font:900 clamp(1.4rem,4vw,2.3rem)/1.5 Consolas,monospace;word-spacing:.55rem}.rhythm-eighth-count em{color:#f2c96d;font-style:normal}@media(max-width:600px){.rhythm-count-grid{grid-template-columns:1fr 1fr}}

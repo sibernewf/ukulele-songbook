@@ -7,6 +7,7 @@
   let practiceIndex = 0;
   let practiceTitle = '';
   let currentAcademyExercise = null;
+  let academyExerciseStep = 0;
 
   let audioContext = null;
   let metronomeTimer = null;
@@ -67,6 +68,14 @@
     loadAcademyExerciseFromUrl();
   }
 
+  function makeChordSteps(chords, beatsPerChord) {
+    return chords.flatMap(chord => Array.from({ length: beatsPerChord }, (_, index) => ({
+      label: chord,
+      detail: `Beat ${index + 1}`,
+      chord
+    })));
+  }
+
   function loadAcademyExerciseFromUrl() {
     const params = new URLSearchParams(window.location.search);
     const exercise = params.get('academyExercise');
@@ -76,24 +85,122 @@
     if (details) details.open = true;
 
     const academyExercises = {
-      'L3-001': { level: 'Level 3 — First Notes', text: 'Play <b>0–2–3–2–0</b> on the A string, one note on each click.', back: 'level3-practice' },
-      'L4-001': { level: 'Level 4 — Your First Chords', text: 'Play <b>C</b> for four clicks, then <b>Am</b> for four clicks. Repeat slowly.', back: 'level4-practice' },
-      'L4-002': { level: 'Level 4 — Your First Chords', text: 'Play <b>Am</b> for four clicks, then <b>F</b> for four clicks. Keep the middle finger planted.', back: 'level4-practice' },
-      'L4-003': { level: 'Level 4 — Your First Chords', text: 'Play <b>C → Am → F → G7</b>, giving each chord four clicks before changing.', back: 'level4-practice' },
-      'L5-001': { level: 'Level 5 — Changing Chords', text: 'Change between <b>Am and F</b>. Keep the middle finger planted and add or remove only the index finger.', back: 'level5-practice' },
-      'L5-002': { level: 'Level 5 — Changing Chords', text: 'Change between <b>C and Am</b>. Keep both fingers close to the strings and move directly to the next shape.', back: 'level5-practice' },
-      'L5-003': { level: 'Level 5 — Changing Chords', text: 'Play <b>C → Am → F → G7</b>. Give each chord four clicks and prepare the next shape before the change.', back: 'level5-practice' }
+      'L3-001': { title: 'First Notes', level: 'Level 3 — First Notes', text: 'Play <b>0–2–3–2–0</b> on the A string, one note on each click.', back: 'level3-practice', tab: ['A|--0--2--3--2--0--','E|-----------------','C|-----------------','G|-----------------'], steps: [{label:'0',detail:'A string'},{label:'2',detail:'A string'},{label:'3',detail:'A string'},{label:'2',detail:'A string'},{label:'0',detail:'A string'}] },
+      'L4-001': { title: 'C and Am', level: 'Level 4 — Your First Chords', text: 'Play <b>C</b> for four clicks, then <b>Am</b> for four clicks. Repeat slowly.', back: 'level4-practice', chords: ['C','Am'], progression: ['C','Am'], steps: makeChordSteps(['C','Am'],4) },
+      'L4-002': { title: 'Am and F', level: 'Level 4 — Your First Chords', text: 'Play <b>Am</b> for four clicks, then <b>F</b> for four clicks. Keep the middle finger planted.', back: 'level4-practice', chords: ['Am','F'], progression: ['Am','F'], steps: makeChordSteps(['Am','F'],4) },
+      'L4-003': { title: 'First four-chord progression', level: 'Level 4 — Your First Chords', text: 'Play <b>C → Am → F → G7</b>, giving each chord four clicks before changing.', back: 'level4-practice', chords: ['C','Am','F','G7'], progression: ['C','Am','F','G7'], steps: makeChordSteps(['C','Am','F','G7'],4) },
+      'L5-001': { title: 'Bronze — Am and F', level: 'Level 5 — Changing Chords', text: 'Change between <b>Am and F</b>. Keep the middle finger planted and add or remove only the index finger.', back: 'level5-practice', chords: ['Am','F'], progression: ['Am','F'], steps: makeChordSteps(['Am','F'],4) },
+      'L5-002': { title: 'Silver — C and Am', level: 'Level 5 — Changing Chords', text: 'Change between <b>C and Am</b>. Keep both fingers close to the strings and move directly to the next shape.', back: 'level5-practice', chords: ['C','Am'], progression: ['C','Am'], steps: makeChordSteps(['C','Am'],4) },
+      'L5-003': { title: 'Gold — Four-chord progression', level: 'Level 5 — Changing Chords', text: 'Play <b>C → Am → F → G7</b>. Give each chord four clicks and prepare the next shape before the change.', back: 'level5-practice', chords: ['C','Am','F','G7'], progression: ['C','Am','F','G7'], steps: makeChordSteps(['C','Am','F','G7'],4) },
+      'L6-001': { title: 'Find the steady beat', level: 'Level 6 — Rhythm and Timing', text: 'Clap or tap once on every click. Count <b>1, 2, 3, 4</b> aloud and keep the spacing even.', back: 'level6-practice', count: '1   2   3   4', steps: ['1','2','3','4'].map(label => ({label,detail:'Clap or tap'})) },
+      'L6-002': { title: 'Down-strum on the beat', level: 'Level 6 — Rhythm and Timing', text: 'Hold <b>C</b> and play one relaxed down-strum on every click. Count <b>1, 2, 3, 4</b>.', back: 'level6-practice', chords: ['C'], progression: ['C','C','C','C'], count: '1   2   3   4', steps: ['1','2','3','4'].map(beat => ({label:'C',detail:`Beat ${beat}`})) },
+      'L6-003': { title: 'One chord per bar', level: 'Level 6 — Rhythm and Timing', text: 'Play <b>C</b> for four beats, then <b>Am</b> for four beats. Keep counting even while your fretting hand changes.', back: 'level6-practice', chords: ['C','Am'], progression: ['C','Am'], count: '1 2 3 4  |  1 2 3 4', steps: makeChordSteps(['C','Am'],4) },
+      'L7-001': { title: 'Bronze — Down-strums only', level: 'Level 7 — Strumming', text: 'Hold <b>C</b> and play one relaxed down-strum on each numbered beat.', back: 'level7-practice', chords: ['C'], progression: ['C'], count: '1 2 3 4', steps: ['1','2','3','4'].map(beat => ({label:'D',detail:`Beat ${beat}`,chord:'C'})) },
+      'L7-002': { title: 'Silver — Even down-up motion', level: 'Level 7 — Strumming', text: 'Hold <b>C</b> and play <b>D U D U D U D U</b>. Down-strums land on numbers and up-strums on the “&”.', back: 'level7-practice', chords: ['C'], progression: ['C'], count: '1 & 2 & 3 & 4 &', steps: ['D','U','D','U','D','U','D','U'].map((label,index) => ({label,detail:index % 2 === 0 ? `Beat ${index/2+1}` : '&',chord:'C'})) },
+      'L7-003': { title: 'Gold — First song pattern', level: 'Level 7 — Strumming', text: 'Hold <b>C</b> and play <b>D – D U – U D U</b>. Keep the hand moving during the silent spaces.', back: 'level7-practice', chords: ['C'], progression: ['C'], count: '1 & 2 & 3 & 4 &', steps: [{label:'D',detail:'1',chord:'C'},{label:'–',detail:'& — move only',chord:'C'},{label:'D',detail:'2',chord:'C'},{label:'U',detail:'&',chord:'C'},{label:'–',detail:'3 — move only',chord:'C'},{label:'U',detail:'&',chord:'C'},{label:'D',detail:'4',chord:'C'},{label:'U',detail:'&',chord:'C'}] }
     };
     const academyExercise = academyExercises[exercise];
     if (academyExercise) {
       currentAcademyExercise = { id: exercise, ...academyExercise };
+      academyExerciseStep = 0;
       if (el('metronomeBpm')) el('metronomeBpm').value = '60';
       updateMetronomeBpmLabel();
       savePracticeState?.({ metronomeBpm: '60' });
       activatePracticeTab('metronome');
+      renderAcademyExerciseMain();
       setStatus(`Academy Exercise ${exercise} loaded at 60 BPM.`);
       window.setTimeout(() => details?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
     }
+  }
+
+  function drawAcademyPracticeChord(shape) {
+    const frets = String(shape).split('').map(value => value.toLowerCase() === 'x' ? 'x' : Number(value));
+    const numbers = frets.filter(value => value !== 'x');
+    const max = Math.max(...numbers, 0);
+    const start = max > 4 ? max - 3 : 1;
+    const left = 34, top = 42, stringGap = 30, fretGap = 30;
+    let svg = '<svg class="academy-practice-chord-svg" viewBox="0 0 170 205" role="img" aria-label="Four-string ukulele chord diagram">';
+    for (let string = 0; string < 4; string++) {
+      const x = left + string * stringGap;
+      svg += `<line x1="${x}" y1="${top}" x2="${x}" y2="${top + fretGap * 4}" class="academy-practice-chord-line"/>`;
+    }
+    for (let fret = 0; fret <= 4; fret++) {
+      const y = top + fret * fretGap;
+      svg += `<line x1="${left}" y1="${y}" x2="${left + stringGap * 3}" y2="${y}" class="${fret === 0 && start === 1 ? 'academy-practice-chord-nut' : 'academy-practice-chord-line'}"/>`;
+    }
+    if (start > 1) svg += `<text x="7" y="${top + 20}" class="academy-practice-fret-label">${start}fr</text>`;
+    frets.forEach((fret, index) => {
+      const x = left + index * stringGap;
+      if (fret === 'x') svg += `<text x="${x}" y="25" text-anchor="middle" class="academy-practice-open-label">×</text>`;
+      else if (fret === 0) svg += `<text x="${x}" y="25" text-anchor="middle" class="academy-practice-open-label">○</text>`;
+      else {
+        const y = top + (fret - start + .5) * fretGap;
+        svg += `<circle cx="${x}" cy="${y}" r="12" class="academy-practice-chord-dot"/><text x="${x}" y="${y + 5}" text-anchor="middle" class="academy-practice-chord-number">${fret}</text>`;
+      }
+    });
+    ['G','C','E','A'].forEach((name, index) => svg += `<text x="${left + index * stringGap}" y="190" text-anchor="middle" class="academy-practice-string-label">${name}</text>`);
+    return svg + '</svg>';
+  }
+
+  function renderAcademyStepTracker(exercise) {
+    if (!exercise.steps?.length) return '';
+    return `<section class="academy-step-tracker" aria-label="Live exercise tracker">
+      <div class="academy-step-tracker-head">
+        <div><strong>Follow the metronome</strong><span>Strum, play or clap the highlighted step on each click.</span></div>
+        <span id="academyTrackerStatus" class="academy-tracker-status">Ready</span>
+      </div>
+      <div id="academyStepTrack" class="academy-step-track">
+        ${exercise.steps.map((step, index) => `<div class="academy-step ${index === 0 ? 'active' : ''}" data-academy-step="${index}">
+          <b>${escapeHtml(step.label)}</b><small>${escapeHtml(step.detail || '')}</small>
+        </div>`).join('')}
+      </div>
+    </section>`;
+  }
+
+  function updateAcademyStepTracker(index, running = Boolean(metronomeTimer)) {
+    if (!currentAcademyExercise?.steps?.length) return;
+    const steps = document.querySelectorAll('[data-academy-step]');
+    if (!steps.length) return;
+    const safeIndex = ((index % steps.length) + steps.length) % steps.length;
+    steps.forEach((step, i) => step.classList.toggle('active', i === safeIndex));
+    const active = steps[safeIndex];
+    if (active?.parentElement) {
+      const track = active.parentElement;
+      const target = active.offsetLeft - (track.clientWidth - active.clientWidth) / 2;
+      track.scrollTo({ left: Math.max(0, target), behavior: 'smooth' });
+    }
+    const status = el('academyTrackerStatus');
+    if (status) status.textContent = running ? `Playing step ${safeIndex + 1} of ${steps.length}` : 'Ready';
+    document.querySelectorAll('.academy-main-chords article').forEach(card => {
+      card.classList.toggle('current-chord', Boolean(running && currentAcademyExercise.steps[safeIndex]?.chord && card.dataset.chord === currentAcademyExercise.steps[safeIndex].chord));
+    });
+  }
+
+  function renderAcademyExerciseMain() {
+    const panel = el('academyExerciseMain');
+    if (!panel || !currentAcademyExercise) return;
+    const exercise = currentAcademyExercise;
+    const progression = exercise.progression?.length
+      ? `<div class="academy-main-progression" aria-label="Chord progression">${exercise.progression.map((chord, index) => `<span><b>${escapeHtml(chord)}</b><small>${index < exercise.progression.length - 1 ? 'then' : 'repeat'}</small></span>`).join('<i>→</i>')}</div>`
+      : '';
+    const diagrams = exercise.chords?.length
+      ? `<div class="academy-main-chords">${exercise.chords.map(chord => {
+          const shape = CHORDS[chord] || CHORDS[chord.split('/')[0]];
+          return `<article data-chord="${escapeHtml(chord)}"><h3>${escapeHtml(chord)}</h3><div class="academy-main-diagram">${shape ? drawAcademyPracticeChord(shape) : ''}</div><p>Fingering: <strong>${escapeHtml(shape || '')}</strong></p></article>`;
+        }).join('')}</div>`
+      : '';
+    const tab = exercise.tab?.length ? `<pre class="academy-main-tab">${exercise.tab.map(escapeHtml).join('\n')}</pre>` : '';
+    const count = exercise.count ? `<div class="academy-main-count"><strong>Count:</strong> ${escapeHtml(exercise.count)}</div>` : '';
+    panel.innerHTML = `
+      <div class="academy-main-header"><span>🎓 Academy Practice</span><a href="academy.html#${escapeHtml(exercise.back)}">Return to the Academy lesson</a></div>
+      <h2>${escapeHtml(exercise.title || exercise.id)}</h2>
+      <p class="academy-main-level">${escapeHtml(exercise.level)}</p>
+      <div class="academy-main-instruction">${exercise.text}</div>
+      ${renderAcademyStepTracker(exercise)}
+      ${count}${progression}${diagrams}${tab}
+      <div class="academy-main-reminder"><strong>Keep this page visible while practising.</strong> The diagrams and progression disappear automatically when you leave the Academy exercise.</div>`;
+    panel.hidden = false;
+    document.body.classList.add('academy-exercise-active');
   }
 
   function activatePracticeTab(name) {
@@ -302,12 +409,13 @@
   function startMetronome() {
     ensureAudioContext();
     metronomeBeat = 0;
-    playMetronomeBeat();
+    academyExerciseStep = 0;
     const interval = 60000 / Number(el('metronomeBpm')?.value || 80);
     metronomeTimer = setInterval(playMetronomeBeat, interval);
     if (el('metronomeToggle')) el('metronomeToggle').textContent = 'Stop metronome';
     document.body.classList.add('metronome-running');
     renderMetronomePanel();
+    playMetronomeBeat();
   }
 
   function stopMetronome() {
@@ -315,7 +423,9 @@
     metronomeTimer = null;
     if (el('metronomeToggle')) el('metronomeToggle').textContent = 'Start metronome';
     document.body.classList.remove('metronome-running');
+    academyExerciseStep = 0;
     renderMetronomePanel();
+    updateAcademyStepTracker(0, false);
   }
 
   function restartMetronome() {
@@ -328,6 +438,10 @@
     const accent = metronomeBeat % beats === 0;
     beep(accent ? 880 : 660, accent ? 0.075 : 0.05, accent ? 0.13 : 0.08);
     updateMetronomeVisual(metronomeBeat % beats);
+    if (currentAcademyExercise?.steps?.length) {
+      updateAcademyStepTracker(academyExerciseStep, true);
+      academyExerciseStep = (academyExerciseStep + 1) % currentAcademyExercise.steps.length;
+    }
     metronomeBeat = (metronomeBeat + 1) % beats;
   }
 

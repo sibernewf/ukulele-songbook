@@ -178,4 +178,38 @@
     } else levelFiveStatus.textContent = 'Tick each readiness statement before marking Level 5 complete.';
   });
 
+  const levelSixButton = document.getElementById('completeLevelSix');
+  const levelSixStatus = document.getElementById('levelSixCompletionStatus');
+  const levelSixCheckIds = ['l6Pulse','l6Count','l6And','l6Strum','l6Change'];
+  try {
+    const savedLevelSixChecks = JSON.parse(localStorage.getItem('ukuleleAcademyLevel6Checks') || '{}');
+    levelSixCheckIds.forEach(id => { const item=document.getElementById(id); if(item) item.checked=Boolean(savedLevelSixChecks[id]); });
+    if(localStorage.getItem('ukuleleAcademyLevel6Complete') === 'true' && levelSixStatus) levelSixStatus.textContent = '✓ Level 6 completed. You are ready for Level 7 — Strumming.';
+  } catch (_) {}
+  levelSixButton?.addEventListener('click', () => {
+    const checks = Object.fromEntries(levelSixCheckIds.map(id => [id, document.getElementById(id)?.checked]));
+    try { localStorage.setItem('ukuleleAcademyLevel6Checks', JSON.stringify(checks)); } catch (_) {}
+    if(Object.values(checks).every(Boolean)) {
+      try { localStorage.setItem('ukuleleAcademyLevel6Complete', 'true'); } catch (_) {}
+      levelSixStatus.textContent = '✓ Level 6 completed. You are ready for Level 7 — Strumming.';
+    } else levelSixStatus.textContent = 'Tick each readiness statement before marking Level 6 complete.';
+  });
+
+  const levelSevenButton = document.getElementById('completeLevelSeven');
+  const levelSevenStatus = document.getElementById('levelSevenCompletionStatus');
+  const levelSevenCheckIds = ['l7Down','l7Up','l7Choice','l7Even','l7Pattern'];
+  try {
+    const saved = JSON.parse(localStorage.getItem('ukuleleAcademyLevel7Checks') || '{}');
+    levelSevenCheckIds.forEach(id => { const item=document.getElementById(id); if(item) item.checked=Boolean(saved[id]); });
+    if(localStorage.getItem('ukuleleAcademyLevel7Complete') === 'true' && levelSevenStatus) levelSevenStatus.textContent = '✓ Level 7 completed. You are ready for Level 8 — Your First Songs.';
+  } catch (_) {}
+  levelSevenButton?.addEventListener('click', () => {
+    const checks = Object.fromEntries(levelSevenCheckIds.map(id => [id, document.getElementById(id)?.checked]));
+    try { localStorage.setItem('ukuleleAcademyLevel7Checks', JSON.stringify(checks)); } catch (_) {}
+    if(Object.values(checks).every(Boolean)) {
+      try { localStorage.setItem('ukuleleAcademyLevel7Complete', 'true'); } catch (_) {}
+      levelSevenStatus.textContent = '✓ Level 7 completed. You are ready for Level 8 — Your First Songs.';
+    } else levelSevenStatus.textContent = 'Tick each readiness statement before marking Level 7 complete.';
+  });
+
 })();

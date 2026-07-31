@@ -1,15 +1,14 @@
-# Ukulele Songbook v6.5.6.1
+# Ukulele Songbook v6.5.8
 
-## v6.5.6.1
+## v6.5.8 — Academy Live Exercise Tracker
 
-- Corrected Academy chord diagrams to show all four ukulele strings.
-- Aligned every chord dot directly on its G, C, E or A string.
-- Added fret numbers inside the Academy chord dots.
-- Added Academy Level 4 — Your First Chords.
-- Added beginner lessons for C, Am, F and G7 with finger placement and clean-sound guidance.
-- Added three Academy chord exercises that open Practice Mode at 60 BPM.
-- Added return links from Practice Mode to Level 4.
-- Added Level 4 completion tracking and a collapsible Level 4 navigation group.
+- Added an Academy-only live step tracker in the main content window.
+- Highlights the note, chord, beat, clap or strum required on every metronome click.
+- Synchronises automatically with the selected metronome tempo, including tempo changes while running.
+- Loops each exercise continuously and resets to the first step when stopped.
+- Highlights the matching chord diagram during chord exercises.
+- Supports all Academy exercises currently available in Levels 3–6.
+- Leaves normal Songbook and ordinary Practice Mode behaviour unchanged.
 
 # Ukulele Songbook v6.5.4
 
@@ -370,3 +369,9 @@ Version 6.3.15 - Portrait TAB printing
 - Uses 12 mm print margins for a clean song-sheet layout.
 - The portrait rule is applied only while printing a TAB arrangement, so the fretboard chart keeps its landscape print layout.
 - The locked v6.3.13 TAB renderer and timing alignment are unchanged.
+
+
+v6.5.8
+- Added Academy Level 6: Rhythm and Timing.
+- Academy chord exercises now show chord diagrams and the chord progression in the main content window.
+- Exercise guidance only appears while an Academy exercise is loaded.

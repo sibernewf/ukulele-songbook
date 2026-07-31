@@ -1143,3 +1143,25 @@ body.fretboard-modal-open { overflow: hidden; }
 
 /* Academy exercise hand-off */
 .academy-exercise-banner{margin:0 0 1rem;padding:1rem;border:1px solid #b7d0c1;border-left:5px solid #39705a;border-radius:12px;background:#eef6ef}.academy-exercise-banner strong,.academy-exercise-banner span{display:block}.academy-exercise-banner span{margin:.15rem 0;color:#39705a;font-weight:800}.academy-exercise-banner p{margin:.55rem 0}.academy-exercise-banner a{font-weight:800;color:#315b49}
+
+
+/* v6.5.7.1 Academy exercise companion in the main content window */
+.academy-exercise-main{display:none;padding:clamp(1rem,3vw,2rem);border:1px solid #d7c39b;border-radius:18px;background:#fffdf8;box-shadow:0 8px 28px rgba(77,52,24,.08)}
+body.academy-exercise-active .song-panel>*{display:none!important}
+body.academy-exercise-active .song-panel>#academyExerciseMain{display:block!important}
+.academy-main-header{display:flex;justify-content:space-between;gap:1rem;align-items:center;padding-bottom:1rem;border-bottom:1px solid #decda9;font-weight:900}.academy-main-header span{color:#704514}.academy-main-header a{color:#37694f}.academy-exercise-main h2{font-size:clamp(2rem,5vw,3.4rem);margin:1rem 0 .15rem}.academy-main-level{font-size:1.15rem;font-weight:800;color:#3f755c;margin:.1rem 0 1rem}.academy-main-instruction{font-size:1.25rem;line-height:1.55;padding:1rem 1.2rem;border-left:6px solid #3f755c;border-radius:10px;background:#eef6ef}.academy-main-progression{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:.7rem;margin:1.3rem 0;padding:1rem;border-radius:14px;background:#efe2c6}.academy-main-progression span{display:grid;min-width:105px;text-align:center;padding:.75rem 1rem;border:1px solid #c9ad79;border-radius:12px;background:#fffaf0}.academy-main-progression b{font-size:1.8rem}.academy-main-progression small{color:#715b3e}.academy-main-progression i{font-size:1.5rem;font-style:normal;font-weight:900}.academy-main-chords{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin:1.2rem 0}.academy-main-chords article{text-align:center;padding:1rem;border:1px solid #d7c39b;border-radius:16px;background:#fffaf0}.academy-main-chords h3{font-size:2rem;margin:.1rem}.academy-main-diagram .chord-diagram{width:150px;max-width:100%;height:auto}.academy-main-chords p{margin:.3rem}.academy-main-count{margin:1rem 0;text-align:center;font:800 1.35rem/1.6 Consolas,monospace;white-space:pre-wrap}.academy-main-tab{overflow:auto;padding:1rem;border-radius:12px;background:#2c2925;color:#fff7df;font:700 1.15rem/1.7 Consolas,monospace}.academy-main-reminder{margin-top:1.2rem;padding:1rem;border-radius:12px;background:#f4ead4}.academy-main-reminder strong{display:block}@media(max-width:680px){.academy-main-header{align-items:flex-start;flex-direction:column}.academy-main-progression span{min-width:80px}.academy-main-chords{grid-template-columns:1fr 1fr}}
+
+.academy-practice-chord-svg{display:block;width:170px;max-width:100%;height:auto;margin:auto;color:#302418}.academy-practice-chord-line{stroke:currentColor;stroke-width:2}.academy-practice-chord-nut{stroke:currentColor;stroke-width:7}.academy-practice-chord-dot{fill:#6b4317}.academy-practice-chord-number{fill:#fff;font:800 14px Arial,sans-serif}.academy-practice-open-label{fill:currentColor;font:800 21px Arial,sans-serif}.academy-practice-string-label{fill:currentColor;font:800 14px Arial,sans-serif}.academy-practice-fret-label{fill:currentColor;font:700 11px Arial,sans-serif}
+
+/* Academy live exercise tracker — v6.5.7.1 */
+.academy-step-tracker{margin:1.25rem 0;padding:1rem;border:1px solid #d7c39b;border-radius:16px;background:#fffaf0}
+.academy-step-tracker-head{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-bottom:.85rem}
+.academy-step-tracker-head div{display:grid;gap:.15rem}.academy-step-tracker-head strong{font-size:1.2rem}.academy-step-tracker-head span{color:#6f604d}
+.academy-tracker-status{flex:none;padding:.4rem .7rem;border-radius:999px;background:#efe2c6;color:#5d3b15!important;font-weight:800}
+.academy-step-track{display:flex;gap:.55rem;overflow-x:auto;padding:.45rem .25rem .8rem;scroll-behavior:smooth;scrollbar-width:thin}
+.academy-step{flex:0 0 88px;display:grid;place-items:center;min-height:78px;padding:.55rem;border:2px solid #d7c39b;border-radius:13px;background:#fff;text-align:center;transition:transform .1s ease,border-color .1s ease,background .1s ease,box-shadow .1s ease}
+.academy-step b{font-size:1.45rem;line-height:1.1}.academy-step small{margin-top:.25rem;color:#766650}
+.academy-step.active{transform:translateY(-2px) scale(1.04);border-color:#3f755c;background:#dff0e4;box-shadow:0 0 0 4px rgba(63,117,92,.14)}
+.academy-step.active b{color:#285b42}
+.academy-main-chords article.current-chord{border-color:#3f755c;background:#e8f3eb;box-shadow:0 0 0 4px rgba(63,117,92,.15)}
+@media(max-width:680px){.academy-step-tracker-head{align-items:flex-start;flex-direction:column}.academy-step{flex-basis:76px;min-height:70px}}
