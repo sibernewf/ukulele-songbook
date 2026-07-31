@@ -140,4 +140,25 @@
     }
   });
 
+  const levelFourButton = document.getElementById('completeLevelFour');
+  const levelFourStatus = document.getElementById('levelFourCompletionStatus');
+  const levelFourCheckIds = ['l4Diagram','l4C','l4Am','l4F','l4G7'];
+  try {
+    const saved = JSON.parse(localStorage.getItem('ukuleleAcademyLevel4Checks') || '{}');
+    levelFourCheckIds.forEach(id => { const node=document.getElementById(id); if(node) node.checked=Boolean(saved[id]); });
+    if(localStorage.getItem('ukuleleAcademyLevel4Complete') === 'true' && levelFourStatus) {
+      levelFourStatus.textContent = '✓ Level 4 completed. You are ready for Level 5 — Changing Chords.';
+    }
+  } catch (_) {}
+  levelFourButton?.addEventListener('click', () => {
+    const checks = Object.fromEntries(levelFourCheckIds.map(id => [id, document.getElementById(id)?.checked]));
+    try { localStorage.setItem('ukuleleAcademyLevel4Checks', JSON.stringify(checks)); } catch (_) {}
+    if(Object.values(checks).every(Boolean)) {
+      try { localStorage.setItem('ukuleleAcademyLevel4Complete', 'true'); } catch (_) {}
+      levelFourStatus.textContent = '✓ Level 4 completed. You are ready for Level 5 — Changing Chords.';
+    } else {
+      levelFourStatus.textContent = 'Tick each readiness statement before marking Level 4 complete.';
+    }
+  });
+
 })();

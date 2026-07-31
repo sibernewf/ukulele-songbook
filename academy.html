@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ukulele Academy v1.3 — Ukulele Songbook v6.5.4</title>
+  <title>Ukulele Academy v1.4 — Ukulele Songbook v6.5.5.1</title>
   <link rel="stylesheet" href="css/academy.css">
 </head>
 <body>
 <header class="academy-header">
   <div>
-    <p class="eyebrow">Ukulele Songbook v6.5.4</p>
+    <p class="eyebrow">Ukulele Songbook v6.5.5.1</p>
     <h1>🎓 Ukulele Academy</h1>
     <p>Friendly, structured tuition from your very first encounter with a ukulele through to confident, advanced playing.</p>
   </div>
@@ -22,8 +22,8 @@
 <main class="academy-layout">
   <aside class="academy-nav" aria-label="Academy navigation">
     <div class="academy-card compact">
-      <strong>Academy v1.3</strong>
-      <span>Levels 0–3 available</span>
+      <strong>Academy v1.4</strong>
+      <span>Levels 0–4 available</span>
     </div>
 
     <div class="nav-group open" data-nav-group="welcome">
@@ -94,6 +94,23 @@
         <a href="#first-melody">Your first melody</a>
         <a href="#level3-practice">Practice exercise</a>
         <a href="#level3-ready">Ready to move on?</a>
+      </div>
+    </div>
+
+    <div class="nav-group" data-nav-group="level4">
+      <button class="nav-group-toggle" type="button" aria-expanded="false">
+        <span>Level 4 — First Chords</span><span class="toggle-icon" aria-hidden="true">▸</span>
+      </button>
+      <div class="nav-group-links">
+        <a href="#level-4">Level overview</a>
+        <a href="#chord-diagrams">Reading chord diagrams</a>
+        <a href="#chord-c">C chord</a>
+        <a href="#chord-am">Am chord</a>
+        <a href="#chord-f">F chord</a>
+        <a href="#chord-g7">G7 chord</a>
+        <a href="#clear-chords">Making chords ring clearly</a>
+        <a href="#level4-practice">Practice exercises</a>
+        <a href="#level4-ready">Ready to move on?</a>
       </div>
     </div>
   </aside>
@@ -266,8 +283,8 @@
         <div class="current"><strong>Level 0</strong><span>Welcome to the Ukulele</span><em>Available now</em></div>
         <div class="current"><strong>Level 1</strong><span>Holding Your Ukulele</span><em>Available now</em></div>
         <div class="current"><strong>Level 2</strong><span>Tuning</span><em>Available now</em></div>
-        <div><strong>Level 3</strong><span>Your First Notes</span><em>Planned</em></div>
-        <div><strong>Level 4</strong><span>Your First Chords</span><em>Planned</em></div>
+        <div class="current"><strong>Level 3</strong><span>Your First Notes</span><em>Available now</em></div>
+        <div class="current"><strong>Level 4</strong><span>Your First Chords</span><em>Available now</em></div>
         <div><strong>Level 5</strong><span>Changing Chords</span><em>Planned</em></div>
         <div><strong>Level 6</strong><span>Rhythm and Timing</span><em>Planned</em></div>
         <div><strong>Level 7</strong><span>Strumming</span><em>Planned</em></div>
@@ -690,14 +707,118 @@ G |-----------------|</pre>
         <p id="levelThreeCompletionStatus" class="completion-status" aria-live="polite"></p>
       </div>
       <div class="reflection-box"><h3>Take a moment to notice…</h3><p>Which helped you most: saying the numbers, watching your fingertips or listening for an even beat? Knowing how you learn best will make future lessons easier.</p></div>
-      <div class="lesson-navigation"><a href="#level-2">← Previous: Level 2</a><span>Next: Level 4 — Your First Chords</span></div>
+      <div class="lesson-navigation"><a href="#level-2">← Previous: Level 2</a><a href="#level-4">Next: Level 4 — Your First Chords →</a></div>
+    </section>
+
+
+    <section class="lesson-card" id="level-4">
+      <div class="lesson-heading">
+        <div><span class="level-badge">Level 4</span><h2>Your First Chords</h2></div>
+        <span class="lesson-time">First accompaniment</span>
+      </div>
+      <p>You have already played individual notes. Now you will play several strings together to create chords—the shapes that allow you to accompany songs.</p>
+      <h3>By the end of Level 4, you will be able to:</h3>
+      <ul class="check-list">
+        <li>Understand a basic ukulele chord diagram.</li>
+        <li>Form the C, Am, F and G7 chords.</li>
+        <li>Check each string and correct muted or buzzing notes.</li>
+        <li>Strum each chord slowly and cleanly.</li>
+        <li>Practise the four chords with a steady metronome pulse.</li>
+      </ul>
+      <div class="callout"><strong>A powerful beginning:</strong> C, Am, F and G7 appear in a huge number of beginner songs. You do not need to change between them quickly yet—that comes in Level 5.</div>
+    </section>
+
+    <section class="lesson-card" id="chord-diagrams">
+      <h2>1. Reading a chord diagram</h2>
+      <p>A chord diagram shows the ukulele as though it were standing upright in front of you. The four vertical lines represent the strings in the order <strong>G–C–E–A</strong>. The horizontal lines represent the frets.</p>
+      <div class="chord-reading-grid">
+        <article><strong>0</strong><span>Play that string open.</span></article>
+        <article><strong>1, 2, 3, 4</strong><span>Suggested fretting fingers: index, middle, ring and little finger.</span></article>
+        <article><strong>●</strong><span>Place a fingertip at that fret.</span></article>
+        <article><strong>G C E A</strong><span>The strings are always shown left to right in this order.</span></article>
+      </div>
+      <div class="tip"><strong>Use fingertips, not flat fingers.</strong> Rounded fingers help neighbouring strings ring freely.</div>
+    </section>
+
+    <section class="lesson-card" id="chord-c">
+      <div class="chord-lesson-layout">
+        <div><h2>2. The C chord</h2><p>C is often the first chord a ukulele player learns because it uses only one finger.</p>
+          <ol class="numbered-steps"><li>Leave the G, C and E strings open.</li><li>Place your <strong>ring finger</strong> on the third fret of the A string.</li><li>Keep the finger close behind the fret wire.</li><li>Strum gently across all four strings.</li></ol>
+          <div class="tip"><strong>Why the ring finger?</strong> It prepares your hand for smoother chord changes later, even though another finger may feel easier at first.</div>
+        </div>
+        <div class="chord-card" aria-label="C chord, open G C E strings and third fret A string"><h3>C</h3><div class="chord-code">0 0 0 3</div><div class="mini-chord"><span></span><span></span><span></span><span class="dot f3">3</span></div><small>G C E A</small></div>
+      </div>
+    </section>
+
+    <section class="lesson-card" id="chord-am">
+      <div class="chord-lesson-layout">
+        <div><h2>3. The Am chord</h2><p>Am means A minor. It also uses only one fretting finger.</p>
+          <ol class="numbered-steps"><li>Place your <strong>middle finger</strong> on the second fret of the G string.</li><li>Leave the C, E and A strings open.</li><li>Arch your finger so the open C string is not touched.</li><li>Strum all four strings.</li></ol>
+          <div class="callout"><strong>Useful preparation:</strong> Keep this middle finger in place when you later move from Am to F. You only need to add one finger.</div>
+        </div>
+        <div class="chord-card" aria-label="A minor chord, second fret G string"><h3>Am</h3><div class="chord-code">2 0 0 0</div><div class="mini-chord"><span class="dot f2">2</span><span></span><span></span><span></span></div><small>G C E A</small></div>
+      </div>
+    </section>
+
+    <section class="lesson-card" id="chord-f">
+      <div class="chord-lesson-layout">
+        <div><h2>4. The F chord</h2><p>F builds directly from the Am shape.</p>
+          <ol class="numbered-steps"><li>Place your <strong>middle finger</strong> on the second fret of the G string.</li><li>Place your <strong>index finger</strong> on the first fret of the E string.</li><li>Leave the C and A strings open.</li><li>Strum all four strings and listen for four clear notes.</li></ol>
+          <div class="tip"><strong>Am → F shortcut:</strong> Do not lift your middle finger. Leave it on the G string and simply add your index finger to the E string.</div>
+        </div>
+        <div class="chord-card" aria-label="F chord, second fret G and first fret E"><h3>F</h3><div class="chord-code">2 0 1 0</div><div class="mini-chord"><span class="dot f2">2</span><span></span><span class="dot f1">1</span><span></span></div><small>G C E A</small></div>
+      </div>
+    </section>
+
+    <section class="lesson-card" id="chord-g7">
+      <div class="chord-lesson-layout">
+        <div><h2>5. The G7 chord</h2><p>G7 uses three fingers and may take longer to feel natural. That is completely normal.</p>
+          <ol class="numbered-steps"><li>Leave the G string open.</li><li>Place your <strong>middle finger</strong> on the second fret of the C string.</li><li>Place your <strong>index finger</strong> on the first fret of the E string.</li><li>Place your <strong>ring finger</strong> on the second fret of the A string.</li><li>Strum slowly across all four strings.</li></ol>
+          <div class="tip"><strong>Shape tip:</strong> Place the index finger first. Then add the two second-fret fingers around it like a small triangle.</div>
+        </div>
+        <div class="chord-card" aria-label="G7 chord, open G, second fret C, first fret E and second fret A"><h3>G7</h3><div class="chord-code">0 2 1 2</div><div class="mini-chord"><span></span><span class="dot f2">2</span><span class="dot f1">1</span><span class="dot f2">3</span></div><small>G C E A</small></div>
+      </div>
+    </section>
+
+    <section class="lesson-card" id="clear-chords">
+      <h2>6. Making every chord ring clearly</h2>
+      <ol class="numbered-steps"><li>Form the chord without strumming.</li><li>Pluck the G, C, E and A strings one at a time.</li><li>Listen for a clear note from every string.</li><li>If one is muted, check whether a neighbouring finger is touching it.</li><li>If one buzzes, move the fingertip closer behind the fret wire.</li><li>When all four strings are clear, strum the complete chord.</li></ol>
+      <div class="mistake-grid">
+        <article><strong>Flat fingers</strong><span>Curve the fingers and use the tips.</span></article><article><strong>Thumb gripping too hard</strong><span>Relax the hand and use only enough pressure.</span></article><article><strong>Finger too far from the fret</strong><span>Move closer to the fret wire without sitting on top of it.</span></article><article><strong>Rushing the shape</strong><span>Build it carefully; speed will come later.</span></article>
+      </div>
+    </section>
+
+    <section class="lesson-card" id="level4-practice">
+      <h2>7. Practice your first chords</h2>
+      <p>Start with one chord at a time. Then use the combined exercise to hear the four shapes in sequence. Play one gentle down-strum on each click.</p>
+      <div class="academy-exercise-grid">
+        <article><span class="level-badge">L4-001</span><h3>C and Am</h3><p>Four clicks of C, then four clicks of Am, repeated at 60 BPM.</p><a class="primary-button" href="index.html?academyExercise=L4-001#practiceMode">🎵 Open Practice Mode</a></article>
+        <article><span class="level-badge">L4-002</span><h3>Am and F</h3><p>Leave the middle finger in place and add or remove the index finger.</p><a class="primary-button" href="index.html?academyExercise=L4-002#practiceMode">🎵 Open Practice Mode</a></article>
+        <article><span class="level-badge">L4-003</span><h3>All four chords</h3><p>Play C, Am, F and G7 slowly, four clicks per chord.</p><a class="primary-button" href="index.html?academyExercise=L4-003#practiceMode">🎵 Open Practice Mode</a></article>
+      </div>
+      <div class="callout"><strong>Do not chase speed yet.</strong> Level 4 is about accurate shapes and clear sound. Level 5 will teach efficient chord changes, including fingers that can remain planted or slide into position.</div>
+    </section>
+
+    <section class="lesson-card" id="level4-ready">
+      <h2>Ready to move on?</h2>
+      <div class="ready-box">
+        <label><input type="checkbox" id="l4Diagram"> I understand how to read a basic G–C–E–A chord diagram.</label>
+        <label><input type="checkbox" id="l4C"> I can form and clearly strum C.</label>
+        <label><input type="checkbox" id="l4Am"> I can form and clearly strum Am.</label>
+        <label><input type="checkbox" id="l4F"> I can form and clearly strum F.</label>
+        <label><input type="checkbox" id="l4G7"> I can form and clearly strum G7.</label>
+        <button class="primary-button" id="completeLevelFour" type="button">Mark Level 4 complete</button>
+        <p id="levelFourCompletionStatus" class="completion-status" aria-live="polite"></p>
+      </div>
+      <div class="reflection-box"><h3>Take a moment to notice…</h3><p>Which chord feels easiest, and which one needs more patience? Spend a little extra time checking each string of the difficult chord rather than repeatedly forcing the whole shape.</p></div>
+      <div class="lesson-navigation"><a href="#level-3">← Previous: Level 3</a><span>Next: Level 5 — Changing Chords</span></div>
     </section>
 
   </section>
 </main>
 
 <footer class="academy-footer">
-  <div><strong>Ukulele Academy v1.3</strong><br>Part of Ukulele Songbook v6.5.4 · July 2026</div>
+  <div><strong>Ukulele Academy v1.4</strong><br>Part of Ukulele Songbook v6.5.5.1 · July 2026</div>
   <a href="index.html">Return to Ukulele Songbook</a>
 </footer>
 <script src="js/academy.js"></script>

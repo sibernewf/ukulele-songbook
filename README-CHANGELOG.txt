@@ -1,3 +1,12 @@
+# Ukulele Songbook v6.5.5.1
+
+## v6.5.5.1
+- Added Academy Level 4 — Your First Chords.
+- Added beginner lessons for C, Am, F and G7 with finger placement and clean-sound guidance.
+- Added three Academy chord exercises that open Practice Mode at 60 BPM.
+- Added return links from Practice Mode to Level 4.
+- Added Level 4 completion tracking and a collapsible Level 4 navigation group.
+
 # Ukulele Songbook v6.5.4
 
 ## v6.5.4

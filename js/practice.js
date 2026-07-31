@@ -6,6 +6,7 @@
   let practiceSet = [];
   let practiceIndex = 0;
   let practiceTitle = '';
+  let currentAcademyExercise = null;
 
   let audioContext = null;
   let metronomeTimer = null;
@@ -74,16 +75,20 @@
     const details = el('practiceMode')?.closest('details');
     if (details) details.open = true;
 
-    if (exercise === 'L3-001') {
+    const academyExercises = {
+      'L3-001': { level: 'Level 3 — First Notes', text: 'Play <b>0–2–3–2–0</b> on the A string, one note on each click.', back: 'level3-practice' },
+      'L4-001': { level: 'Level 4 — Your First Chords', text: 'Play <b>C</b> for four clicks, then <b>Am</b> for four clicks. Repeat slowly.', back: 'level4-practice' },
+      'L4-002': { level: 'Level 4 — Your First Chords', text: 'Play <b>Am</b> for four clicks, then <b>F</b> for four clicks. Keep the middle finger planted.', back: 'level4-practice' },
+      'L4-003': { level: 'Level 4 — Your First Chords', text: 'Play <b>C → Am → F → G7</b>, giving each chord four clicks before changing.', back: 'level4-practice' }
+    };
+    const academyExercise = academyExercises[exercise];
+    if (academyExercise) {
+      currentAcademyExercise = { id: exercise, ...academyExercise };
       if (el('metronomeBpm')) el('metronomeBpm').value = '60';
       updateMetronomeBpmLabel();
       savePracticeState?.({ metronomeBpm: '60' });
       activatePracticeTab('metronome');
-      const workspace = el('practiceWorkspace');
-      if (workspace) {
-        workspace.insertAdjacentHTML('afterbegin', `<div class="academy-exercise-banner"><strong>🎓 Academy Exercise L3-001</strong><span>Level 3 — First Notes</span><p>Play <b>0–2–3–2–0</b> on the A string, one note on each click. Start the metronome when you are ready.</p><a href="academy.html#level3-practice">Return to Level 3</a></div>`);
-      }
-      setStatus('Academy Exercise L3-001 loaded at 60 BPM.');
+      setStatus(`Academy Exercise ${exercise} loaded at 60 BPM.`);
       window.setTimeout(() => details?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
     }
   }
@@ -253,17 +258,32 @@
     setStatus(`${title} loaded.`);
   }
 
+  function renderAcademyExerciseBanner() {
+    if (!currentAcademyExercise) return '';
+    const status = metronomeTimer ? '🎵 Practising…' : '⏸ Ready or paused';
+    return `<div class="academy-exercise-banner">
+      <strong>🎓 Academy Exercise ${currentAcademyExercise.id}</strong>
+      <span>${currentAcademyExercise.level}</span>
+      <p>${currentAcademyExercise.text} Start the metronome when you are ready.</p>
+      <small class="academy-exercise-status">${status}</small>
+      <a href="academy.html#${currentAcademyExercise.back}">Return to the Academy lesson</a>
+    </div>`;
+  }
+
   function renderMetronomePanel() {
     const workspace = el('practiceWorkspace');
     if (!workspace) return;
     workspace.innerHTML = `
+      ${renderAcademyExerciseBanner()}
       <div class="practice-card metronome-card">
         <div class="practice-card-head"><strong>Metronome</strong><span>${el('metronomeBpm')?.value || 80} BPM</span></div>
         <div id="metronomePulse" class="metronome-pulse">${renderBeatDots()}</div>
         <div class="practice-metronome-note">Use the metronome for chord changes, steady strumming, or full songs. The first beat of each bar is accented.</div>
       </div>`;
     updateMetronomeVisual();
-    setStatus('Metronome ready. Choose a tempo and press Start metronome.');
+    setStatus(currentAcademyExercise
+      ? `Academy Exercise ${currentAcademyExercise.id} is ready at ${el('metronomeBpm')?.value || 60} BPM.`
+      : 'Metronome ready. Choose a tempo and press Start metronome.');
   }
 
   function updateMetronomeBpmLabel() {
@@ -292,7 +312,7 @@
     metronomeTimer = null;
     if (el('metronomeToggle')) el('metronomeToggle').textContent = 'Start metronome';
     document.body.classList.remove('metronome-running');
-    updateMetronomeVisual();
+    renderMetronomePanel();
   }
 
   function restartMetronome() {
