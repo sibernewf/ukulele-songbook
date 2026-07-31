@@ -137,5 +137,13 @@ const SONGS = [
   favourite: false,
   tags: ["Soul","Classic","Beginner","Campfire","4 Chords"],
   type: "chords-tabs"
+},
+{
+  title: "The Godfather Theme — TAB arrangement",
+  artist: "",
+  file: "songs/the-godfather-theme-tab-arrangement.txt",
+  favourite: false,
+  tags: ["TAB","Melody"],
+  type: "chords-tabs"
 }
 ];
