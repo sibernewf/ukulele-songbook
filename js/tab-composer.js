@@ -141,8 +141,8 @@
     STRINGS.forEach(string=>{
       const label=document.createElement('span');label.className='tab-string';label.textContent=string+'|';grid.appendChild(label);
       measure.notes[string].forEach((value,pi)=>{
-        const input=document.createElement('input');input.className='tab-cell';input.inputMode='text';input.maxLength=3;input.value=value;input.setAttribute('aria-label',`${string} string ${LABELS[pi]}`);
-        input.oninput=e=>{e.target.value=e.target.value.replace(/[^0-9xXhHpP\/\\-]/g,'').slice(0,3);measure.notes[string][pi]=e.target.value;scheduleSave();};
+        const input=document.createElement('input');input.className='tab-cell';input.inputMode='text';input.maxLength=5;input.value=value;input.setAttribute('aria-label',`${string} string ${LABELS[pi]}`);
+        input.oninput=e=>{e.target.value=e.target.value.replace(/[^0-9xXhHpPbBrR\/\\~]/g,'').slice(0,5);measure.notes[string][pi]=e.target.value;scheduleSave();};
         input.onkeydown=e=>{if(e.key==='ArrowRight'||e.key==='Tab'&&!e.shiftKey){if(e.key==='ArrowRight'){e.preventDefault();nextInput(e.target,'.tab-cell',1);}}else if(e.key==='ArrowLeft'){e.preventDefault();nextInput(e.target,'.tab-cell',-1);}else if(e.key==='Enter'){e.preventDefault();nextInput(e.target,'.tab-cell',POSITIONS);}else if(e.key==='Delete'){measure.notes[string][pi]='';e.target.value='';scheduleSave();}};
         grid.appendChild(input);
       });

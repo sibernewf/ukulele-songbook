@@ -1,3 +1,11 @@
+# Ukulele Songbook v6.4.3
+
+- Added a searchable Help Centre linked directly from the project.
+- Documented the Songbook, My Songs, set lists, Practice Mode, TAB Composer, printing, fretboard chart and common questions.
+- Added standard TAB technique entry up to five characters.
+- Supported examples include 5/7, 7\5, 5h7, 7p5, 7b8, 8r7, 5~ and x/X.
+- Kept the locked TAB timing and preview geometry unchanged.
+
 # Ukulele Songbook v6.3.16
 
 - TAB arrangements can be reopened from My Songs with **Edit arrangement**.

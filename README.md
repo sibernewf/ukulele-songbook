@@ -1,3 +1,7 @@
+# Ukulele Songbook v6.4.3
+
+Open `index.html` to use the application. Open `help.html` for the searchable Help Centre.
+
 # Ukulele Songbook v6.3.16
 
 - TAB arrangements can be reopened from My Songs with **Edit arrangement**.

@@ -1127,3 +1127,15 @@ body.fretboard-modal-open { overflow: hidden; }
 .my-song-link{flex:1}
 .my-song-edit-composer{white-space:nowrap}
 @media (max-width:900px){.composer-tuning-group{grid-template-columns:repeat(2,minmax(100px,1fr))}.composer-tuning-title{grid-column:1/-1}}
+
+
+/* v6.4.0 Help Centre and extended TAB notation */
+.help-link-button {
+  display: inline-flex; align-items: center; justify-content: center;
+  box-sizing: border-box; text-decoration: none; font: inherit; font-weight: 700;
+  color: #2d241b; background: #fff6df; border: 1px solid #cdbb98;
+  border-radius: 9px; padding: .48rem .8rem; cursor: pointer;
+}
+.help-link-button:hover { background: #ffedbd; }
+.sidebar-help-link { width: 100%; margin-top: .35rem; }
+.tab-cell { font-size: clamp(.72rem, 1.2vw, .95rem); }

@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ukulele Songbook v6.3.0</title>
+  <title>Ukulele Songbook v6.4.3</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header class="topbar">
     <div><h1>Ukulele Songbook</h1><p>Select songs, view chords, build set lists, practise, use the chord dictionary, view and print the fretboard note chart, practise with metronome and strumming trainer, transpose songs, manage My Songs, and auto-scroll while you play.</p></div>
-    <div class="controls"><button id="smallerText">A−</button><button id="largerText">A+</button><button class="menu-toggle top-menu-toggle" data-sidebar-toggle type="button" aria-expanded="true" aria-controls="leftMenu">Minimise menu</button></div>
+    <div class="controls"><a class="help-link-button" href="help.html">Help Centre</a><button id="smallerText">A−</button><button id="largerText">A+</button><button class="menu-toggle top-menu-toggle" data-sidebar-toggle type="button" aria-expanded="true" aria-controls="leftMenu">Minimise menu</button></div>
   </header>
   <main class="app">
     <button class="sidebar-expand-button menu-toggle" data-sidebar-toggle type="button" aria-expanded="false" aria-controls="leftMenu" title="Show left menu">☰ Maximise menu</button>
@@ -206,7 +206,7 @@
         <div class="summary"><div><strong id="chordCount">0</strong> diagrams</div><div id="missingCount">0 missing</div></div>
         <div id="chordCards" class="chord-cards"></div><h2>Missing chords</h2><p id="missingChords" class="missing-list">None.</p>
       </details>
-      <details class="accordion-section"><summary>Adding Songs Help</summary><div class="hint">Put TXT files in <code>songs</code>, add them to <code>data/song-list.js</code>, then refresh with Ctrl + F5 if needed.</div></details>
+      <details class="accordion-section"><summary>Help Centre</summary><div class="help-launch"><p class="hint compact-hint">Open the searchable online guide for the Songbook, TAB Composer, practice tools, printing and more.</p><a class="wide-button help-link-button sidebar-help-link" href="help.html">Open Help Centre</a></div></details>
     </aside>
     <section class="song-panel">
       <div id="performanceBar" class="performance-bar"></div><div id="setModeBar" class="set-mode-bar"></div><h2 id="songTitle">Loading...</h2><div id="songInfo" class="song-info"></div>
