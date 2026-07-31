@@ -7,33 +7,44 @@ Tuning: G C E A | Key: C | Capo: No capo | Difficulty: Beginner | Tempo: 70 BPM 
 [Verse]
 C
 Should old acquaintance
+
 F
 Be forgot
+
 C
 And never
+
 G7
 Brought to mind?
 
+
 C
 Should old acquaintance
+
 F
 Be forgot
+
 C        G7       C
 And days of auld lang syne
 
 [Chorus]
 C
 For auld lang syne
+
 F
 My dear
+
 C
 For auld lang
+
 G7
 Syne
 
 C
 We'll take a cup
+
 F
 Of kindness yet
+
 C        G7       C
 For auld lang syne

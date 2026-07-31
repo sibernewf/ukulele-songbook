@@ -7,16 +7,21 @@ Tuning: G C E A | Key: C | Capo: No capo | Difficulty: Beginner | Tempo: 60 BPM 
 [Verse]
 C
 Amazing grace!
+
 F
 How sweet the sound
+
 C
 That saved a
+
 G7
 Wretch like me!
 
 C
 I once was lost
+
 F
 But now am found
+
 C        G7      C
 Was blind, but now I see.
