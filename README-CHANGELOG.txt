@@ -1,4 +1,9 @@
-# Ukulele Songbook v6.4.3
+# Ukulele Songbook v6.5.1
+
+## v6.5.1
+- Added the four Level 0 ukulele type photographs: soprano, concert, tenor and baritone.
+- Added responsive image cards and descriptive captions to the Academy page.
+
 
 - Added a searchable Help Centre linked directly from the project.
 - Documented the Songbook, My Songs, set lists, Practice Mode, TAB Composer, printing, fretboard chart and common questions.
