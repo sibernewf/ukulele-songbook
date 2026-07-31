@@ -62,6 +62,8 @@
     const visible = entries.filter(e => e.isIntersecting).sort((a,b) => b.intersectionRatio-a.intersectionRatio)[0];
     if(!visible) return;
     navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + visible.target.id));
+    const activeLink = navLinks.find(a => a.classList.contains('active'));
+    activeLink?.scrollIntoView({block:'nearest', inline:'nearest'});
   }, {rootMargin:'-15% 0px -70% 0px', threshold:[0,.2,.5]});
   sections.forEach(s => observer.observe(s));
 
@@ -211,5 +213,93 @@
       levelSevenStatus.textContent = '✓ Level 7 completed. You are ready for Level 8 — Your First Songs.';
     } else levelSevenStatus.textContent = 'Tick each readiness statement before marking Level 7 complete.';
   });
+
+  // Custom Academy exercises for experienced learners.
+  function openCustomExercise(id, values) {
+    const params = new URLSearchParams({ academyExercise: id, ...values });
+    window.location.href = `index.html?${params.toString()}#practiceMode`;
+  }
+
+  const l4Input = document.getElementById('level4CustomChord');
+  const l4Status = document.getElementById('level4CustomStatus');
+  document.getElementById('startLevel4Custom')?.addEventListener('click', () => {
+    const chord = l4Input?.value.trim();
+    if (!chord) { l4Status.textContent = 'Enter a chord first.'; l4Input?.focus(); return; }
+    openCustomExercise('L4-CUSTOM', { chord });
+  });
+
+  const l5Input = document.getElementById('level5CustomChords');
+  const l5Status = document.getElementById('level5CustomStatus');
+  document.getElementById('startLevel5Custom')?.addEventListener('click', () => {
+    const chords = (l5Input?.value || '').split(/[\s,→|]+/).filter(Boolean);
+    if (chords.length !== 4) { l5Status.textContent = 'Enter exactly four chords, separated by spaces or commas.'; l5Input?.focus(); return; }
+    openCustomExercise('L5-CUSTOM', { chords: chords.join(',') });
+  });
+
+  const l7Input = document.getElementById('level7CustomPattern');
+  const l7Status = document.getElementById('level7CustomStatus');
+  document.getElementById('startLevel7Custom')?.addEventListener('click', () => {
+    const raw = l7Input?.value.trim() || '';
+    const compact = raw.toUpperCase().replace(/[–—_]/g, '-').replace(/\s+/g, '');
+    if (!compact || !/^[DU-]+$/.test(compact)) { l7Status.textContent = 'Use only D, U and – (or hyphen) in the pattern.'; l7Input?.focus(); return; }
+    if (compact.length > 16) { l7Status.textContent = 'Please use no more than 16 strumming steps.'; l7Input?.focus(); return; }
+    openCustomExercise('L7-CUSTOM', { pattern: compact });
+  });
+
+  [l4Input,l5Input,l7Input].forEach(input => input?.addEventListener('keydown', event => {
+    if (event.key === 'Enter') input.closest('article')?.querySelector('button')?.click();
+  }));
+
+  // Custom Academy practice builders for experienced learners.
+  document.querySelectorAll('.academy-custom-form').forEach(form => {
+    form.addEventListener('submit', event => {
+      event.preventDefault();
+      const type = form.dataset.customExercise;
+      const status = form.querySelector('.custom-form-status');
+      const params = new URLSearchParams({ academyExercise: type });
+      if (type === 'L4-CUSTOM') {
+        const chord = form.elements.chord.value.trim();
+        if (!chord) { if(status) status.textContent = 'Enter a chord first.'; return; }
+        params.set('chord', chord);
+      } else if (type === 'L5-CUSTOM') {
+        const chords = form.elements.chords.value.trim().split(/[\s,;|]+/).filter(Boolean);
+        if (chords.length !== 4) { if(status) status.textContent = 'Enter exactly four chords, separated by spaces.'; return; }
+        params.set('chords', chords.join(','));
+      } else if (type === 'L7-CUSTOM') {
+        const raw = form.elements.pattern.value.trim().toUpperCase().replace(/[—_]/g, '–');
+        const tokens = raw.match(/[DUX\-–]/g) || [];
+        if (!tokens.length || tokens.some(token => !['D','U','X','-','–'].includes(token))) { if(status) status.textContent = 'Use D, U and – only.'; return; }
+        params.set('pattern', tokens.map(token => token === '-' || token === 'X' ? '–' : token).join(','));
+      }
+      window.location.href = `index.html?${params.toString()}#practiceMode`;
+    });
+  });
+
+  // Keep the active section visible inside the independently scrolling lesson tree.
+  const navScroller = document.querySelector('.academy-nav-scroll');
+  const revealActiveNav = () => {
+    const active = navScroller?.querySelector('a.active');
+    active?.scrollIntoView({ block: 'nearest' });
+  };
+  window.setTimeout(revealActiveNav, 100);
+
+  // Keep the complete Academy sidebar inside the visible browser window.
+  // The fixed header remains visible while only the lesson tree scrolls.
+  const academyNav = document.querySelector('.academy-nav');
+  const sizeAcademySidebar = () => {
+    if (!academyNav) return;
+    if (window.matchMedia('(max-width: 800px)').matches) {
+      academyNav.style.removeProperty('height');
+      academyNav.style.removeProperty('max-height');
+      return;
+    }
+    const top = Math.max(16, academyNav.getBoundingClientRect().top);
+    const available = Math.max(320, window.innerHeight - top - 16);
+    academyNav.style.height = `${available}px`;
+    academyNav.style.maxHeight = `${available}px`;
+  };
+  sizeAcademySidebar();
+  window.addEventListener('resize', sizeAcademySidebar);
+  window.addEventListener('scroll', sizeAcademySidebar, { passive: true });
 
 })();

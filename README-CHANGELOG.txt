@@ -1,6 +1,13 @@
-# Ukulele Songbook v6.5.8
+# Ukulele Songbook v6.5.9.2
 
-## v6.5.8 — Academy Live Exercise Tracker
+## v6.5.9.2 — Sidebar viewport-height fix
+
+- Keeps the complete Academy sidebar within the visible browser window.
+- The fixed Academy heading and Back to Songbook button stay visible.
+- Only the lesson tree scrolls, with access through Level 7 and all later lessons.
+
+
+## v6.5.9.2 — Academy Live Exercise Tracker
 
 - Added an Academy-only live step tracker in the main content window.
 - Highlights the note, chord, beat, clap or strum required on every metronome click.
@@ -371,7 +378,7 @@ Version 6.3.15 - Portrait TAB printing
 - The locked v6.3.13 TAB renderer and timing alignment are unchanged.
 
 
-v6.5.8
+v6.5.9.2
 - Added Academy Level 6: Rhythm and Timing.
 - Academy chord exercises now show chord diagrams and the chord progression in the main content window.
 - Exercise guidance only appears while an Academy exercise is loaded.

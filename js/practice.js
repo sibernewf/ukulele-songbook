@@ -99,7 +99,29 @@
       'L7-002': { title: 'Silver — Even down-up motion', level: 'Level 7 — Strumming', text: 'Hold <b>C</b> and play <b>D U D U D U D U</b>. Down-strums land on numbers and up-strums on the “&”.', back: 'level7-practice', chords: ['C'], progression: ['C'], count: '1 & 2 & 3 & 4 &', steps: ['D','U','D','U','D','U','D','U'].map((label,index) => ({label,detail:index % 2 === 0 ? `Beat ${index/2+1}` : '&',chord:'C'})) },
       'L7-003': { title: 'Gold — First song pattern', level: 'Level 7 — Strumming', text: 'Hold <b>C</b> and play <b>D – D U – U D U</b>. Keep the hand moving during the silent spaces.', back: 'level7-practice', chords: ['C'], progression: ['C'], count: '1 & 2 & 3 & 4 &', steps: [{label:'D',detail:'1',chord:'C'},{label:'–',detail:'& — move only',chord:'C'},{label:'D',detail:'2',chord:'C'},{label:'U',detail:'&',chord:'C'},{label:'–',detail:'3 — move only',chord:'C'},{label:'U',detail:'&',chord:'C'},{label:'D',detail:'4',chord:'C'},{label:'U',detail:'&',chord:'C'}] }
     };
-    const academyExercise = academyExercises[exercise];
+    let academyExercise = academyExercises[exercise];
+
+    // Build user-defined Academy exercises from safe URL parameters.
+    if (exercise === 'L4-CUSTOM') {
+      const chord = (params.get('chord') || '').trim();
+      const known = CHORDS[chord] ? chord : Object.keys(CHORDS).find(name => name.toLowerCase() === chord.toLowerCase());
+      if (known) academyExercise = { title: `Custom chord — ${known}`, level: 'Level 4 — Your First Chords', text: `Hold <b>${escapeHtml(known)}</b> and play one clear down-strum on each click.`, back: 'level4-practice', chords: [known], progression: [known], count: '1 2 3 4', steps: makeChordSteps([known],4) };
+      else setStatus(`The chord “${escapeHtml(chord)}” was not found in the Chord Dictionary.`, true);
+    }
+    if (exercise === 'L5-CUSTOM') {
+      const requested = (params.get('chords') || '').split(',').map(value => value.trim()).filter(Boolean);
+      const chords = requested.map(chord => CHORDS[chord] ? chord : Object.keys(CHORDS).find(name => name.toLowerCase() === chord.toLowerCase())).filter(Boolean);
+      if (chords.length === 4) academyExercise = { title: 'Custom four-chord progression', level: 'Level 5 — Changing Chords', text: `Play <b>${chords.map(escapeHtml).join(' → ')}</b>, giving each chord four clicks.`, back: 'level5-practice', chords: [...new Set(chords)], progression: chords, steps: makeChordSteps(chords,4) };
+      else setStatus('One or more custom chords were not found in the Chord Dictionary.', true);
+    }
+    if (exercise === 'L7-CUSTOM') {
+      const tokens = (params.get('pattern') || '').split(',').map(value => value.trim().toUpperCase()).filter(value => ['D','U','–','-'].includes(value)).map(value => value === '-' ? '–' : value);
+      if (tokens.length) {
+        const beatNames = ['1','&','2','&','3','&','4','&'];
+        academyExercise = { title: 'Custom strumming pattern', level: 'Level 7 — Strumming', text: `Hold <b>C</b> and follow <b>${tokens.map(escapeHtml).join(' ')}</b>. Keep your hand moving through silent spaces.`, back: 'level7-practice', chords: ['C'], progression: ['C'], count: tokens.map((_,index) => beatNames[index % 8]).join(' '), steps: tokens.map((label,index) => ({label, detail: label === '–' ? `${beatNames[index % 8]} — move only` : beatNames[index % 8], chord:'C'})) };
+      }
+    }
+
     if (academyExercise) {
       currentAcademyExercise = { id: exercise, ...academyExercise };
       academyExerciseStep = 0;
