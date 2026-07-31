@@ -27,6 +27,14 @@ const SONGS = [
     type: "chords-tabs"
   },
   {
+  title: "Game of Thrones Theme — TAB arrangement",
+  artist: "Symphony Orchestra",
+  file: "songs/game-of-thrones-theme-tab-arrangement.txt",
+  favourite: false,
+  tags: ["TAB","Melody"],
+  type: "chords-tabs"
+},
+  {
     title: "Jingle Bells",
     artist: "Traditional",
     file: "songs/jingle-bells.txt",
