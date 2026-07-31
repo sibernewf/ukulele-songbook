@@ -63,6 +63,29 @@
 
     renderPracticePacks();
     renderPracticeWelcome(state);
+    loadAcademyExerciseFromUrl();
+  }
+
+  function loadAcademyExerciseFromUrl() {
+    const params = new URLSearchParams(window.location.search);
+    const exercise = params.get('academyExercise');
+    if (!exercise) return;
+
+    const details = el('practiceMode')?.closest('details');
+    if (details) details.open = true;
+
+    if (exercise === 'L3-001') {
+      if (el('metronomeBpm')) el('metronomeBpm').value = '60';
+      updateMetronomeBpmLabel();
+      savePracticeState?.({ metronomeBpm: '60' });
+      activatePracticeTab('metronome');
+      const workspace = el('practiceWorkspace');
+      if (workspace) {
+        workspace.insertAdjacentHTML('afterbegin', `<div class="academy-exercise-banner"><strong>🎓 Academy Exercise L3-001</strong><span>Level 3 — First Notes</span><p>Play <b>0–2–3–2–0</b> on the A string, one note on each click. Start the metronome when you are ready.</p><a href="academy.html#level3-practice">Return to Level 3</a></div>`);
+      }
+      setStatus('Academy Exercise L3-001 loaded at 60 BPM.');
+      window.setTimeout(() => details?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+    }
   }
 
   function activatePracticeTab(name) {

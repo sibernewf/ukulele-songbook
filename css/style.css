@@ -1139,3 +1139,7 @@ body.fretboard-modal-open { overflow: hidden; }
 .help-link-button:hover { background: #ffedbd; }
 .sidebar-help-link { width: 100%; margin-top: .35rem; }
 .tab-cell { font-size: clamp(.72rem, 1.2vw, .95rem); }
+
+
+/* Academy exercise hand-off */
+.academy-exercise-banner{margin:0 0 1rem;padding:1rem;border:1px solid #b7d0c1;border-left:5px solid #39705a;border-radius:12px;background:#eef6ef}.academy-exercise-banner strong,.academy-exercise-banner span{display:block}.academy-exercise-banner span{margin:.15rem 0;color:#39705a;font-weight:800}.academy-exercise-banner p{margin:.55rem 0}.academy-exercise-banner a{font-weight:800;color:#315b49}
