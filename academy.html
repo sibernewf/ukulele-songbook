@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ukulele Academy v1.0 — Ukulele Songbook v6.5.1</title>
+  <title>Ukulele Academy v1.2 — Ukulele Songbook v6.5.3</title>
   <link rel="stylesheet" href="css/academy.css">
 </head>
 <body>
 <header class="academy-header">
   <div>
-    <p class="eyebrow">Ukulele Songbook v6.5.1</p>
+    <p class="eyebrow">Ukulele Songbook v6.5.3</p>
     <h1>🎓 Ukulele Academy</h1>
     <p>Friendly, structured tuition from your very first encounter with a ukulele through to confident, advanced playing.</p>
   </div>
@@ -22,17 +22,65 @@
 <main class="academy-layout">
   <aside class="academy-nav" aria-label="Academy navigation">
     <div class="academy-card compact">
-      <strong>Academy v1.0</strong>
-      <span>Initial foundation release</span>
+      <strong>Academy v1.2</strong>
+      <span>Levels 0–2 available</span>
     </div>
-    <a class="active" href="#welcome">Academy Welcome</a>
-    <a href="#level-0">Level 0 — Welcome to the Ukulele</a>
-    <a href="#what-is-a-ukulele">What is a ukulele?</a>
-    <a href="#academy-works">How the Academy works</a>
-    <a href="#expectations">What we expect from you</a>
-    <a href="#what-you-need">What you will need</a>
-    <a href="#first-reflection">Your first reflection</a>
-    <a href="#roadmap">Learning journey</a>
+
+    <div class="nav-group open" data-nav-group="welcome">
+      <button class="nav-group-toggle" type="button" aria-expanded="true">
+        <span>Academy Welcome</span><span class="toggle-icon" aria-hidden="true">▾</span>
+      </button>
+      <div class="nav-group-links">
+        <a class="active" href="#welcome">Welcome page</a>
+        <a href="#roadmap">Learning journey</a>
+      </div>
+    </div>
+
+    <div class="nav-group open" data-nav-group="level0">
+      <button class="nav-group-toggle" type="button" aria-expanded="true">
+        <span>Level 0 — Welcome</span><span class="toggle-icon" aria-hidden="true">▾</span>
+      </button>
+      <div class="nav-group-links">
+        <a href="#level-0">Level overview</a>
+        <a href="#what-is-a-ukulele">What is a ukulele?</a>
+        <a href="#academy-works">How the Academy works</a>
+        <a href="#expectations">What we expect from you</a>
+        <a href="#what-you-need">What you will need</a>
+        <a href="#first-reflection">Your first reflection</a>
+      </div>
+    </div>
+
+    <div class="nav-group" data-nav-group="level1">
+      <button class="nav-group-toggle" type="button" aria-expanded="false">
+        <span>Level 1 — Holding</span><span class="toggle-icon" aria-hidden="true">▸</span>
+      </button>
+      <div class="nav-group-links">
+        <a href="#level-1">Level overview</a>
+        <a href="#posture">Posture and comfort</a>
+        <a href="#supporting-uke">Supporting the instrument</a>
+        <a href="#fretting-hand">Fretting-hand position</a>
+        <a href="#strumming-arm">Strumming-arm position</a>
+        <a href="#standing">Playing while standing</a>
+        <a href="#level1-practice">Practice exercise</a>
+        <a href="#level1-ready">Ready to move on?</a>
+      </div>
+    </div>
+
+    <div class="nav-group" data-nav-group="level2">
+      <button class="nav-group-toggle" type="button" aria-expanded="false">
+        <span>Level 2 — Tuning</span><span class="toggle-icon" aria-hidden="true">▸</span>
+      </button>
+      <div class="nav-group-links">
+        <a href="#level-2">Level overview</a>
+        <a href="#tuning-notes">Meet G–C–E–A</a>
+        <a href="#high-low-g">High-G and Low-G</a>
+        <a href="#tuning-tools">Ways to tune</a>
+        <a href="#tuning-steps">Tune step by step</a>
+        <a href="#new-strings">New strings</a>
+        <a href="#level2-practice">Practice exercise</a>
+        <a href="#level2-ready">Ready to move on?</a>
+      </div>
+    </div>
   </aside>
 
   <section class="academy-content">
@@ -201,8 +249,8 @@
       <p>Level 0 is the first foundation. Future Academy releases will build the complete path below.</p>
       <div class="roadmap-list">
         <div class="current"><strong>Level 0</strong><span>Welcome to the Ukulele</span><em>Available now</em></div>
-        <div><strong>Level 1</strong><span>Holding Your Ukulele</span><em>Coming next</em></div>
-        <div><strong>Level 2</strong><span>Tuning</span><em>Planned</em></div>
+        <div class="current"><strong>Level 1</strong><span>Holding Your Ukulele</span><em>Available now</em></div>
+        <div class="current"><strong>Level 2</strong><span>Tuning</span><em>Available now</em></div>
         <div><strong>Level 3</strong><span>Your First Notes</span><em>Planned</em></div>
         <div><strong>Level 4</strong><span>Your First Chords</span><em>Planned</em></div>
         <div><strong>Level 5</strong><span>Changing Chords</span><em>Planned</em></div>
@@ -212,14 +260,310 @@
       </div>
       <div class="lesson-navigation">
         <a href="index.html">← Return to Songbook</a>
-        <span>Next: Level 1 — Holding Your Ukulele</span>
+        <a href="#level-1">Next: Level 1 — Holding Your Ukulele →</a>
       </div>
     </section>
+
+
+    <section class="lesson-card" id="level-1">
+      <div class="lesson-heading">
+        <div><span class="level-badge">Level 1</span><h2>Holding Your Ukulele</h2></div>
+        <span class="lesson-time">Beginner · 15–25 minutes</span>
+      </div>
+      <p>Before learning chords or strumming patterns, you need a comfortable and reliable way to hold the instrument. Good positioning keeps the ukulele steady, helps both hands move freely and reduces unnecessary tension.</p>
+      <p>There is no single pose that suits every body. The goal is not to look identical to another player—it is to find a balanced position that lets you breathe, relax and reach the instrument without twisting.</p>
+      <div class="callout"><strong>Most important rule:</strong> The ukulele should feel supported before either hand begins to play. Your fretting hand should guide the neck, not carry the entire instrument.</div>
+
+      <h3>By the end of Level 1, you will be able to:</h3>
+      <ul class="check-list">
+        <li>Sit or stand with relaxed, balanced posture.</li>
+        <li>Rest the ukulele securely against your body.</li>
+        <li>Position the neck at a comfortable upward angle.</li>
+        <li>Keep your fretting wrist and thumb in a useful position.</li>
+        <li>Place your strumming arm without squeezing the instrument.</li>
+        <li>Recognise and correct common signs of tension.</li>
+      </ul>
+    </section>
+
+    <section class="lesson-card" id="posture">
+      <h2>1. Begin with comfortable posture</h2>
+      <p>Sit toward the front half of a firm chair with both feet supported. Let your shoulders drop naturally and keep your head balanced rather than leaning forward to inspect the fretboard.</p>
+      <div class="two-column">
+        <div>
+          <h3>A comfortable starting position</h3>
+          <ol>
+            <li>Place both feet flat on the floor, or use a footrest if needed.</li>
+            <li>Sit tall without becoming stiff.</li>
+            <li>Relax your shoulders and elbows.</li>
+            <li>Bring the ukulele to you rather than bending your body toward it.</li>
+            <li>Take a slow breath and check that you are not holding tension.</li>
+          </ol>
+        </div>
+        <div class="image-needed">
+          <strong>Suggested image</strong>
+          <span>Correct seated posture, front or three-quarter view</span>
+          <code>images/academy/level1/correct-seated-posture.jpg</code>
+        </div>
+      </div>
+      <div class="tip"><strong>Helpful check:</strong> If your neck, shoulders or lower back begin aching after only a few minutes, pause and reset your position. Discomfort is useful information, not something to push through.</div>
+    </section>
+
+    <section class="lesson-card" id="supporting-uke">
+      <h2>2. Support the ukulele against your body</h2>
+      <p>For a typical right-handed playing position, rest the back of the ukulele lightly against your chest or upper stomach. Your right forearm rests over the lower edge of the body and provides gentle inward support.</p>
+      <ol class="numbered-steps">
+        <li><strong>Place the body:</strong> Let the ukulele body sit against the right side of your torso, not directly beneath your chin.</li>
+        <li><strong>Angle the neck:</strong> Raise the headstock slightly. A modest upward angle usually keeps the wrist more comfortable than holding the neck completely horizontal.</li>
+        <li><strong>Rest the forearm:</strong> Lay your right forearm over the upper edge of the instrument near where the body narrows.</li>
+        <li><strong>Use gentle pressure:</strong> Draw the instrument lightly toward your body. Do not clamp it tightly.</li>
+        <li><strong>Test the support:</strong> Briefly loosen your fretting hand. The ukulele should remain reasonably stable instead of immediately falling away.</li>
+      </ol>
+      <div class="image-pair">
+        <div class="image-needed"><strong>Suggested image</strong><span>Ukulele resting against the torso</span><code>images/academy/level1/body-support.jpg</code></div>
+        <div class="image-needed"><strong>Suggested image</strong><span>Side view showing forearm contact</span><code>images/academy/level1/forearm-support.jpg</code></div>
+      </div>
+      <div class="warning"><strong>Avoid:</strong> squeezing the instrument between your forearm and body. Too much pressure creates tension and can make strumming feel stiff.</div>
+    </section>
+
+    <section class="lesson-card" id="fretting-hand">
+      <h2>3. Position your fretting hand</h2>
+      <p>Your fretting hand will eventually press strings and form chords. For now, practise supporting and guiding the neck without gripping it tightly.</p>
+      <h3>Thumb position</h3>
+      <p>Rest the pad of your thumb gently on the back of the neck. Keep it roughly opposite your first or second finger. The thumb may move as you play; it does not need to remain frozen in one exact spot.</p>
+      <h3>Finger and wrist position</h3>
+      <ul>
+        <li>Curve your fingers naturally, as though loosely holding a small ball.</li>
+        <li>Keep space between your palm and the underside of the neck.</li>
+        <li>Let the wrist remain mostly straight and comfortable.</li>
+        <li>Avoid collapsing the wrist sharply inward.</li>
+        <li>Use only enough thumb pressure to balance the fingers.</li>
+      </ul>
+      <div class="image-pair">
+        <div class="image-needed"><strong>Suggested image</strong><span>Thumb on the back of the neck</span><code>images/academy/level1/thumb-position.jpg</code></div>
+        <div class="image-needed"><strong>Suggested image</strong><span>Curved fingers with space under the neck</span><code>images/academy/level1/fretting-hand-position.jpg</code></div>
+      </div>
+      <div class="tip"><strong>Teacher's tip:</strong> Imagine the neck is delicate. Guide it securely, but do not crush it. Excess thumb pressure often causes hand fatigue and makes chord changes slower.</div>
+    </section>
+
+    <section class="lesson-card" id="strumming-arm">
+      <h2>4. Position your strumming arm and hand</h2>
+      <p>Your forearm supports the instrument, but your wrist and hand must still be free to move. Let your right hand hang loosely over the strings.</p>
+      <ol>
+        <li>Rest your forearm on the body of the ukulele.</li>
+        <li>Bring your hand toward the strings near the end of the fretboard or just above the sound hole.</li>
+        <li>Keep the wrist soft rather than locked.</li>
+        <li>Let the fingers remain relaxed.</li>
+        <li>Make a few silent up-and-down movements without touching the strings.</li>
+      </ol>
+      <p>Do not worry about producing a proper strum yet. Level 7 will explain strumming with the index finger, thumb and pick in detail. At this stage, we are only establishing a relaxed movement path.</p>
+      <div class="image-needed wide"><strong>Suggested image</strong><span>Relaxed strumming arm and hand position</span><code>images/academy/level1/strumming-arm-position.jpg</code></div>
+    </section>
+
+    <section class="lesson-card" id="standing">
+      <h2>5. Playing while standing</h2>
+      <p>A strap is not compulsory, but many players find it extremely useful. It holds the instrument at a consistent height and reduces the amount of support required from the arms.</p>
+      <h3>Without a strap</h3>
+      <p>Use your strumming forearm and torso to support the body, while the fretting hand guides the neck. This works well for simple playing but may feel less stable during difficult chord changes.</p>
+      <h3>With a strap</h3>
+      <p>Adjust the strap so the ukulele sits at approximately the same height it did while seated. Avoid hanging it very low, because that forces the wrist into an awkward angle.</p>
+      <div class="image-pair">
+        <div class="image-needed"><strong>Optional image</strong><span>Standing position without strap</span><code>images/academy/level1/standing-without-strap.jpg</code></div>
+        <div class="image-needed"><strong>Optional image</strong><span>Standing position with strap</span><code>images/academy/level1/standing-with-strap.jpg</code></div>
+      </div>
+      <div class="callout"><strong>Left-handed players:</strong> Reverse the hand references throughout this lesson. The principles of balance, relaxation and support remain exactly the same.</div>
+    </section>
+
+    <section class="lesson-card" id="level1-practice">
+      <h2>Practice exercise: the one-minute reset</h2>
+      <p>Repeat this short exercise several times over the next few days. You are teaching your body what a relaxed playing position feels like.</p>
+      <div class="steps">
+        <article><span>1</span><div><h3>Settle</h3><p>Sit comfortably with both feet supported and shoulders relaxed.</p></div></article>
+        <article><span>2</span><div><h3>Place</h3><p>Bring the ukulele to your body and angle the neck slightly upward.</p></div></article>
+        <article><span>3</span><div><h3>Support</h3><p>Rest your strumming forearm gently over the instrument.</p></div></article>
+        <article><span>4</span><div><h3>Guide</h3><p>Place the fretting thumb behind the neck and curve the fingers loosely.</p></div></article>
+        <article><span>5</span><div><h3>Release tension</h3><p>Take a breath, soften your shoulders, jaw, hands and wrists.</p></div></article>
+        <article><span>6</span><div><h3>Reset</h3><p>Put the ukulele down, then repeat the whole setup without rushing.</p></div></article>
+      </div>
+      <h3>Try this stability check</h3>
+      <p>While keeping the ukulele supported by your body and strumming arm, briefly open the fingers of your fretting hand. Do this carefully. The instrument does not need to remain perfectly motionless, but it should not depend entirely on your left hand for support.</p>
+    </section>
+
+    <section class="lesson-card" id="level1-ready">
+      <h2>Common mistakes</h2>
+      <div class="mistake-grid">
+        <article><strong>Hunching forward</strong><span>Bring the instrument closer instead of lowering your head toward it.</span></article>
+        <article><strong>Holding the neck flat</strong><span>Raise the headstock slightly to give the wrist more room.</span></article>
+        <article><strong>Gripping with the thumb</strong><span>Use gentle contact rather than squeezing.</span></article>
+        <article><strong>Clamping the body</strong><span>Use enough forearm pressure for stability, but keep the arm mobile.</span></article>
+        <article><strong>Locked wrist</strong><span>Let the strumming hand hang and move loosely.</span></article>
+        <article><strong>Ignoring discomfort</strong><span>Stop, reset and adjust before continuing.</span></article>
+      </div>
+
+      <div class="ready-box">
+        <h3>Ready to move on?</h3>
+        <label><input type="checkbox" id="l1Posture"> I can sit with relaxed shoulders and balanced posture.</label>
+        <label><input type="checkbox" id="l1Support"> I can support the ukulele without relying entirely on my fretting hand.</label>
+        <label><input type="checkbox" id="l1Thumb"> I can place my thumb gently behind the neck.</label>
+        <label><input type="checkbox" id="l1Arm"> My strumming wrist and hand can move freely.</label>
+        <label><input type="checkbox" id="l1Comfort"> I can recognise tension and reset my position.</label>
+        <button class="primary-button" id="completeLevelOne" type="button">Mark Level 1 complete</button>
+        <p id="levelOneCompletionStatus" class="completion-status" aria-live="polite"></p>
+      </div>
+
+      <div class="reflection-box">
+        <h3>Take a moment to notice…</h3>
+        <p>Which part of holding the ukulele feels least natural right now—your posture, your fretting hand, or your strumming arm? Simply noticing it gives you something useful to check during future practice.</p>
+      </div>
+
+      <div class="lesson-navigation">
+        <a href="#level-0">← Previous: Level 0</a>
+        <a href="#level-2">Next: Level 2 — Tuning →</a>
+      </div>
+    </section>
+
+
+    <section class="lesson-card" id="level-2">
+      <div class="lesson-heading">
+        <div><span class="level-badge">Level 2</span><h2>Tuning Your Ukulele</h2></div>
+        <span class="lesson-time">Beginner · 15–25 minutes</span>
+      </div>
+      <p>Before you play a chord or melody, your ukulele needs to be in tune. An out-of-tune instrument can make correct playing sound wrong, while a well-tuned ukulele makes practice much more enjoyable.</p>
+      <p>Tuning may feel unfamiliar at first, but it quickly becomes a simple routine. With a clip-on tuner, most players can check all four strings in less than a minute.</p>
+      <div class="callout"><strong>Academy standard:</strong> We use standard High-G tuning—G, C, E and A—throughout the beginner lessons unless a lesson clearly says otherwise.</div>
+      <h3>By the end of Level 2, you will be able to:</h3>
+      <ul class="check-list">
+        <li>Name the four open strings in order.</li>
+        <li>Understand the difference between High-G and Low-G tuning.</li>
+        <li>Use a clip-on tuner or tuning app.</li>
+        <li>Recognise whether a string is too low or too high.</li>
+        <li>Adjust each tuning peg safely in small movements.</li>
+        <li>Build tuning into your normal practice routine.</li>
+      </ul>
+    </section>
+
+    <section class="lesson-card" id="tuning-notes">
+      <h2>1. Meet the open strings: G–C–E–A</h2>
+      <p>When you play a string without pressing any fret, it is called an <strong>open string</strong>. Standard ukulele tuning gives the four open strings these notes:</p>
+      <div class="string-grid" aria-label="Standard ukulele string tuning">
+        <article><strong>4th string</strong><span class="note-name">G</span><small>Top string when playing</small></article>
+        <article><strong>3rd string</strong><span class="note-name">C</span><small>Usually the lowest-sounding note</small></article>
+        <article><strong>2nd string</strong><span class="note-name">E</span><small>Middle-high note</small></article>
+        <article><strong>1st string</strong><span class="note-name">A</span><small>Bottom string when playing</small></article>
+      </div>
+      <blockquote>Remember the order as: <strong>G – C – E – A</strong>.</blockquote>
+      <div class="tip"><strong>Helpful habit:</strong> Say each note aloud while tuning. This helps you connect the string position, its number and its note name.</div>
+      <div class="image-needed wide"><strong>Suggested image</strong><span>Ukulele strings labelled G, C, E and A from the player's viewpoint</span><code>images/academy/level2/gcea-strings-labelled.jpg</code></div>
+    </section>
+
+    <section class="lesson-card" id="high-low-g">
+      <h2>2. High-G and Low-G tuning</h2>
+      <p>Most soprano, concert and tenor ukuleles use <strong>High-G</strong> tuning. The top G string sounds higher than the C string below it. This non-linear arrangement helps create the familiar bright ukulele sound.</p>
+      <p>Some players use a thicker <strong>Low-G</strong> string instead. Low-G extends the instrument's lower range and is popular for fingerstyle and melody arrangements.</p>
+      <div class="two-column">
+        <div>
+          <h3>For this Academy</h3>
+          <ul class="check-list">
+            <li>Begin with High-G unless your ukulele already has Low-G.</li>
+            <li>Both use the note names G–C–E–A.</li>
+            <li>The difference is the octave of the G string.</li>
+            <li>You do not need to change strings to continue learning.</li>
+          </ul>
+        </div>
+        <div class="image-needed"><strong>Suggested image</strong><span>High-G and Low-G strings shown side by side</span><code>images/academy/level2/high-g-low-g-comparison.jpg</code></div>
+      </div>
+      <div class="tip"><strong>Did you know?</strong> The C string is normally the lowest-sounding string on a High-G ukulele, even though it is not physically the top string.</div>
+    </section>
+
+    <section class="lesson-card" id="tuning-tools">
+      <h2>3. Ways to tune your ukulele</h2>
+      <div class="method-grid">
+        <article><span>⭐ Recommended</span><h3>Clip-on tuner</h3><p>Clips to the headstock and detects vibration. It works well in noisy rooms and is usually the easiest option for beginners.</p></article>
+        <article><span>Convenient</span><h3>Phone or tablet app</h3><p>Uses the device microphone. It can work very well in a quiet room, but nearby sounds may confuse it.</p></article>
+        <article><span>Later skill</span><h3>Tuning by ear</h3><p>Uses a reference note or another instrument. Ear training is valuable, but an electronic tuner is more reliable while learning.</p></article>
+      </div>
+      <div class="image-pair">
+        <div class="image-needed"><strong>Suggested image</strong><span>Clip-on tuner attached to the headstock</span><code>images/academy/level2/clip-on-tuner.jpg</code></div>
+        <div class="image-needed"><strong>Suggested image</strong><span>Close view of tuner showing a centred note</span><code>images/academy/level2/tuner-in-tune-display.jpg</code></div>
+      </div>
+    </section>
+
+    <section class="lesson-card" id="tuning-steps">
+      <h2>4. Tune each string step by step</h2>
+      <ol class="numbered-steps">
+        <li><strong>Attach or open your tuner:</strong> Clip it to the headstock or open your tuning app and select ukulele or chromatic mode.</li>
+        <li><strong>Choose one string:</strong> Begin with the top G string. Pluck only that string gently and let it ring.</li>
+        <li><strong>Read the note:</strong> Confirm that the tuner is identifying the correct letter. If you are tuning G, the display should show G.</li>
+        <li><strong>Check low or high:</strong> A note below the target is <em>flat</em>; a note above the target is <em>sharp</em>.</li>
+        <li><strong>Turn the correct peg slightly:</strong> Tightening raises the pitch; loosening lowers it. Make only a tiny adjustment.</li>
+        <li><strong>Pluck again:</strong> The tuner needs a fresh, clear sound after each adjustment.</li>
+        <li><strong>Centre the reading:</strong> Stop when the tuner shows the correct note centred or marked in tune.</li>
+        <li><strong>Continue through C, E and A:</strong> Work one string at a time, then check all four once more.</li>
+      </ol>
+      <div class="warning"><strong>Important:</strong> Never keep tightening a string when the tuner shows the wrong note letter and you are unsure where you are. Stop, loosen slightly and seek help. Excessive tightening can break a string.</div>
+      <div class="tip"><strong>Which way do I turn the peg?</strong> Peg direction can vary because tuners are mounted differently. Watch the tuner instead of memorising clockwise or anticlockwise: tighten to make the note higher, loosen to make it lower.</div>
+      <div class="image-needed wide"><strong>Suggested image</strong><span>Headstock with each tuning peg connected to its string</span><code>images/academy/level2/tuning-pegs-labelled.jpg</code></div>
+    </section>
+
+    <section class="lesson-card" id="new-strings">
+      <h2>5. New strings and tuning stability</h2>
+      <p>New ukulele strings stretch. During the first several practice sessions, they may fall flat repeatedly—even only minutes after you tuned them. This is normal and does not mean the ukulele or tuner is faulty.</p>
+      <ul>
+        <li>Tune before every practice session.</li>
+        <li>Expect to retune several times when strings are new.</li>
+        <li>Play normally and allow the strings to settle gradually.</li>
+        <li>Do not pull or stretch them aggressively.</li>
+        <li>Changes in temperature can also affect tuning.</li>
+      </ul>
+      <div class="callout"><strong>A musician's routine:</strong> Pick up the ukulele, tune G–C–E–A, then begin playing. Even experienced musicians check their tuning regularly.</div>
+    </section>
+
+    <section class="lesson-card" id="level2-practice">
+      <h2>6. Practice exercise: the tuning routine</h2>
+      <p>Complete this short routine on several different days. The goal is confidence and accuracy—not speed.</p>
+      <div class="practice-sequence">
+        <article><strong>Round 1</strong><span>Say “G”, pluck the G string and tune it.</span></article>
+        <article><strong>Round 2</strong><span>Say “C”, pluck the C string and tune it.</span></article>
+        <article><strong>Round 3</strong><span>Say “E”, pluck the E string and tune it.</span></article>
+        <article><strong>Round 4</strong><span>Say “A”, pluck the A string and tune it.</span></article>
+        <article><strong>Final check</strong><span>Repeat G–C–E–A once more because adjusting one string can slightly affect the others.</span></article>
+      </div>
+      <h3>Common tuning mistakes</h3>
+      <div class="mistake-grid">
+        <article><strong>Turning the wrong peg</strong><span>Trace the string visually from the body to its tuning peg before adjusting.</span></article>
+        <article><strong>Plucking several strings</strong><span>Mute the others and pluck one clear string at a time.</span></article>
+        <article><strong>Making large turns</strong><span>Use tiny movements and check the tuner after each one.</span></article>
+        <article><strong>Watching only the needle</strong><span>First confirm the tuner is displaying the correct note letter.</span></article>
+        <article><strong>Tuning once and assuming it will stay</strong><span>Check before every practice session, especially with new strings.</span></article>
+        <article><strong>Plucking too hard</strong><span>A gentle, even pluck gives the tuner a steadier reading.</span></article>
+      </div>
+    </section>
+
+    <section class="lesson-card" id="level2-ready">
+      <h2>Ready to move on?</h2>
+      <div class="ready-box">
+        <label><input type="checkbox" id="l2Strings"> I can name the strings G–C–E–A in order.</label>
+        <label><input type="checkbox" id="l2Tool"> I can use my tuner and identify the note it displays.</label>
+        <label><input type="checkbox" id="l2Pitch"> I understand that tightening raises pitch and loosening lowers it.</label>
+        <label><input type="checkbox" id="l2Tune"> I can tune all four strings using small adjustments.</label>
+        <label><input type="checkbox" id="l2Routine"> I will check the tuning before I practise.</label>
+        <button class="primary-button" id="completeLevelTwo" type="button">Mark Level 2 complete</button>
+        <p id="levelTwoCompletionStatus" class="completion-status" aria-live="polite"></p>
+      </div>
+      <div class="reflection-box">
+        <h3>Take a moment to notice…</h3>
+        <p>Which part of tuning needs the most attention right now—remembering the string names, choosing the correct peg, or making small adjustments? Repeat that one part slowly during your next practice.</p>
+      </div>
+      <div class="lesson-navigation">
+        <a href="#level-1">← Previous: Level 1</a>
+        <span>Next: Level 3 — Your First Notes</span>
+      </div>
+    </section>
+
   </section>
 </main>
 
 <footer class="academy-footer">
-  <div><strong>Ukulele Academy v1.0</strong><br>Part of Ukulele Songbook v6.5.1 · July 2026</div>
+  <div><strong>Ukulele Academy v1.2</strong><br>Part of Ukulele Songbook v6.5.3 · July 2026</div>
   <a href="index.html">Return to Ukulele Songbook</a>
 </footer>
 <script src="js/academy.js"></script>

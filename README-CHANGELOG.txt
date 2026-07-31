@@ -1,6 +1,11 @@
-# Ukulele Songbook v6.5.1
+# Ukulele Songbook v6.5.3
 
-## v6.5.1
+## v6.5.3
+- Added Academy Level 2 — Tuning Your Ukulele.
+- Added collapsible Academy lesson groups in the left navigation.
+- Navigation open/closed state is remembered in the browser.
+
+## v6.5.3
 - Added the four Level 0 ukulele type photographs: soprano, concert, tenor and baritone.
 - Added responsive image cards and descriptive captions to the Academy page.
 
