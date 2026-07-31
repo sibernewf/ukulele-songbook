@@ -29,11 +29,9 @@ Don't worry, be happy.
 Don't worry, be happy now.
  
 [CHORUS]
-C Dm
-            F         C
+C Dm        F         C
 Don't worry, be happy. Don't worry, be happy.
-C Dm
-            F         C
+C Dm        F         C
 Don't worry, be happy. Don't worry, be happy.
  
 [2nd VERSE]
@@ -53,14 +51,12 @@ Don't worry, be happy.
 Look at me -- I'm happy.
  
 [CHORUS]
-C Dm
-            F          C
+C Dm        F          C
 Don't worry, be happy.
 C                   C                               C
 Here I give you my phone number. When you worry, call me,
 I make you happy.
-C Dm
-            F         C
+C Dm        F         C
 Don't worry, be happy.
  
 [3rd VERSE]
@@ -80,16 +76,14 @@ Don't worry, be happy.
 Don't worry, be happy now.
  
 [CHORUS]
-C Dm
-            F         C                 C
+C Dm        F         C                 C
 Don't worry, be happy. Don't worry, be happy.
 C Dm
             F         C                 C
 Don't worry, be happy. Don't worry, be happy.
  
 [OUTRO]
-C Dm
-                        F
+C Dm                    F
 Don't worry, don't worry, don't do it.
          C
 Be happy. Put a smile on your face.

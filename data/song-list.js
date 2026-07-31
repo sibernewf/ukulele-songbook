@@ -91,6 +91,18 @@ const SONGS = [
     ],
     "type": "chords-tabs"
   },
+   {
+    "title": "Happy Birthday",
+    "artist": "Traditional",
+    "file": "songs/happy-birthday.txt",
+    "favourite": true,
+    "tags": [
+      "Beginner",
+      "Happy",
+      "Campfire"
+    ],
+    "type": "chords-tabs"
+  },
   {
     "title": "Frere Jacques",
     "artist": "Traditional",

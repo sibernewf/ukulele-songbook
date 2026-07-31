@@ -6,7 +6,7 @@ Intro (x2):
  C|-0-0---------------|
  g|-------------------|
 
-Verse 1:
+[Verse 1]
 C
 One evening as the sun went down
       G              C
@@ -46,7 +46,7 @@ Where the bluebird sings
 G                C
 In the Big Rock Candy Mountains
 
-Verse 2:
+[Verse 2]
 C
 In the Big Rock Candy Mountains
 F                         C
@@ -70,7 +70,7 @@ The wind don't blow
 G                C
 In the Big Rock Candy Mountains
 
-Verse 3:
+[Verse 3]
 C
 In the Big Rock Candy Mountains
 F                   C
@@ -94,7 +94,7 @@ In a big canoe
 G                C
 In the Big Rock Candy Mountains
 
-Verse 4:
+[Verse 4]
 C
 In the Big Rock Candy Mountains,
 F                    C
