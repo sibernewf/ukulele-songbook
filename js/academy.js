@@ -161,4 +161,21 @@
     }
   });
 
+  const levelFiveButton = document.getElementById('completeLevelFive');
+  const levelFiveStatus = document.getElementById('levelFiveCompletionStatus');
+  const levelFiveCheckIds = ['l5Low','l5Anchor','l5Prepare','l5Pulse','l5Relax'];
+  try {
+    const saved = JSON.parse(localStorage.getItem('ukuleleAcademyLevel5Checks') || '{}');
+    levelFiveCheckIds.forEach(id => { const node=document.getElementById(id); if(node) node.checked=Boolean(saved[id]); });
+    if(localStorage.getItem('ukuleleAcademyLevel5Complete') === 'true' && levelFiveStatus) levelFiveStatus.textContent = '✓ Level 5 completed. You are ready for Level 6 — Rhythm and Timing.';
+  } catch (_) {}
+  levelFiveButton?.addEventListener('click', () => {
+    const checks = Object.fromEntries(levelFiveCheckIds.map(id => [id, document.getElementById(id)?.checked]));
+    try { localStorage.setItem('ukuleleAcademyLevel5Checks', JSON.stringify(checks)); } catch (_) {}
+    if(Object.values(checks).every(Boolean)) {
+      try { localStorage.setItem('ukuleleAcademyLevel5Complete', 'true'); } catch (_) {}
+      levelFiveStatus.textContent = '✓ Level 5 completed. You are ready for Level 6 — Rhythm and Timing.';
+    } else levelFiveStatus.textContent = 'Tick each readiness statement before marking Level 5 complete.';
+  });
+
 })();

@@ -29,3 +29,16 @@
 
 /* Level 4 chord lessons */
 .chord-reading-grid,.academy-exercise-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem;margin:1rem 0}.chord-reading-grid article,.academy-exercise-grid article{padding:1rem;border:1px solid var(--border);border-radius:12px;background:#fffaf0}.chord-reading-grid strong{display:block;font-size:1.3rem;color:#6b4317}.chord-reading-grid span{font-size:.92rem}.chord-lesson-layout{display:grid;grid-template-columns:minmax(0,1fr) 220px;gap:1.4rem;align-items:center}.chord-card{text-align:center;padding:1rem;border:1px solid var(--border);border-radius:15px;background:#fffaf0}.chord-card h3{font-size:2rem;margin:.1rem}.chord-code{font:800 1rem/1.4 Consolas,monospace;letter-spacing:.45rem;margin:.25rem 0 .7rem;padding-left:.45rem}.mini-chord{position:relative;display:grid;grid-template-columns:repeat(4,1fr);height:180px;margin:.5rem auto;width:150px;border-top:7px solid #3c2a18;background:repeating-linear-gradient(to bottom,transparent 0,transparent 41px,#7f674d 42px,#7f674d 44px)}.mini-chord:before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(to right,#4e3b27 0,#4e3b27 2px,transparent 2px,transparent calc(33.333%));pointer-events:none}.mini-chord span{position:relative}.mini-chord .dot:after{content:attr(class);display:none}.mini-chord .dot{position:relative;z-index:1;justify-self:center;width:28px;height:28px;border-radius:50%;background:#6b4317;color:#fff;display:grid;place-items:center;font-weight:900;transform:translateY(8px)}.mini-chord .f1{margin-top:5px}.mini-chord .f2{margin-top:49px}.mini-chord .f3{margin-top:93px}.academy-exercise-grid article{display:flex;flex-direction:column;align-items:flex-start}.academy-exercise-grid .primary-button{margin-top:auto}.academy-exercise-grid h3{margin:.55rem 0 .15rem}@media(max-width:760px){.chord-lesson-layout{grid-template-columns:1fr}.chord-card{max-width:320px;width:100%;margin:auto}.chord-reading-grid,.academy-exercise-grid{grid-template-columns:1fr}}
+
+.songbook-nav-link{display:block!important;background:#5d3911!important;color:#fff!important;font-weight:900;text-align:center;border-radius:10px;margin:.1rem 0 .45rem;padding:.7rem!important}.songbook-nav-link:hover{background:#3f2911!important}
+
+/* v6.5.6.1: corrected four-string Academy chord diagrams */
+.chord-card .chord-code{letter-spacing:.28rem;padding-left:.28rem;margin:.25rem 0 .35rem}
+.academy-chord-diagram{display:block;width:100%;max-width:230px;height:auto;margin:0 auto;color:#3c2a18}
+.academy-chord-title{font:800 30px Arial,Helvetica,sans-serif;fill:currentColor}
+.academy-chord-line{stroke:currentColor;stroke-width:2}
+.academy-chord-nut{stroke:currentColor;stroke-width:7}
+.academy-chord-dot{fill:#6b4317}
+.academy-chord-dot-label{fill:#fff;font:800 16px Arial,Helvetica,sans-serif}
+.academy-chord-string{fill:currentColor;font:700 15px Arial,Helvetica,sans-serif}
+.academy-chord-open{fill:currentColor;font:700 20px Arial,Helvetica,sans-serif}

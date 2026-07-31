@@ -1,6 +1,10 @@
-# Ukulele Songbook v6.5.5.1
+# Ukulele Songbook v6.5.6.1
 
-## v6.5.5.1
+## v6.5.6.1
+
+- Corrected Academy chord diagrams to show all four ukulele strings.
+- Aligned every chord dot directly on its G, C, E or A string.
+- Added fret numbers inside the Academy chord dots.
 - Added Academy Level 4 — Your First Chords.
 - Added beginner lessons for C, Am, F and G7 with finger placement and clean-sound guidance.
 - Added three Academy chord exercises that open Practice Mode at 60 BPM.

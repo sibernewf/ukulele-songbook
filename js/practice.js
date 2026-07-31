@@ -79,7 +79,10 @@
       'L3-001': { level: 'Level 3 — First Notes', text: 'Play <b>0–2–3–2–0</b> on the A string, one note on each click.', back: 'level3-practice' },
       'L4-001': { level: 'Level 4 — Your First Chords', text: 'Play <b>C</b> for four clicks, then <b>Am</b> for four clicks. Repeat slowly.', back: 'level4-practice' },
       'L4-002': { level: 'Level 4 — Your First Chords', text: 'Play <b>Am</b> for four clicks, then <b>F</b> for four clicks. Keep the middle finger planted.', back: 'level4-practice' },
-      'L4-003': { level: 'Level 4 — Your First Chords', text: 'Play <b>C → Am → F → G7</b>, giving each chord four clicks before changing.', back: 'level4-practice' }
+      'L4-003': { level: 'Level 4 — Your First Chords', text: 'Play <b>C → Am → F → G7</b>, giving each chord four clicks before changing.', back: 'level4-practice' },
+      'L5-001': { level: 'Level 5 — Changing Chords', text: 'Change between <b>Am and F</b>. Keep the middle finger planted and add or remove only the index finger.', back: 'level5-practice' },
+      'L5-002': { level: 'Level 5 — Changing Chords', text: 'Change between <b>C and Am</b>. Keep both fingers close to the strings and move directly to the next shape.', back: 'level5-practice' },
+      'L5-003': { level: 'Level 5 — Changing Chords', text: 'Play <b>C → Am → F → G7</b>. Give each chord four clicks and prepare the next shape before the change.', back: 'level5-practice' }
     };
     const academyExercise = academyExercises[exercise];
     if (academyExercise) {
