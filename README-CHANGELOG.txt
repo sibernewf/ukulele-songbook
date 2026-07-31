@@ -1,4 +1,9 @@
-Ukulele Songbook v6.5.9.3
+Ukulele Songbook v6.5.9.4
+
+Changes in v6.5.9.4
+- Combined song tags into one compact "Tags:" information chip.
+- Duplicate tag values are removed before display and filtering.
+- Reformatted js/app.js into readable, maintainable JavaScript.
 - Added Level 8: Your First Songs to the Ukulele Academy.
 - Added direct Academy buttons for all nine Foundation practice songs.
 - Academy song links now locate songs by Lesson 8.x tags rather than hardcoded filenames.
