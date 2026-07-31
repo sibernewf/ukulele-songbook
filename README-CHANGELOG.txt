@@ -1,3 +1,12 @@
+Ukulele Songbook v6.5.9.3
+- Added Level 8: Your First Songs to the Ukulele Academy.
+- Added direct Academy buttons for all nine Foundation practice songs.
+- Academy song links now locate songs by Lesson 8.x tags rather than hardcoded filenames.
+- Added Academy Practice and Academy Beginner tag collections.
+- Added Academy graduation checklist and a link into the wider Beginner library.
+- Removed Greensleeves from the Academy collection.
+- Corrected Scarborough Fair to the Chords + tabs song type.
+
 # Ukulele Songbook v6.5.9.2
 
 ## v6.5.9.2 — Sidebar viewport-height fix

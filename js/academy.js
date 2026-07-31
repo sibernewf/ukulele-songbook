@@ -302,4 +302,21 @@
   window.addEventListener('resize', sizeAcademySidebar);
   window.addEventListener('scroll', sizeAcademySidebar, { passive: true });
 
+
+  const levelEightButton = document.getElementById('completeLevelEight');
+  const levelEightStatus = document.getElementById('levelEightCompletionStatus');
+  const levelEightCheckIds = ['l8Open','l8Steady','l8Changes','l8Tools','l8Choice'];
+  try {
+    const saved = JSON.parse(localStorage.getItem('ukuleleAcademyLevel8Checks') || '{}');
+    levelEightCheckIds.forEach(id => { const el=document.getElementById(id); if(el) el.checked=Boolean(saved[id]); });
+    if(localStorage.getItem('ukuleleAcademyLevel8Complete') === 'true' && levelEightStatus) levelEightStatus.textContent = '✓ Level 8 completed. You have graduated from the Foundation Academy!';
+  } catch (_) {}
+  levelEightButton?.addEventListener('click', () => {
+    const checks = Object.fromEntries(levelEightCheckIds.map(id => [id, document.getElementById(id)?.checked]));
+    try { localStorage.setItem('ukuleleAcademyLevel8Checks', JSON.stringify(checks)); } catch (_) {}
+    if(Object.values(checks).every(Boolean)) {
+      try { localStorage.setItem('ukuleleAcademyLevel8Complete', 'true'); } catch (_) {}
+      levelEightStatus.textContent = '✓ Level 8 completed. You have graduated from the Foundation Academy!';
+    } else levelEightStatus.textContent = 'Tick each graduation statement before completing Level 8.';
+  });
 })();
