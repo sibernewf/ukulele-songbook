@@ -1,0 +1,49 @@
+Tuning: G C E A | Key: C | Capo: No capo | Difficulty: Beginner | Tempo: 60 BPM | Style: Fingerpicking (P I M A)
+
+[Fingerpicking Guide]
+P = Thumb — G string
+I = Index finger — C string
+M = Middle finger — E string
+A = Ring finger — A string
+
+Pattern: P I M A M I
+
+[Intro]
+| Am | G | Am | G |
+
+[Verse]
+
+Am                G
+G|2-----------|0-----------|
+C|--0---------|--2---------|
+E|---0---0----|---3---3----|
+A|-----0---0--|-----2---2--|
+
+Are you going to
+Scarborough Fair?
+
+Am                G
+G|2-----------|0-----------|
+C|--0---------|--2---------|
+E|---0---0----|---3---3----|
+A|-----0---0--|-----2---2--|
+
+Parsley, sage,
+Rosemary and thyme.
+
+Am                G
+G|2-----------|0-----------|
+C|--0---------|--2---------|
+E|---0---0----|---3---3----|
+A|-----0---0--|-----2---2--|
+
+Remember me to
+One who lives there.
+
+Am                G          Am
+G|2-----------|0-----------|2-----------|
+C|--0---------|--2---------|--0---------|
+E|---0---0----|---3---3----|---0---0----|
+A|-----0---0--|-----2---2--|-----0---0--|
+
+She once was a true love of mine.

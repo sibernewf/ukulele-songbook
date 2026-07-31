@@ -3,6 +3,59 @@
 
 const SONGS = [
   {
+  "title": "Amazing Grace",
+  "artist": "Traditional",
+  "file": "songs/amazing-grace.txt",
+  "favourite": false,
+  "tags": [
+    "Academy",
+    "Academy Level 8",
+    "Academy Song 9",
+    "Beginner",
+    "Easy",
+    "Practice",
+    "Public Domain",
+    "Expression",
+    "Dynamics"
+  ],
+  "type": "chords"
+},
+  {
+  "title": "Aura Lee",
+  "artist": "Traditional",
+  "file": "songs/aura-lee.txt",
+  "favourite": false,
+  "tags": [
+    "Academy",
+    "Academy Level 8",
+    "Academy Song 5",
+    "Beginner",
+    "Easy",
+    "Practice",
+    "Public Domain",
+    "Strumming",
+    "Am Chord"
+  ],
+  "type": "chords"
+},
+{
+  "title": "Auld Lang Syne",
+  "artist": "Traditional",
+  "file": "songs/auld-lang-syne.txt",
+  "favourite": false,
+  "tags": [
+    "Academy",
+    "Academy Level 8",
+    "Academy Song 6",
+    "Beginner",
+    "Easy",
+    "Practice",
+    "Public Domain",
+    "Strumming"
+  ],
+  "type": "chords"
+},
+  {
     title: "Somewhere Over the Rainbow",
     artist: "Israel Kamakawiwoʻole",
     file: "songs/somewhere-over-the-rainbow.txt",
@@ -27,12 +80,44 @@ const SONGS = [
     type: "chords-tabs"
   },
   {
+  "title": "Frere Jacques",
+  "artist": "Traditional",
+  "file": "songs/frere-jacques.txt",
+  "favourite": false,
+  "tags": [
+    "Academy",
+    "Academy Level 8",
+    "Beginner",
+    "Easy",
+    "Practice",
+    "Public Domain",
+    "Strumming"
+  ],
+  "type": "chords"
+},
+  {
   title: "Game of Thrones Theme — TAB arrangement",
   artist: "Symphony Orchestra",
   file: "songs/game-of-thrones-theme-tab-arrangement.txt",
   favourite: false,
   tags: ["TAB","Melody"],
   type: "chords-tabs"
+},
+{
+  "title": "He's Got the Whole World in His Hands",
+  "artist": "Traditional",
+  "file": "songs/hes-got-the-whole-world-in-his-hands.txt",
+  "favourite": false,
+  "tags": [
+    "Academy",
+    "Academy Level 8",
+    "Beginner",
+    "Easy",
+    "Practice",
+    "Public Domain",
+    "Strumming"
+  ],
+  "type": "chords"
 },
   {
     title: "Jingle Bells",
@@ -99,6 +184,24 @@ const SONGS = [
   type: "chords-tabs"
 },
 {
+  "title": "Michael, Row the Boat Ashore",
+  "artist": "Traditional",
+  "file": "songs/michael-row-the-boat-ashore.txt",
+  "favourite": false,
+  "tags": [
+    "Academy",
+    "Academy Level 8",
+    "Academy Song 7",
+    "Beginner",
+    "Easy",
+    "Practice",
+    "Public Domain",
+    "Strumming",
+    "Em Chord"
+  ],
+  "type": "chords"
+},
+{
   title: "Ring of Fire",
   artist: "Johnny Cash",
   file: "songs/ring-of-fire.txt",
@@ -131,6 +234,40 @@ const SONGS = [
   type: "chords"
 },
 {
+  "title": "Scarborough Fair",
+  "artist": "Traditional",
+  "file": "songs/scarborough-fair.txt",
+  "favourite": false,
+  "tags": [
+    "Academy",
+    "Academy Level 8",
+    "Academy Song 8",
+    "Beginner",
+    "Easy",
+    "Practice",
+    "Public Domain",
+    "Fingerpicking"
+  ],
+  "type": "chords"
+},
+{
+  "title": "Skip to My Lou",
+  "artist": "Traditional",
+  "file": "songs/skip-to-my-lou.txt",
+  "favourite": false,
+  "tags": [
+    "Academy",
+    "Academy Level 8",
+    "Academy Song 4",
+    "Beginner",
+    "Easy",
+    "Practice",
+    "Public Domain",
+    "Strumming"
+  ],
+  "type": "chords"
+},
+{
   title: "Stand By Me — Campfire",
   artist: "Ben E King",
   file: "songs/stand-by-me-campfire.txt",
@@ -145,5 +282,21 @@ const SONGS = [
   favourite: false,
   tags: ["TAB","Melody"],
   type: "chords-tabs"
+},
+{
+  "title": "When the Saints Go Marching In",
+  "artist": "Traditional",
+  "file": "songs/when-the-saints-go-marching-in.txt",
+  "favourite": false,
+  "tags": [
+    "Academy",
+    "Academy Level 8",
+    "Beginner",
+    "Easy",
+    "Practice",
+    "Public Domain",
+    "Strumming"
+  ],
+  "type": "chords"
 }
 ];
