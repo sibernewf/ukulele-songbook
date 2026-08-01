@@ -320,6 +320,24 @@ const SONGS = [
     "type": "chords-tabs"
   },
   {
+  title: "Shortnin' Bread",
+  artist: "Traditional",
+  file: "songs/shortnin-bread.txt",
+  favourite: false,
+  tags: [
+    "Academy",
+    "Academy Practice",
+    "Academy Beginner",
+    "Traditional",
+    "Beginner",
+    "Easy",
+    "Public Domain",
+    "Strumming",
+    "Lesson 8.10"
+  ],
+  type: "chords-tabs"
+},
+  {
     "title": "Skip to My Lou",
     "artist": "Traditional",
     "file": "songs/skip-to-my-lou.txt",
