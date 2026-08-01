@@ -4,7 +4,7 @@ Title : Shortnin Bread
 
 Artist: Traditional
 
-Key   :                                          Tempo: 4/4   Strum: D DUD DU
+Tuning: G C E A | Key:  | Capo: No capo | Tempo: 4/4 | Difficulty: Beginner | Strumming: D DUD DU
 
 ==============================================================================================================
 

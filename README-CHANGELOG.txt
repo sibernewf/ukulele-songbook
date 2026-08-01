@@ -1,6 +1,6 @@
-Ukulele Songbook v6.5.9.4
+Ukulele Songbook v6.5.9.5
 
-Changes in v6.5.9.4
+Changes in v6.5.9.5
 - Combined song tags into one compact "Tags:" information chip.
 - Duplicate tag values are removed before display and filtering.
 - Reformatted js/app.js into readable, maintainable JavaScript.

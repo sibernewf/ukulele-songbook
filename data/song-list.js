@@ -91,6 +91,23 @@ const SONGS = [
     ],
     "type": "chords-tabs"
   },
+  {
+  title: "House of the Rising Sun",
+  artist: "Traditional",
+  file: "songs/house-of-the-rising-sun.txt",
+  favourite: false,
+  tags: [
+    "Traditional",
+    "Intermediate",
+    "Classic",
+    "Folk",
+    "Fingerpicking",
+    "Strumming",
+    "6/8 Time",
+    "Campfire"
+  ],
+  type: "chords-tabs"
+},
    {
     "title": "Happy Birthday",
     "artist": "Traditional",

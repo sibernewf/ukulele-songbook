@@ -139,12 +139,26 @@ function attachTransposeControls() { let minus = $('transposeDown'), plus = $('t
     minus.onclick = () => changeTranspose(-1); if (plus)
     plus.onclick = () => changeTranspose(1); if (reset)
     reset.onclick = resetTranspose; }
-function parseSongFile(raw) { let lines = raw.replace(/\r/g, '').trimStart().split('\n'), info = {}, start = 0; if (lines.length && looksLikeMetadataLine(lines[0])) {
-    Object.assign(info, parseMetadataLine(lines[0]));
-    start = 1;
+function parseSongFile(raw) {
+    const lines = raw.replace(/\r/g, '').trimStart().split('\n');
+    const info = {};
+    let start = 0;
+
+    // Metadata is optional. Read any consecutive metadata lines at the top
+    // (for example, a main header line followed by a separate Notes: line).
+    while (start < lines.length && looksLikeMetadataLine(lines[start])) {
+        Object.assign(info, parseMetadataLine(lines[start]));
+        start++;
+    }
+
     while (start < lines.length && lines[start].trim() === '')
         start++;
-} return { info, songText: lines.slice(start).join('\n').replace(/\n{3,}/g, '\n\n').trim() }; }
+
+    return {
+        info,
+        songText: lines.slice(start).join('\n').replace(/\n{3,}/g, '\n\n').trim()
+    };
+}
 function looksLikeMetadataLine(line) { return /\b(Tuning|Key|Capo|Difficulty|Tempo|Strum|Strumming|Notes)\s*:/i.test(line); }
 function parseMetadataLine(line) { let info = {}; line.split('|').forEach(p => { let [k, ...rest] = p.split(':'); if (!k || !rest.length)
     return; let key = k.trim().toLowerCase(), v = rest.join(':').trim(); if (!v)
@@ -162,9 +176,33 @@ else if (key === 'strum' || key === 'strumming')
     info.strumming = v;
 else if (key === 'notes')
     info.notes = v; }); return info; }
-function renderSongInfo(info, song) { let bits = [], type = getSongType(song); bits.push(`<span class="info-chip type-chip"><strong>Type:</strong> ${escapeHtml(getTypeLabel(type))}</span>`); ['tuning', 'key', 'capo', 'difficulty', 'tempo', 'notes'].forEach(k => { if (info[k])
-    bits.push(`<span class="info-chip"><strong>${k[0].toUpperCase() + k.slice(1)}:</strong> ${escapeHtml(info[k])}</span>`); }); const tags = getSongTags(song); if (tags.length)
-    bits.push(`<span class="info-chip"><strong>Tags:</strong> ${tags.map(escapeHtml).join(', ')}</span>`); let strum = info.strumming ? renderStrummingCard(info.strumming) : '', transpose = renderTransposeCard(); songInfo.innerHTML = strum + transpose + bits.join(''); }
+function renderSongInfo(info, song) {
+    const bits = [];
+    const type = getSongType(song);
+
+    bits.push(`<span class="info-chip type-chip"><strong>Type:</strong> ${escapeHtml(getTypeLabel(type))}</span>`);
+
+    // All metadata fields are optional. Missing fields are simply not shown.
+    ['tuning', 'key', 'capo', 'difficulty', 'tempo'].forEach(key => {
+        if (info[key]) {
+            const label = key[0].toUpperCase() + key.slice(1);
+            bits.push(`<span class="info-chip"><strong>${label}:</strong> ${escapeHtml(info[key])}</span>`);
+        }
+    });
+
+    const tags = getSongTags(song);
+    if (tags.length) {
+        bits.push(`<span class="info-chip"><strong>Tags:</strong> ${tags.map(escapeHtml).join(', ')}</span>`);
+    }
+
+    const strum = info.strumming ? renderStrummingCard(info.strumming) : '';
+    const transpose = renderTransposeCard();
+    const notes = info.notes
+        ? `<div class="song-teaching-notes"><strong>Notes</strong><div>${escapeHtml(info.notes).replace(/\n/g, '<br>')}</div></div>`
+        : '';
+
+    songInfo.innerHTML = strum + transpose + bits.join('') + notes;
+}
 function renderTransposeCard() { let label = window.ukuleleTranspose ? window.ukuleleTranspose.formatAmount(currentTransposeAmount) : String(currentTransposeAmount); let active = currentTransposeAmount !== 0 ? ' active' : ''; return `<div class="transpose-card${active}"><span class="transpose-title">Transpose</span><button id="transposeDown" type="button" title="Transpose down one semitone">−</button><span class="transpose-value">${label}</span><button id="transposeUp" type="button" title="Transpose up one semitone">+</button><button id="transposeReset" type="button" ${currentTransposeAmount === 0 ? 'disabled' : ''}>Original</button></div>`; }
 function renderStrummingCard(pattern) { let parts = String(pattern).split(/\s*(?:;|\/)\s*/).filter(Boolean); let rows = parts.map(part => { let label = '', value = part.trim(); let m = value.match(/^([^:=]+)\s*[:=]\s*(.+)$/); if (m) {
     label = `<span class="strum-label">${escapeHtml(m[1].trim())}</span>`;

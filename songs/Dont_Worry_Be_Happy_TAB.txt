@@ -4,7 +4,7 @@ Title : Don't Worry, Be Happy
 
 Artist: Bobby McFerrin
 
-Key   : C Major                                  Tempo: 4/4
+Tuning: G C E A | Key: C Major | Capo: No Capo | Tempo: 4/4 | Difficulty: Beginner |  
 
 ==============================================================================================================
 

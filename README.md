@@ -1,4 +1,4 @@
-# Ukulele Songbook v6.5.9.4
+# Ukulele Songbook v6.5.9.5
 
 Academy v1.2 adds Level 2 — Tuning Your Ukulele and collapsible lesson groups in the left navigation.
 

@@ -1165,3 +1165,7 @@ body.academy-exercise-active .song-panel>#academyExerciseMain{display:block!impo
 .academy-step.active b{color:#285b42}
 .academy-main-chords article.current-chord{border-color:#3f755c;background:#e8f3eb;box-shadow:0 0 0 4px rgba(63,117,92,.15)}
 @media(max-width:680px){.academy-step-tracker-head{align-items:flex-start;flex-direction:column}.academy-step{flex-basis:76px;min-height:70px}}
+
+/* Shared notes supplied by the song file. Hidden automatically when absent. */
+.song-teaching-notes{flex:1 0 100%;padding:.75rem .85rem;background:#fff9ec;border:1px solid #d8c8ad;border-left:4px solid #a64200;border-radius:.75rem;line-height:1.5}
+.song-teaching-notes strong{display:block;margin-bottom:.25rem;color:#5f4226}
