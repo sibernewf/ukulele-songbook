@@ -129,7 +129,7 @@ const SONGS = [
       "TAB",
       "Melody"
     ],
-    "type": "chords-tabs"
+    "type": "tabs"
   },
   {
     "title": "He's Got the Whole World in His Hands",
@@ -377,7 +377,7 @@ const SONGS = [
       "TAB",
       "Melody"
     ],
-    "type": "chords-tabs"
+    "type": "tabs"
   },
   {
     "title": "When the Saints Go Marching In",
