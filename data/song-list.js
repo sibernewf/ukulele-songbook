@@ -149,6 +149,23 @@ const SONGS = [
     "type": "chords"
   },
   {
+  title: "House of the Rising Sun",
+  artist: "Traditional",
+  file: "songs/house-of-the-rising-sun.txt",
+  favourite: false,
+  tags: [
+    "Traditional",
+    "Beginner",
+    "Easy",
+    "Strumming",
+    "6/8 Time",
+    "Fingerpicking",
+    "Classic",
+    "Campfire"
+  ],
+  type: "chords-tabs"
+},
+  {
     "title": "Jingle Bells",
     "artist": "Traditional",
     "file": "songs/jingle-bells.txt",
